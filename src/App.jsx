@@ -102,7 +102,7 @@ export default function App() {
                 }}
                 className="px-3.5 py-1.5 rounded-xl bg-white border border-[#D5C9B5] text-xs font-bold text-ink-700 hover:text-cinnabar-600 shadow-xs transition-colors flex items-center gap-1.5"
               >
-                ← Quay lại Lộ trình bài học
+                ← Quay lại danh sách bài học
               </button>
             </div>
             <PinyinCourseView />
