@@ -150,7 +150,9 @@ export default function GameSpeedMatch({ words }) {
               >
                 {card.type === 'hanzi' ? (
                   <>
-                    <span className="text-3xl font-bold font-hanzi">{card.text}</span>
+                    <span className={`${card.text.length > 2 ? 'text-xl sm:text-2xl' : 'text-3xl'} font-bold font-hanzi whitespace-nowrap`}>
+                      {card.text}
+                    </span>
                     <span className="text-xs font-semibold text-cinnabar-600 mt-1">{card.pinyin}</span>
                   </>
                 ) : (

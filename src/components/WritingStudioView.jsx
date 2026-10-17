@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import HanziWriter from 'hanzi-writer';
-import { Play, Edit3, Volume2, CheckCircle2, RotateCcw, Lightbulb, Search, BookOpen, Sparkles, AlertCircle } from 'lucide-react';
+import { Play, Edit3, Volume2, CheckCircle2, RotateCcw, Lightbulb, Search, BookOpen, Sparkles, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { speakChinese, playSoundEffect } from '../utils/audio';
 import { BASIC_STROKES, STROKE_RULES } from '../data/pinyinData';
@@ -9,8 +9,31 @@ import { getLearningTipForWord } from '../data/learningTips';
 export default function WritingStudioView({ words = [], onOpenWriter }) {
   const [activeTab, setActiveTab] = useState('practice'); // 'practice', 'stroke_rules'
   const [selectedWord, setSelectedWord] = useState(words[0] || { hanzi: '你', pinyin: 'nǐ', han_viet: 'Nễ', vietnamese: 'Bạn, anh, chị' });
+  const [selectedLesson, setSelectedLesson] = useState('all');
   const [charIndex, setCharIndex] = useState(0);
   const [wordFilter, setWordFilter] = useState('');
+
+  // Extract unique lesson numbers
+  const availableLessons = useMemo(() => {
+    return [...new Set(words.map(w => w.lesson_number).filter(Boolean))].sort((a, b) => a - b);
+  }, [words]);
+
+  // Filter words by selected lesson and search query
+  const filteredWords = useMemo(() => {
+    let list = words;
+    if (selectedLesson !== 'all') {
+      list = list.filter(w => w.lesson_number === Number(selectedLesson));
+    }
+    if (wordFilter.trim()) {
+      const q = wordFilter.trim().toLowerCase();
+      list = list.filter(w =>
+        (w.hanzi && w.hanzi.includes(q)) ||
+        (w.pinyin && w.pinyin.toLowerCase().includes(q)) ||
+        (w.vietnamese && w.vietnamese.toLowerCase().includes(q))
+      );
+    }
+    return list;
+  }, [words, selectedLesson, wordFilter]);
 
   // Sync selected word whenever the user changes level in Navbar
   useEffect(() => {
@@ -18,8 +41,20 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
       setSelectedWord(words[0]);
       setCharIndex(0);
       setWordFilter('');
+      setSelectedLesson('all');
     }
   }, [words]);
+
+  // When filteredWords changes, keep selectedWord if it exists, otherwise select the first word
+  useEffect(() => {
+    if (filteredWords.length > 0) {
+      const exists = filteredWords.some(w => w.hanzi === selectedWord?.hanzi);
+      if (!exists) {
+        setSelectedWord(filteredWords[0]);
+        setCharIndex(0);
+      }
+    }
+  }, [filteredWords]);
 
   const containerRef = useRef(null);
   const writerRef = useRef(null);
@@ -129,6 +164,29 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
     setCharIndex(0);
   };
 
+  const currentWordIndex = filteredWords.findIndex(w => w.hanzi === selectedWord?.hanzi);
+
+  const handlePrevWord = () => {
+    if (currentWordIndex > 0) {
+      setSelectedWord(filteredWords[currentWordIndex - 1]);
+      setCharIndex(0);
+    }
+  };
+
+  const handleNextWord = () => {
+    if (currentWordIndex >= 0 && currentWordIndex < filteredWords.length - 1) {
+      setSelectedWord(filteredWords[currentWordIndex + 1]);
+      setCharIndex(0);
+    }
+  };
+
+  const hanziLen = (selectedWord?.hanzi || '').length;
+  const hanziSizeClass = hanziLen >= 4
+    ? 'text-3xl sm:text-4xl'
+    : hanziLen === 3
+      ? 'text-4xl sm:text-5xl'
+      : 'text-5xl sm:text-6xl';
+
   return (
     <div className="max-w-md mx-auto px-2 sm:px-4 py-2">
       {/* Header */}
@@ -170,11 +228,31 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
 
       {activeTab === 'practice' && (
         <div className="space-y-4 animate-fade-in">
-          {/* Word Selector Bar */}
-          <div className="bg-[#FDFCF9] rounded-3xl p-3.5 border-2 border-[#E8E2D5] shadow-paper space-y-2">
-            <div className="text-xs font-bold text-ink-600 flex items-center justify-between">
-              <span>Chọn từ vựng để luyện viết:</span>
-              <span className="text-cinnabar-600 font-bold">{words.length} từ có sẵn</span>
+          {/* Word Selector Bar with Lesson Filter */}
+          <div className="bg-[#FDFCF9] rounded-3xl p-3.5 border-2 border-[#E8E2D5] shadow-paper space-y-2.5">
+            {/* Top Lesson Selector and Count */}
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-ink-700">Lọc theo bài:</span>
+                <select
+                  value={selectedLesson}
+                  onChange={(e) => setSelectedLesson(e.target.value)}
+                  className="text-xs font-bold bg-[#FAF2E6] text-amberseal-900 border border-[#EEDBBA] px-2.5 py-1.5 rounded-xl shadow-xs focus:outline-none cursor-pointer"
+                >
+                  <option value="all">Tất cả bài ({words.length} từ)</option>
+                  {availableLessons.map(num => {
+                    const count = words.filter(w => w.lesson_number === num).length;
+                    return (
+                      <option key={num} value={num}>
+                        Bài {num} ({count} từ)
+                      </option>
+                    );
+                  })}
+                </select>
+              </div>
+              <span className="text-xs font-bold text-cinnabar-600 bg-cinnabar-50 border border-cinnabar-200 px-2.5 py-1 rounded-xl">
+                {filteredWords.length} từ
+              </span>
             </div>
 
             {/* Quick search input */}
@@ -197,21 +275,15 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
               )}
             </div>
 
+            {/* Horizontal word pills */}
             <div className="flex gap-2 overflow-x-auto pb-1 no-scrollbar">
-              {(wordFilter.trim()
-                ? words.filter(w =>
-                    w.hanzi.includes(wordFilter) ||
-                    w.pinyin.toLowerCase().includes(wordFilter.toLowerCase()) ||
-                    w.vietnamese.toLowerCase().includes(wordFilter.toLowerCase())
-                  )
-                : words
-              ).slice(0, 36).map((w, idx) => (
+              {filteredWords.map((w, idx) => (
                 <button
                   key={w.id || idx}
                   onClick={() => handleSelectWord(w)}
                   className={`px-3.5 py-1.5 rounded-xl font-hanzi font-bold text-base whitespace-nowrap transition-all border ${
                     selectedWord?.hanzi === w.hanzi
-                      ? 'bg-cinnabar-500 text-white border-cinnabar-600 shadow-sm'
+                      ? 'bg-cinnabar-500 text-white border-cinnabar-600 shadow-sm scale-105'
                       : 'bg-[#F9F6F0] text-ink-800 border-[#E8E2D5] hover:border-cinnabar-300'
                   }`}
                   title={`${w.pinyin} - ${w.vietnamese}`}
@@ -224,10 +296,12 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
 
           {/* Canvas & Word Information Card */}
           <div className="bg-[#FDFCF9] rounded-3xl p-5 sm:p-6 border-2 border-[#E8E2D5] shadow-paper text-center space-y-3.5">
-            {/* Word metadata with large fonts */}
+            {/* Word metadata with responsive font scaling and no wrapping */}
             <div>
               <div className="flex items-center justify-center gap-3">
-                <span className="text-6xl font-extrabold font-hanzi text-ink-900 tracking-wide">{selectedWord?.hanzi || ''}</span>
+                <span className={`${hanziSizeClass} font-extrabold font-hanzi text-ink-900 tracking-wide whitespace-nowrap`}>
+                  {selectedWord?.hanzi || ''}
+                </span>
                 <button
                   onClick={() => speakChinese(selectedWord?.hanzi || '', 0.55)}
                   className="p-2.5 rounded-full bg-cinnabar-50 text-cinnabar-600 hover:bg-cinnabar-100 transition-colors"
@@ -248,18 +322,18 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
 
             {/* If multi-character, show character selector buttons */}
             {chars.length > 1 && (
-              <div className="flex justify-center gap-2 pt-1">
+              <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
                 {chars.map((c, idx) => (
                   <button
                     key={idx}
                     onClick={() => setCharIndex(idx)}
-                    className={`px-4 py-2 rounded-xl font-hanzi font-bold text-lg transition-all border ${
+                    className={`px-3.5 py-1.5 rounded-xl font-hanzi font-bold text-base transition-all border ${
                       charIndex === idx
                         ? 'bg-cinnabar-500 text-white border-cinnabar-600 shadow-sm'
-                        : 'bg-[#F2ECE1] text-ink-700 border-[#D5C9B5]'
+                        : 'bg-[#F2ECE1] text-ink-700 border-[#D5C9B5] hover:bg-[#E8E2D5]'
                     }`}
                   >
-                    Viết chữ: {c}
+                    Chữ {idx + 1}: <span className="text-lg">{c}</span>
                   </button>
                 ))}
               </div>
@@ -274,9 +348,31 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
               {/* Status Message */}
               <div className="mt-3 text-sm font-semibold">
                 {quizStatus === 'complete' && (
-                  <div className="p-3.5 rounded-2xl bg-jade-50 border border-jade-200 text-jade-800 flex items-center justify-center gap-2">
-                    <CheckCircle2 size={20} className="text-jade-600 flex-shrink-0" />
-                    <span>Hoàn hảo! Viết đúng thứ tự nét bút ({quizScore}/100 điểm) 🍵</span>
+                  <div className="space-y-2">
+                    <div className="p-3.5 rounded-2xl bg-jade-50 border border-jade-200 text-jade-800 flex items-center justify-center gap-2">
+                      <CheckCircle2 size={20} className="text-jade-600 flex-shrink-0" />
+                      <span>
+                        {chars.length > 1 && charIndex < chars.length - 1
+                          ? `Đúng nét chữ '${currentChar}' (${quizScore}/100 điểm)! ✨`
+                          : `Hoàn hảo! Viết đúng thứ tự nét bút (${quizScore}/100 điểm) 🍵`}
+                      </span>
+                    </div>
+
+                    {chars.length > 1 && charIndex < chars.length - 1 && (
+                      <button
+                        onClick={() => setCharIndex(prev => prev + 1)}
+                        className="w-full py-2.5 px-4 bg-cinnabar-500 hover:bg-cinnabar-600 text-white font-bold text-sm rounded-2xl shadow-sm transition-all flex items-center justify-center gap-1.5"
+                      >
+                        <span>Viết tiếp chữ "{chars[charIndex + 1]}"</span>
+                        <span>👉</span>
+                      </button>
+                    )}
+
+                    {chars.length > 1 && charIndex === chars.length - 1 && (
+                      <div className="text-xs font-bold text-jade-700 py-1">
+                        🎉 Xuất sắc! Bạn đã viết hoàn thành toàn bộ chữ "{selectedWord?.hanzi}"!
+                      </div>
+                    )}
                   </div>
                 )}
                 {quizStatus === 'mistake' && (
@@ -354,6 +450,27 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
                 </div>
               </div>
             )}
+
+            {/* Quick Word Pagination Bar */}
+            <div className="flex items-center justify-between pt-3 border-t border-[#E8E2D5] text-xs font-semibold text-ink-600">
+              <button
+                onClick={handlePrevWord}
+                disabled={currentWordIndex <= 0}
+                className="px-3.5 py-2 rounded-xl bg-[#F2ECE1] text-ink-700 hover:bg-[#E8E2D5] disabled:opacity-30 disabled:pointer-events-none flex items-center gap-1 transition-colors"
+              >
+                <ChevronLeft size={16} /> Từ trước
+              </button>
+              <span className="font-bold text-ink-600">
+                {currentWordIndex >= 0 ? `${currentWordIndex + 1} / ${filteredWords.length} từ` : ''}
+              </span>
+              <button
+                onClick={handleNextWord}
+                disabled={currentWordIndex < 0 || currentWordIndex >= filteredWords.length - 1}
+                className="px-3.5 py-2 rounded-xl bg-[#F2ECE1] text-ink-700 hover:bg-[#E8E2D5] disabled:opacity-30 disabled:pointer-events-none flex items-center gap-1 transition-colors"
+              >
+                Từ tiếp theo <ChevronRight size={16} />
+              </button>
+            </div>
           </div>
         </div>
       )}

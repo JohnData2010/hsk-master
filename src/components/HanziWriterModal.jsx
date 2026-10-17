@@ -104,10 +104,18 @@ export default function HanziWriterModal({ word, onClose }) {
           <X size={20} />
         </button>
 
-        {/* Word Info Header with large fonts */}
+        {/* Word Info Header with responsive scaling */}
         <div className="text-center mb-4">
           <div className="flex items-center justify-center gap-3 mb-1">
-            <span className="text-6xl font-extrabold font-hanzi text-ink-900 tracking-wide">{word?.hanzi}</span>
+            <span className={`${
+              (word?.hanzi || '').length >= 4
+                ? 'text-3xl sm:text-4xl'
+                : (word?.hanzi || '').length === 3
+                  ? 'text-4xl sm:text-5xl'
+                  : 'text-5xl sm:text-6xl'
+            } font-extrabold font-hanzi text-ink-900 tracking-wide whitespace-nowrap`}>
+              {word?.hanzi}
+            </span>
             <button
               onClick={handleAudio}
               className="p-2.5 rounded-full bg-cinnabar-50 text-cinnabar-600 hover:bg-cinnabar-100 transition-all"
@@ -128,18 +136,18 @@ export default function HanziWriterModal({ word, onClose }) {
 
         {/* Character Selector for multi-character words */}
         {characters.length > 1 && (
-          <div className="flex justify-center gap-2 mb-4">
+          <div className="flex flex-wrap justify-center gap-2 mb-4">
             {characters.map((c, idx) => (
               <button
                 key={idx}
                 onClick={() => setCharIndex(idx)}
-                className={`px-4 py-2 rounded-xl font-bold font-hanzi text-lg transition-all ${
+                className={`px-3.5 py-1.5 rounded-xl font-bold font-hanzi text-base transition-all ${
                   charIndex === idx
                     ? 'bg-cinnabar-500 text-white shadow-sm'
                     : 'bg-[#F2ECE1] text-ink-700 hover:bg-[#E8E2D5]'
                 }`}
               >
-                Viết chữ: {c}
+                Chữ {idx + 1}: <span className="text-lg">{c}</span>
               </button>
             ))}
           </div>
@@ -155,9 +163,19 @@ export default function HanziWriterModal({ word, onClose }) {
           {mode === 'quiz' && (
             <div className="mt-3 text-xs sm:text-sm font-semibold transition-all">
               {quizStatus === 'complete' && (
-                <div className="flex items-center gap-1.5 text-jade-700 bg-jade-50 border border-jade-200 px-4 py-2 rounded-full">
-                  <CheckCircle2 size={18} />
-                  <span>Viết xuất sắc! Đúng 100% thứ tự nét bút! 🍵</span>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-center gap-1.5 text-jade-700 bg-jade-50 border border-jade-200 px-4 py-2 rounded-2xl">
+                    <CheckCircle2 size={18} />
+                    <span>Viết xuất sắc chữ '{currentChar}'! Đúng 100% thứ tự nét bút! 🍵</span>
+                  </div>
+                  {characters.length > 1 && charIndex < characters.length - 1 && (
+                    <button
+                      onClick={() => setCharIndex(prev => prev + 1)}
+                      className="w-full py-2 px-3 bg-cinnabar-500 hover:bg-cinnabar-600 text-white font-bold text-xs rounded-xl shadow-sm transition-all"
+                    >
+                      Viết chữ tiếp theo: "{characters[charIndex + 1]}" 👉
+                    </button>
+                  )}
                 </div>
               )}
               {quizStatus === 'mistake' && (

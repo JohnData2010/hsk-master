@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Volume2, Edit3, RotateCw, Sparkles, ChevronRight, ChevronLeft, Lightbulb } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { speakChinese } from '../utils/audio';
@@ -9,31 +9,41 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
   const [filterMode, setFilterMode] = useState('all'); // 'all', 'review', 'unlearned'
+  const [selectedLesson, setSelectedLesson] = useState('all');
   const [deck, setDeck] = useState([]);
   const [srsMap, setSrsMap] = useState({});
+
+  const availableLessons = useMemo(() => {
+    return [...new Set(words.map(w => w.lesson_number).filter(Boolean))].sort((a, b) => a - b);
+  }, [words]);
 
   useEffect(() => {
     const srs = getSRSData();
     setSrsMap(srs);
 
     let filtered = [...words];
-    const now = Date.now();
 
+    // Filter by lesson if selected
+    if (selectedLesson !== 'all') {
+      filtered = filtered.filter(w => w.lesson_number === Number(selectedLesson));
+    }
+
+    const now = Date.now();
     if (filterMode === 'review') {
-      filtered = words.filter(w => {
+      const reviewWords = filtered.filter(w => {
         const item = srs[w.id];
         return item && item.dueDate <= now;
       });
-      if (filtered.length === 0) filtered = [...words];
+      filtered = reviewWords.length > 0 ? reviewWords : filtered;
     } else if (filterMode === 'unlearned') {
-      filtered = words.filter(w => !srs[w.id]);
-      if (filtered.length === 0) filtered = [...words];
+      const unlearnedWords = filtered.filter(w => !srs[w.id]);
+      filtered = unlearnedWords.length > 0 ? unlearnedWords : filtered;
     }
 
     setDeck(filtered);
     setCurrentIndex(0);
     setIsFlipped(false);
-  }, [words, filterMode]);
+  }, [words, filterMode, selectedLesson]);
 
   const currentWord = deck[currentIndex];
   const learningTip = getLearningTipForWord(currentWord);
@@ -98,29 +108,113 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
     );
   }
 
+  const renderFrontHanzi = (hanzi) => {
+    if (!hanzi) return null;
+    const chars = hanzi.split('');
+
+    if (chars.length === 1) {
+      return (
+        <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-3xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner">
+          <span className="text-7xl sm:text-8xl font-hanzi font-bold text-ink-900 leading-none select-none">
+            {chars[0]}
+          </span>
+        </div>
+      );
+    }
+
+    if (chars.length === 2) {
+      return (
+        <div className="flex items-center justify-center gap-2.5 sm:gap-3">
+          {chars.map((c, i) => (
+            <div
+              key={i}
+              className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
+            >
+              <span className="text-5xl sm:text-6xl font-hanzi font-bold text-ink-900 leading-none select-none">
+                {c}
+              </span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    if (chars.length === 3) {
+      return (
+        <div className="flex items-center justify-center gap-2">
+          {chars.map((c, i) => (
+            <div
+              key={i}
+              className="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
+            >
+              <span className="text-4xl sm:text-5xl font-hanzi font-bold text-ink-900 leading-none select-none">
+                {c}
+              </span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
+    // 4 or more characters
+    return (
+      <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-sm">
+        {chars.map((c, i) => (
+          <div
+            key={i}
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
+          >
+            <span className="text-2xl sm:text-3xl font-hanzi font-bold text-ink-900 leading-none select-none">
+              {c}
+            </span>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   const srsInfo = srsMap[currentWord.id];
 
   return (
     <div className="max-w-md mx-auto px-2 sm:px-4 py-2">
-      {/* Top Filter & Counter */}
-      <div className="flex items-center justify-between mb-3 text-sm font-semibold text-ink-400">
-        <div className="flex gap-1 bg-[#F2ECE1] p-1 rounded-xl border border-[#E0D7C7]">
-          <button
-            onClick={() => setFilterMode('all')}
-            className={`px-3 py-1 rounded-lg text-xs transition-all ${
-              filterMode === 'all' ? 'bg-[#FDFCF9] text-ink-900 shadow-sm font-bold' : 'text-ink-600'
-            }`}
+      {/* Top Filter, Lesson Dropdown & Counter */}
+      <div className="flex flex-wrap items-center justify-between gap-2 mb-3 text-sm font-semibold text-ink-600">
+        <div className="flex items-center gap-1.5 flex-wrap">
+          <div className="flex gap-1 bg-[#F2ECE1] p-1 rounded-xl border border-[#E0D7C7]">
+            <button
+              onClick={() => setFilterMode('all')}
+              className={`px-2.5 py-1 rounded-lg text-xs transition-all ${
+                filterMode === 'all' ? 'bg-[#FDFCF9] text-ink-900 shadow-sm font-bold' : 'text-ink-600'
+              }`}
+            >
+              Tất cả
+            </button>
+            <button
+              onClick={() => setFilterMode('review')}
+              className={`px-2.5 py-1 rounded-lg text-xs transition-all ${
+                filterMode === 'review' ? 'bg-[#FDFCF9] text-cinnabar-600 shadow-sm font-bold' : 'text-ink-600'
+              }`}
+            >
+              Cần ôn
+            </button>
+          </div>
+
+          {/* Lesson Selector Dropdown */}
+          <select
+            value={selectedLesson}
+            onChange={(e) => setSelectedLesson(e.target.value)}
+            className="text-xs font-bold bg-[#FDFCF9] text-cinnabar-700 border border-[#D5C9B5] px-2.5 py-1.5 rounded-xl shadow-xs focus:outline-none cursor-pointer"
           >
-            Tất cả ({words.length})
-          </button>
-          <button
-            onClick={() => setFilterMode('review')}
-            className={`px-3 py-1 rounded-lg text-xs transition-all ${
-              filterMode === 'review' ? 'bg-[#FDFCF9] text-cinnabar-600 shadow-sm font-bold' : 'text-ink-600'
-            }`}
-          >
-            Cần ôn lại
-          </button>
+            <option value="all">Tất cả bài ({words.length} từ)</option>
+            {availableLessons.map(num => {
+              const count = words.filter(w => w.lesson_number === num).length;
+              return (
+                <option key={num} value={num}>
+                  Bài {num} ({count} từ)
+                </option>
+              );
+            })}
+          </select>
         </div>
 
         <div className="flex items-center gap-1 font-bold text-ink-700 text-sm">
@@ -138,7 +232,7 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
         />
       </div>
 
-      {/* Large Physical-feeling Flashcard (Standard Size like xue-hanzi & Pleco) */}
+      {/* Large Physical-feeling Flashcard */}
       <div
         onClick={handleFlip}
         className="w-full min-h-[440px] bg-[#FDFCF9] rounded-3xl border-2 border-[#D5C9B5] shadow-paper hover:shadow-paper-hover p-6 flex flex-col justify-between cursor-pointer relative select-none transition-all duration-200 active:scale-[0.99]"
@@ -150,7 +244,7 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
               {currentWord.level?.toUpperCase()}
             </span>
             {currentWord.lesson_number && (
-              <span className="text-[11px] font-bold text-amberseal-800 bg-[#FAF2E6] border border-[#EEDBBA] px-2 py-0.5 rounded-md">
+              <span className="text-xs font-bold text-amberseal-800 bg-[#FAF2E6] border border-[#EEDBBA] px-2 py-0.5 rounded-md">
                 Bài {currentWord.lesson_number}
               </span>
             )}
@@ -176,18 +270,14 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
 
         {/* Center Content */}
         {!isFlipped ? (
-          /* FRONT SIDE - BIG BOLD CHARACTERS (text-7xl / text-8xl like xue-hanzi) */
-          <div className="my-auto text-center py-6">
-            <div className="relative inline-block mb-3">
-              <div className="w-44 h-44 mx-auto rounded-3xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner">
-                <span className="text-7xl sm:text-8xl font-hanzi font-bold text-ink-900 tracking-wider">
-                  {currentWord.hanzi}
-                </span>
-              </div>
+          /* FRONT SIDE - AUTHENTIC TIANZIGE GRID BOXES (HORIZONTAL, NEVER OVERFLOW) */
+          <div className="my-auto text-center py-4">
+            <div className="relative mb-4 flex items-center justify-center">
+              {renderFrontHanzi(currentWord.hanzi)}
             </div>
 
             {settings?.showPinyin && (
-              <div className="text-2xl font-bold text-cinnabar-600 tracking-wide mb-1">
+              <div className="text-2xl sm:text-3xl font-bold text-cinnabar-600 tracking-wide mb-1">
                 {currentWord.pinyin}
               </div>
             )}
@@ -201,7 +291,9 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
           /* BACK SIDE - RICH DETAILS & PEDAGOGICAL TIPS */
           <div className="my-auto text-center py-2 animate-fade-in space-y-3.5">
             {/* Main Character Header */}
-            <div className="text-5xl sm:text-6xl font-hanzi font-bold text-ink-900 tracking-wide">
+            <div className={`font-hanzi font-bold text-ink-900 tracking-wide whitespace-nowrap ${
+              currentWord.hanzi.length > 3 ? 'text-3xl sm:text-4xl' : currentWord.hanzi.length > 2 ? 'text-4xl sm:text-5xl' : 'text-5xl sm:text-6xl'
+            }`}>
               {currentWord.hanzi}
             </div>
 

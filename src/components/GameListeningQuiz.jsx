@@ -151,7 +151,9 @@ export default function GameListeningQuiz({ words }) {
                   onClick={() => handleSelect(opt)}
                   className={`p-3.5 rounded-2xl shadow-paper text-center flex flex-col items-center justify-center min-h-[100px] transition-all select-none ${btnStyle}`}
                 >
-                  <span className="text-3xl font-bold font-hanzi mb-1">{opt.hanzi}</span>
+                  <span className={`${opt.hanzi.length > 2 ? 'text-2xl sm:text-3xl' : 'text-3xl sm:text-4xl'} font-bold font-hanzi mb-1 whitespace-nowrap`}>
+                    {opt.hanzi}
+                  </span>
                   <span className="text-sm font-semibold text-cinnabar-600 mb-0.5">{opt.pinyin}</span>
                   <span className="text-xs sm:text-sm text-ink-600 line-clamp-1">{opt.vietnamese}</span>
                 </button>
