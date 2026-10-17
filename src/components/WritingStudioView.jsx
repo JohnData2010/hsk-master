@@ -364,8 +364,7 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
           {/* 8 Basic Strokes */}
           <div className="bg-[#FDFCF9] rounded-3xl p-5 border-2 border-[#E8E2D5] shadow-paper space-y-3.5">
             <div className="flex items-center gap-2">
-              <span className="stamp-seal text-xs px-2.5 py-0.5">Căn bản</span>
-              <h3 className="font-extrabold text-ink-900 text-base">8 Nét Chữ Hán Cơ Bản Nhất</h3>
+              <h3 className="font-extrabold text-ink-900 text-base">8 Nét chữ Hán cơ bản</h3>
             </div>
 
             <div className="grid grid-cols-2 gap-3 pt-1">
@@ -386,11 +385,10 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
             </div>
           </div>
 
-          {/* 7 Golden Stroke Order Rules */}
+          {/* 7 Stroke Order Rules */}
           <div className="bg-[#FDFCF9] rounded-3xl p-5 border-2 border-[#D5C9B5] shadow-paper space-y-3.5">
             <div className="flex items-center gap-2">
-              <span className="stamp-seal text-xs px-2.5 py-0.5">Bút thuận</span>
-              <h3 className="font-extrabold text-ink-900 text-base">7 Quy Tắc Vàng Viết Chữ Hán</h3>
+              <h3 className="font-extrabold text-ink-900 text-base">7 Quy tắc bút thuận</h3>
             </div>
 
             <div className="space-y-3 text-sm">

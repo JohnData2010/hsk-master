@@ -124,12 +124,9 @@ export default function NativeAIEvaluator({ currentLevel = 'hsk1' }) {
           👨🏻‍🏫
         </div>
         <div>
-          <div className="flex items-center gap-2">
-            <h3 className="font-extrabold text-ink-900 text-sm">Thầy Vương (王老师)</h3>
-            <span className="stamp-seal text-[9px] px-1.5 py-0.2">Bắc Kinh</span>
-          </div>
+          <h3 className="font-extrabold text-ink-900 text-sm">Thầy Vương (王老师)</h3>
           <p className="text-xs text-ink-500 mt-0.5 leading-snug">
-            "Cứ viết hoặc nói tự nhiên, thầy sẽ chỉ cách nói chuẩn đời thực nhé."
+            "Cứ viết hoặc nói tự nhiên, thầy sẽ hỗ trợ sửa lỗi và cách dùng từ chuẩn nhé."
           </p>
         </div>
       </div>

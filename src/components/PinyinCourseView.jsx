@@ -59,9 +59,9 @@ export default function PinyinCourseView() {
           声
         </div>
         <div>
-          <h2 className="text-base font-extrabold text-ink-900">Vỡ Lòng Pinyin & 4 Thanh Điệu</h2>
-          <p className="text-xs text-ink-400 mt-0.5 leading-snug">
-            Nền móng quan trọng nhất: Phát âm chuẩn thanh mẫu, vận mẫu và không bao giờ nhầm dấu.
+          <h2 className="text-base font-extrabold text-ink-900">Ngữ Âm Pinyin & 4 Thanh Điệu</h2>
+          <p className="text-xs text-ink-500 mt-0.5 leading-snug">
+            Hướng dẫn phát âm thanh điệu, biến điệu và thanh mẫu chuẩn BLCUP.
           </p>
         </div>
       </div>
@@ -156,11 +156,10 @@ export default function PinyinCourseView() {
             ))}
           </div>
 
-          {/* Tone Sandhi Rules (Biến điệu quan trọng) */}
+          {/* Tone Sandhi Rules */}
           <div className="bg-[#FDFCF9] rounded-3xl p-5 border border-[#D5C9B5] shadow-paper space-y-3.5">
             <div className="flex items-center gap-2">
-              <span className="stamp-seal text-[11px] px-2.5 py-0.5">Quy tắc vàng</span>
-              <h3 className="font-extrabold text-ink-900 text-base">3 Quy Tắc Biến Điệu Sống Còn</h3>
+              <h3 className="font-extrabold text-ink-900 text-base">Quy tắc biến điệu thanh điệu</h3>
             </div>
 
             <div className="space-y-3 text-sm">

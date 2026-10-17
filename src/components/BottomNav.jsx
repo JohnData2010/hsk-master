@@ -3,8 +3,8 @@ import { BookOpen, Layers, Edit3, Sparkles } from 'lucide-react';
 
 export default function BottomNav({ activeTab, onSelectTab }) {
   const tabs = [
-    { id: 'curriculum', label: 'Bài học', icon: BookOpen, badge: 'Lộ trình' },
-    { id: 'flashcards', label: 'Sổ từ SRS', icon: Layers },
+    { id: 'curriculum', label: 'Bài học', icon: BookOpen },
+    { id: 'flashcards', label: 'Từ vựng', icon: Layers },
     { id: 'writing', label: 'Tập viết', icon: Edit3 },
     { id: 'practice', label: 'Luyện tập', icon: Sparkles },
   ];
@@ -27,11 +27,6 @@ export default function BottomNav({ activeTab, onSelectTab }) {
             >
               <div className="relative">
                 <Icon size={22} className={isActive ? 'stroke-[2.5]' : 'stroke-[1.8]'} />
-                {tab.badge && isActive && (
-                  <span className="absolute -top-1 -right-4 text-[8px] font-extrabold bg-cinnabar-500 text-white px-1 py-0.2 rounded-full leading-none">
-                    {tab.badge}
-                  </span>
-                )}
               </div>
               <span className={`text-xs mt-1 tracking-tight ${isActive ? 'font-extrabold text-cinnabar-600' : 'text-ink-600'}`}>
                 {tab.label}

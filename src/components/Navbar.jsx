@@ -29,7 +29,7 @@ export default function Navbar({ currentLevel, onSelectLevel, userStats, onOpenS
                 <ChevronDown size={14} className="absolute right-2 top-1/2 -translate-y-1/2 text-cinnabar-600 pointer-events-none" />
               </div>
             </div>
-            <p className="text-[11px] text-ink-400 font-medium hidden sm:block">Giáo trình thực tế & Đồng hành bản xứ</p>
+            <p className="text-[11px] text-ink-400 font-medium hidden sm:block">Giáo trình chuẩn HSK</p>
           </div>
         </div>
 

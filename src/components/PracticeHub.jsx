@@ -57,7 +57,7 @@ export default function PracticeHub({ words, currentLevel, situationalDialogues 
                   : 'text-ink-600 hover:text-ink-900'
               }`}
             >
-              ✍️ Sửa lỗi câu & Phát âm
+              Sửa câu & Phát âm
             </button>
             <button
               onClick={() => setMentorSubMode('dialogues')}
@@ -67,7 +67,7 @@ export default function PracticeHub({ words, currentLevel, situationalDialogues 
                   : 'text-ink-600 hover:text-ink-900'
               }`}
             >
-              💬 Hội thoại tình huống (6 cảnh)
+              Hội thoại tình huống
             </button>
           </div>
 
