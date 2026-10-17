@@ -13,6 +13,12 @@ export default function SituationalDialogues({ dialogues = [] }) {
   const [selectedId, setSelectedId] = useState(dialogues[0]?.id || 'milktea');
   const [activeSpeechLine, setActiveSpeechLine] = useState(null);
 
+  React.useEffect(() => {
+    if (dialogues && dialogues.length > 0 && !dialogues.some(d => d.id === selectedId)) {
+      setSelectedId(dialogues[0].id);
+    }
+  }, [dialogues]);
+
   const activeDialogue = dialogues.find(d => d.id === selectedId) || dialogues[0];
 
   const handleSpeakLine = (text, index) => {

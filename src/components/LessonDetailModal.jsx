@@ -110,7 +110,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
     <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-ink-900/60 backdrop-blur-sm animate-fade-in">
       <div className="bg-[#FDFCF9] rounded-3xl shadow-xl border-2 border-[#D5C9B5] max-w-lg w-full max-h-[92vh] flex flex-col overflow-hidden relative">
         {/* Header */}
-        <div className="p-4 sm:p-5 pb-3 border-b border-[#E8E2D5] flex items-start justify-between bg-[#F9F6F0]">
+        <div className="p-4 sm:p-5 pb-3 border-b border-[#E8E2D5] flex items-start justify-between bg-[#F9F6F0] flex-shrink-0">
           <div>
             <div className="flex items-center gap-2">
               <span className="stamp-seal text-xs px-2.5 py-0.5">
@@ -137,20 +137,20 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
               stopDialogueAudio();
               onClose();
             }}
-            className="p-2 rounded-full text-ink-400 hover:text-ink-700 hover:bg-paper-200 transition-colors"
+            className="p-2 rounded-full text-ink-400 hover:text-ink-700 hover:bg-paper-200 transition-colors flex-shrink-0"
           >
             <X size={20} />
           </button>
         </div>
 
         {/* Authentic BLCUP 4-Section Tab Switcher */}
-        <div className="flex border-b border-[#E8E2D5] bg-[#F2ECE1] px-2 sm:px-3 pt-2 gap-1 overflow-x-auto text-xs font-bold no-scrollbar">
+        <div className="flex items-center border-b border-[#E8E2D5] bg-[#F2ECE1] px-2 sm:px-3 gap-1 overflow-x-auto text-xs font-bold no-scrollbar flex-shrink-0 sticky top-0 z-10 shadow-xs min-h-[42px]">
           <button
             onClick={() => {
               setActiveTab('dialogues');
               stopDialogueAudio();
             }}
-            className={`pb-2.5 px-2.5 sm:px-3 border-b-2 whitespace-nowrap transition-all ${
+            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
               activeTab === 'dialogues'
                 ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
                 : 'border-transparent text-ink-600 hover:text-ink-900'
@@ -164,7 +164,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
               setActiveTab('vocab');
               stopDialogueAudio();
             }}
-            className={`pb-2.5 px-2.5 sm:px-3 border-b-2 whitespace-nowrap transition-all ${
+            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
               activeTab === 'vocab'
                 ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
                 : 'border-transparent text-ink-600 hover:text-ink-900'
@@ -178,13 +178,13 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
               setActiveTab('grammar');
               stopDialogueAudio();
             }}
-            className={`pb-2.5 px-2.5 sm:px-3 border-b-2 whitespace-nowrap transition-all ${
+            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
               activeTab === 'grammar'
                 ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
                 : 'border-transparent text-ink-600 hover:text-ink-900'
             }`}
           >
-            3. Ngữ pháp ({grammarList.length})
+            3. {lesson.lesson <= 2 ? 'Chú thích' : 'Ngữ pháp'} ({grammarList.length})
           </button>
 
           <button
@@ -192,7 +192,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
               setActiveTab('quiz');
               stopDialogueAudio();
             }}
-            className={`pb-2.5 px-2.5 sm:px-3 border-b-2 whitespace-nowrap transition-all ${
+            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
               activeTab === 'quiz'
                 ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
                 : 'border-transparent text-ink-600 hover:text-ink-900'
@@ -203,7 +203,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
         </div>
 
         {/* Modal Body */}
-        <div className="p-4 sm:p-5 overflow-y-auto flex-1 space-y-4">
+        <div className="p-4 sm:p-5 overflow-y-auto flex-1 min-h-0 space-y-4">
           {/* SECTION 1: BÀI KHÓA (课文 - DIALOGUES) */}
           {activeTab === 'dialogues' && (
             <div className="space-y-4">

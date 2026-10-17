@@ -82,17 +82,17 @@
           ],
           "grammar": [
             {
-              "point": "Đại từ nhân xưng kính trọng 您 (nín)",
-              "explanation": "您 là hình thức tôn kính của 你, dùng để chào người lớn tuổi hơn, cấp trên hoặc khách hàng trang trọng.",
+              "point": "Chú thích 1: Chào hỏi bằng 你好 và kính ngữ 您好",
+              "explanation": "Khi gặp nhau hãy nói 你好 (Nǐ hǎo). Khi chào người lớn tuổi hơn, thầy cô hoặc đối tác trang trọng, dùng kính ngữ 您 (Nín) thành 您好 (Nín hǎo).",
               "example": "您好，李老师！(Em chào thầy Lý ạ!)"
             },
             {
-              "point": "Hậu tố số nhiều 们 (men)",
-              "explanation": "Thêm 们 sau đại từ nhân xưng để tạo đại từ số nhiều: 你们 (các bạn), 我们 (chúng tôi), 他们 (họ).",
-              "example": "你们好！(Chào các bạn!)"
+              "point": "Chú thích 2: Lời xin lỗi và đáp lại (对不起 / 没关系)",
+              "explanation": "Khi muốn xin lỗi vì sơ suất hãy nói 对不起 (Duìbuqǐ). Người nghe đáp lại lịch sự bằng 没关系 (Méi guānxi - Không sao đâu).",
+              "example": "对不起！— 没关系！(Xin lỗi nhé! — Không sao đâu!)"
             }
           ],
-          "word_count": 11,
+          "word_count": 6,
           "words": [
             {
               "id": "hsk1_你",
@@ -166,16 +166,16 @@
               "id": "hsk1_你们",
               "hanzi": "你们",
               "traditional": "你们",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "nǐmen",
+              "pinyin_numeric": "ni3men",
+              "han_viet": "Nễ môn",
+              "vietnamese": "Các bạn, các anh chị (số nhiều của 你)",
               "level": "hsk1",
               "pos": [
-                "n"
+                "r"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "亻",
+              "frequency": 40,
               "example": {
                 "cn": "你们好！",
                 "pinyin": "Nǐmen hǎo!",
@@ -220,122 +220,6 @@
               ],
               "radical": "氵",
               "frequency": 3541,
-              "example": {
-                "cn": "没关系！",
-                "pinyin": "Méi guānxi!",
-                "vi": "Không sao / Không có gì đâu!"
-              },
-              "lesson_number": 1,
-              "lesson_title": "你好"
-            },
-            {
-              "id": "hsk1_一",
-              "hanzi": "一",
-              "traditional": "一",
-              "pinyin": "yī",
-              "pinyin_numeric": "yi1",
-              "han_viet": "Nhất",
-              "vietnamese": "Một (1)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "d",
-                "t"
-              ],
-              "radical": "一",
-              "frequency": 21,
-              "example": {
-                "cn": "这是一。",
-                "pinyin": "Zhè shì 一.",
-                "vi": "Đây là 一."
-              },
-              "lesson_number": 1,
-              "lesson_title": "你好"
-            },
-            {
-              "id": "hsk1_二",
-              "hanzi": "二",
-              "traditional": "二",
-              "pinyin": "èr",
-              "pinyin_numeric": "er4",
-              "han_viet": "Nhị",
-              "vietnamese": "Hai (2)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "二",
-              "frequency": 664,
-              "example": {
-                "cn": "这是二。",
-                "pinyin": "Zhè shì 二.",
-                "vi": "Đây là 二."
-              },
-              "lesson_number": 1,
-              "lesson_title": "你好"
-            },
-            {
-              "id": "hsk1_三",
-              "hanzi": "三",
-              "traditional": "三",
-              "pinyin": "Sān",
-              "pinyin_numeric": "San1",
-              "han_viet": "Tam",
-              "vietnamese": "Ba (3)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "一",
-              "frequency": 233,
-              "example": {
-                "cn": "这是三。",
-                "pinyin": "Zhè shì 三.",
-                "vi": "Đây là 三."
-              },
-              "lesson_number": 1,
-              "lesson_title": "你好"
-            },
-            {
-              "id": "hsk1_四",
-              "hanzi": "四",
-              "traditional": "四",
-              "pinyin": "sì",
-              "pinyin_numeric": "si4",
-              "han_viet": "Tứ",
-              "vietnamese": "Bốn (4)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "囗",
-              "frequency": 481,
-              "example": {
-                "cn": "这是四。",
-                "pinyin": "Zhè shì 四.",
-                "vi": "Đây là 四."
-              },
-              "lesson_number": 1,
-              "lesson_title": "你好"
-            },
-            {
-              "id": "hsk1_没",
-              "hanzi": "没",
-              "traditional": "沒",
-              "pinyin": "méi",
-              "pinyin_numeric": "mei2",
-              "han_viet": "Một",
-              "vietnamese": "Không, chưa (phủ định quá khứ, sở hữu)",
-              "level": "hsk1",
-              "pos": [
-                "d",
-                "v"
-              ],
-              "radical": "氵",
-              "frequency": 63,
               "example": {
                 "cn": "没关系！",
                 "pinyin": "Méi guānxi!",
@@ -410,17 +294,17 @@
           ],
           "grammar": [
             {
-              "point": "Phó từ phủ định 不 (bù)",
-              "explanation": "Đứng trước động từ hoặc tính từ để biểu thị ý nghĩa phủ định hiện tại hoặc tương lai.",
-              "example": "我不客气 (Tôi không khách sáo), 他不好 (Anh ấy không khỏe)."
+              "point": "Chú thích 1: Lời cảm ơn và đáp lại (谢谢 / 不客气)",
+              "explanation": "Khi nhận được sự giúp đỡ, nói 谢谢 (Xièxie) hoặc 谢谢你 (Xièxie nǐ). Đáp lại lịch sự bằng 不客气 (Bú kèqi - Đừng khách sáo / Không có gì).",
+              "example": "谢谢你！— 不客气！(Cảm ơn bạn! — Đừng khách sáo!)"
             },
             {
-              "point": "Biến điệu của chữ 不 (bù -> bú)",
-              "explanation": "Khi 不 đứng trước từ mang thanh 4, 不 sẽ đọc biến điệu thành thanh 2 (bú).",
-              "example": "不客气 (bú kèqi), 不是 (bú shì)."
+              "point": "Chú thích 2: Lời chào tạm biệt 再见 (zàijiàn)",
+              "explanation": "再 nghĩa là lại/lần nữa, 见 nghĩa là gặp. 再见 nghĩa đen là 'hẹn gặp lại', dùng phổ biến khi chào tạm biệt.",
+              "example": "再见！明天见！(Tạm biệt! Ngày mai gặp lại!)"
             }
           ],
-          "word_count": 10,
+          "word_count": 4,
           "words": [
             {
               "id": "hsk1_谢谢",
@@ -504,145 +388,6 @@
                 "cn": "再见！",
                 "pinyin": "Zàijiàn!",
                 "vi": "Tạm biệt bạn!"
-              },
-              "lesson_number": 2,
-              "lesson_title": "谢谢你"
-            },
-            {
-              "id": "hsk1_五",
-              "hanzi": "五",
-              "traditional": "五",
-              "pinyin": "wǔ",
-              "pinyin_numeric": "wu3",
-              "han_viet": "Ngũ",
-              "vietnamese": "Năm (5)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "二",
-              "frequency": 563,
-              "example": {
-                "cn": "这是五。",
-                "pinyin": "Zhè shì 五.",
-                "vi": "Đây là 五."
-              },
-              "lesson_number": 2,
-              "lesson_title": "谢谢你"
-            },
-            {
-              "id": "hsk1_六",
-              "hanzi": "六",
-              "traditional": "六",
-              "pinyin": "liù",
-              "pinyin_numeric": "liu4",
-              "han_viet": "Lục",
-              "vietnamese": "Sáu (6)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "八",
-              "frequency": 802,
-              "example": {
-                "cn": "这是六。",
-                "pinyin": "Zhè shì 六.",
-                "vi": "Đây là 六."
-              },
-              "lesson_number": 2,
-              "lesson_title": "谢谢你"
-            },
-            {
-              "id": "hsk1_七",
-              "hanzi": "七",
-              "traditional": "七",
-              "pinyin": "qī",
-              "pinyin_numeric": "qi1",
-              "han_viet": "Thất",
-              "vietnamese": "Bảy (7)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "一",
-              "frequency": 1419,
-              "example": {
-                "cn": "这是七。",
-                "pinyin": "Zhè shì 七.",
-                "vi": "Đây là 七."
-              },
-              "lesson_number": 2,
-              "lesson_title": "谢谢你"
-            },
-            {
-              "id": "hsk1_八",
-              "hanzi": "八",
-              "traditional": "八",
-              "pinyin": "bā",
-              "pinyin_numeric": "ba1",
-              "han_viet": "Bát",
-              "vietnamese": "Tám (8)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "八",
-              "frequency": 1362,
-              "example": {
-                "cn": "这是八。",
-                "pinyin": "Zhè shì 八.",
-                "vi": "Đây là 八."
-              },
-              "lesson_number": 2,
-              "lesson_title": "谢谢你"
-            },
-            {
-              "id": "hsk1_九",
-              "hanzi": "九",
-              "traditional": "九",
-              "pinyin": "jiǔ",
-              "pinyin_numeric": "jiu3",
-              "han_viet": "Cửu",
-              "vietnamese": "Chín (9)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t",
-                "b"
-              ],
-              "radical": "乙",
-              "frequency": 2040,
-              "example": {
-                "cn": "这是九。",
-                "pinyin": "Zhè shì 九.",
-                "vi": "Đây là 九."
-              },
-              "lesson_number": 2,
-              "lesson_title": "谢谢你"
-            },
-            {
-              "id": "hsk1_十",
-              "hanzi": "十",
-              "traditional": "十",
-              "pinyin": "shí",
-              "pinyin_numeric": "shi2",
-              "han_viet": "Thập",
-              "vietnamese": "Mười (10)",
-              "level": "hsk1",
-              "pos": [
-                "m",
-                "t"
-              ],
-              "radical": "十",
-              "frequency": 865,
-              "example": {
-                "cn": "这是十。",
-                "pinyin": "Zhè shì 十.",
-                "vi": "Đây là 十."
               },
               "lesson_number": 2,
               "lesson_title": "谢谢你"
@@ -956,16 +701,16 @@
               "id": "hsk1_美国",
               "hanzi": "美国",
               "traditional": "美国",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "Měiguó",
+              "pinyin_numeric": "Mei3guo2",
+              "han_viet": "Mỹ quốc",
+              "vietnamese": "Nước Mỹ, Hoa Kỳ",
               "level": "hsk1",
               "pos": [
-                "n"
+                "ns"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "羊",
+              "frequency": 50,
               "example": {
                 "cn": "我不是中国人，我是美国人。",
                 "pinyin": "Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.",
@@ -1191,16 +936,16 @@
               "id": "hsk1_国",
               "hanzi": "国",
               "traditional": "国",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "guó",
+              "pinyin_numeric": "guo2",
+              "han_viet": "Quốc",
+              "vietnamese": "Nước, quốc gia",
               "level": "hsk1",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "囗",
+              "frequency": 30,
               "example": {
                 "cn": "你是哪国人？",
                 "pinyin": "Nǐ shì nǎ guó rén?",
@@ -1385,7 +1130,7 @@
               "example": "你女儿几岁了？ / 李老师多大了？"
             }
           ],
-          "word_count": 10,
+          "word_count": 20,
           "words": [
             {
               "id": "hsk1_家",
@@ -1550,16 +1295,16 @@
               "id": "hsk1_今年",
               "hanzi": "今年",
               "traditional": "今年",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "jīnnián",
+              "pinyin_numeric": "jin1nian2",
+              "han_viet": "Kim niên",
+              "vietnamese": "Năm nay",
               "level": "hsk1",
               "pos": [
-                "n"
+                "t"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "人",
+              "frequency": 60,
               "example": {
                 "cn": "她今年四岁了。",
                 "pinyin": "Tā jīnnián sì suì le.",
@@ -1616,6 +1361,226 @@
                 "cn": "李老师多大了？",
                 "pinyin": "Lǐ lǎoshī duō dà le?",
                 "vi": "Cô Lý năm nay bao nhiêu tuổi rồi?"
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_一",
+              "hanzi": "一",
+              "traditional": "一",
+              "pinyin": "yī",
+              "pinyin_numeric": "yi1",
+              "han_viet": "Nhất",
+              "vietnamese": "Một (1)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "一",
+              "frequency": 21,
+              "example": {
+                "cn": "他有一本书。",
+                "pinyin": "Tā yǒu 一 běn shū.",
+                "vi": "Anh ấy có 一 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_二",
+              "hanzi": "二",
+              "traditional": "二",
+              "pinyin": "èr",
+              "pinyin_numeric": "er4",
+              "han_viet": "Nhị",
+              "vietnamese": "Hai (2)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "二",
+              "frequency": 664,
+              "example": {
+                "cn": "他有二本书。",
+                "pinyin": "Tā yǒu 二 běn shū.",
+                "vi": "Anh ấy có 二 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_三",
+              "hanzi": "三",
+              "traditional": "三",
+              "pinyin": "Sān",
+              "pinyin_numeric": "San1",
+              "han_viet": "Tam",
+              "vietnamese": "Ba (3)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "一",
+              "frequency": 233,
+              "example": {
+                "cn": "他有三本书。",
+                "pinyin": "Tā yǒu 三 běn shū.",
+                "vi": "Anh ấy có 三 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_四",
+              "hanzi": "四",
+              "traditional": "四",
+              "pinyin": "sì",
+              "pinyin_numeric": "si4",
+              "han_viet": "Tứ",
+              "vietnamese": "Bốn (4)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "囗",
+              "frequency": 481,
+              "example": {
+                "cn": "他有四本书。",
+                "pinyin": "Tā yǒu 四 běn shū.",
+                "vi": "Anh ấy có 四 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_五",
+              "hanzi": "五",
+              "traditional": "五",
+              "pinyin": "wǔ",
+              "pinyin_numeric": "wu3",
+              "han_viet": "Ngũ",
+              "vietnamese": "Năm (5)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "二",
+              "frequency": 563,
+              "example": {
+                "cn": "他有五本书。",
+                "pinyin": "Tā yǒu 五 běn shū.",
+                "vi": "Anh ấy có 五 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_六",
+              "hanzi": "六",
+              "traditional": "六",
+              "pinyin": "liù",
+              "pinyin_numeric": "liu4",
+              "han_viet": "Lục",
+              "vietnamese": "Sáu (6)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "八",
+              "frequency": 802,
+              "example": {
+                "cn": "他有六本书。",
+                "pinyin": "Tā yǒu 六 běn shū.",
+                "vi": "Anh ấy có 六 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_七",
+              "hanzi": "七",
+              "traditional": "七",
+              "pinyin": "qī",
+              "pinyin_numeric": "qi1",
+              "han_viet": "Thất",
+              "vietnamese": "Bảy (7)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "一",
+              "frequency": 1419,
+              "example": {
+                "cn": "他有七本书。",
+                "pinyin": "Tā yǒu 七 běn shū.",
+                "vi": "Anh ấy có 七 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_八",
+              "hanzi": "八",
+              "traditional": "八",
+              "pinyin": "bā",
+              "pinyin_numeric": "ba1",
+              "han_viet": "Bát",
+              "vietnamese": "Tám (8)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "八",
+              "frequency": 1362,
+              "example": {
+                "cn": "他有八本书。",
+                "pinyin": "Tā yǒu 八 běn shū.",
+                "vi": "Anh ấy có 八 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_九",
+              "hanzi": "九",
+              "traditional": "九",
+              "pinyin": "jiǔ",
+              "pinyin_numeric": "jiu3",
+              "han_viet": "Cửu",
+              "vietnamese": "Chín (9)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "乙",
+              "frequency": 2040,
+              "example": {
+                "cn": "他有九本书。",
+                "pinyin": "Tā yǒu 九 běn shū.",
+                "vi": "Anh ấy có 九 cuốn sách."
+              },
+              "lesson_number": 5,
+              "lesson_title": "她女儿今年二十岁"
+            },
+            {
+              "id": "hsk1_十",
+              "hanzi": "十",
+              "traditional": "十",
+              "pinyin": "shí",
+              "pinyin_numeric": "shi2",
+              "han_viet": "Thập",
+              "vietnamese": "Mười (10)",
+              "level": "hsk1",
+              "pos": [
+                "m"
+              ],
+              "radical": "十",
+              "frequency": 865,
+              "example": {
+                "cn": "他有十本书。",
+                "pinyin": "Tā yǒu 十 běn shū.",
+                "vi": "Anh ấy có 十 cuốn sách."
               },
               "lesson_number": 5,
               "lesson_title": "她女儿今年二十岁"
@@ -1766,16 +1731,16 @@
               "id": "hsk1_说",
               "hanzi": "说",
               "traditional": "说",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "shuō",
+              "pinyin_numeric": "shuo1",
+              "han_viet": "Thuyết",
+              "vietnamese": "Nói",
               "level": "hsk1",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "讠",
+              "frequency": 15,
               "example": {
                 "cn": "你会说汉语吗？",
                 "pinyin": "Nǐ huì shuō Hànyǔ ma?",
@@ -1920,16 +1885,16 @@
               "id": "hsk1_汉字",
               "hanzi": "汉字",
               "traditional": "汉字",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "hànzì",
+              "pinyin_numeric": "han4zi4",
+              "han_viet": "Hán tự",
+              "vietnamese": "Chữ Hán, chữ Trung Quốc",
               "level": "hsk1",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "氵",
+              "frequency": 80,
               "example": {
                 "cn": "你会写汉字吗？",
                 "pinyin": "Nǐ huì xiě hànzì ma?",
@@ -3097,16 +3062,16 @@
               "id": "hsk1_那儿",
               "hanzi": "那儿",
               "traditional": "那儿",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "nàr",
+              "pinyin_numeric": "nar4",
+              "han_viet": "Kia",
+              "vietnamese": "Chỗ đó, đằng kia",
               "level": "hsk1",
               "pos": [
-                "n"
+                "r"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "阝",
+              "frequency": 75,
               "example": {
                 "cn": "小猫在那儿。",
                 "pinyin": "Xiǎo māo zài nàr.",
@@ -3188,16 +3153,16 @@
               "id": "hsk1_哪儿",
               "hanzi": "哪儿",
               "traditional": "哪儿",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "nǎr",
+              "pinyin_numeric": "nar3",
+              "han_viet": "Nào",
+              "vietnamese": "Ở đâu, chỗ nào",
               "level": "hsk1",
               "pos": [
-                "n"
+                "r"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 45,
               "example": {
                 "cn": "小猫在哪儿？",
                 "pinyin": "Xiǎo māo zài nǎr?",
@@ -3645,16 +3610,16 @@
               "id": "hsk1_这儿",
               "hanzi": "这儿",
               "traditional": "这儿",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "zhèr",
+              "pinyin_numeric": "zher4",
+              "han_viet": "Giá",
+              "vietnamese": "Ở đây, chỗ này",
               "level": "hsk1",
               "pos": [
-                "n"
+                "r"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "辶",
+              "frequency": 35,
               "example": {
                 "cn": "这儿有人吗？",
                 "pinyin": "Zhèr yǒu rén ma?",
@@ -3667,16 +3632,16 @@
               "id": "hsk1_没有",
               "hanzi": "没有",
               "traditional": "没有",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "méiyǒu",
+              "pinyin_numeric": "mei2you3",
+              "han_viet": "Một hữu",
+              "vietnamese": "Không có, chưa",
               "level": "hsk1",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "氵",
+              "frequency": 25,
               "example": {
                 "cn": "没有。",
                 "pinyin": "Méiyǒu.",
@@ -3950,16 +3915,16 @@
               "id": "hsk1_吃饭",
               "hanzi": "吃饭",
               "traditional": "吃饭",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "chīfàn",
+              "pinyin_numeric": "chi1fan4",
+              "han_viet": "Ngật phạn",
+              "vietnamese": "Ăn cơm, dùng bữa",
               "level": "hsk1",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 55,
               "example": {
                 "cn": "中午几点吃饭？",
                 "pinyin": "Zhōngwǔ jǐ diǎn chī fàn?",
@@ -4083,16 +4048,16 @@
               "id": "hsk1_前",
               "hanzi": "前",
               "traditional": "前",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "qián",
+              "pinyin_numeric": "qian2",
+              "han_viet": "Tiền",
+              "vietnamese": "Trước, phía trước",
               "level": "hsk1",
               "pos": [
-                "n"
+                "f"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "刂",
+              "frequency": 65,
               "example": {
                 "cn": "星期五前能回家吗？",
                 "pinyin": "Xīngqīwǔ qián néng huí jiā ma?",
@@ -4375,16 +4340,16 @@
               "id": "hsk1_雨",
               "hanzi": "雨",
               "traditional": "雨",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "yǔ",
+              "pinyin_numeric": "yu3",
+              "han_viet": "Vũ",
+              "vietnamese": "Mưa",
               "level": "hsk1",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "雨",
+              "frequency": 90,
               "example": {
                 "cn": "今天会下雨吗？",
                 "pinyin": "Jīntiān huì xià yǔ ma?",
@@ -5037,16 +5002,16 @@
               "id": "hsk1_一点儿",
               "hanzi": "一点儿",
               "traditional": "一点儿",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "yìdiǎnr",
+              "pinyin_numeric": "yi4dianr3",
+              "han_viet": "Nhất điểm nhi",
+              "vietnamese": "Một chút, một ít",
               "level": "hsk1",
               "pos": [
-                "n"
+                "m"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "一",
+              "frequency": 85,
               "example": {
                 "cn": "我买了一点儿苹果。",
                 "pinyin": "Wǒ mǎi le yìdiǎnr píngguǒ.",
@@ -5148,16 +5113,16 @@
               "id": "hsk1_车",
               "hanzi": "车",
               "traditional": "车",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "chē",
+              "pinyin_numeric": "che1",
+              "han_viet": "Xa",
+              "vietnamese": "Xe, xe cộ",
               "level": "hsk1",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "车",
+              "frequency": 70,
               "example": {
                 "cn": "看见了，他去学开车了。",
                 "pinyin": "Kànjiàn le, tā qù xué kāi chē le.",
@@ -5170,16 +5135,16 @@
               "id": "hsk1_回来",
               "hanzi": "回来",
               "traditional": "回来",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "huílái",
+              "pinyin_numeric": "hui2lai2",
+              "han_viet": "Hồi lai",
+              "vietnamese": "Trở về, quay về",
               "level": "hsk1",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 60,
               "example": {
                 "cn": "他什么时候能回来？",
                 "pinyin": "Tā shénme shíhou néng huílái?",
@@ -5214,16 +5179,16 @@
               "id": "hsk1_后",
               "hanzi": "后",
               "traditional": "后",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "hòu",
+              "pinyin_numeric": "hou4",
+              "han_viet": "Hậu",
+              "vietnamese": "Sau, phía sau",
               "level": "hsk1",
               "pos": [
-                "n"
+                "f"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 50,
               "example": {
                 "cn": "四十分钟后回来。",
                 "pinyin": "Sìshí fēnzhōng hòu huílái.",
@@ -5329,16 +5294,16 @@
               "id": "hsk1_不少",
               "hanzi": "不少",
               "traditional": "不少",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "bùshǎo",
+              "pinyin_numeric": "bu4shao3",
+              "han_viet": "Bất thiểu",
+              "vietnamese": "Nhiều, không ít",
               "level": "hsk1",
               "pos": [
-                "n"
+                "a"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "一",
+              "frequency": 95,
               "example": {
                 "cn": "是啊，她买了不少衣服。",
                 "pinyin": "Shì a, tā mǎi le bù shǎo yīfu.",
@@ -5351,16 +5316,16 @@
               "id": "hsk1_这些",
               "hanzi": "这些",
               "traditional": "这些",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "zhèxiē",
+              "pinyin_numeric": "zhe4xie1",
+              "han_viet": "Giá ta",
+              "vietnamese": "Những cái này",
               "level": "hsk1",
               "pos": [
-                "n"
+                "r"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "辶",
+              "frequency": 40,
               "example": {
                 "cn": "我没买，这些都是李老师的东西。",
                 "pinyin": "Wǒ méi mǎi, zhèxiē dōu shì Lǐ lǎoshī de dōngxi.",
@@ -5558,16 +5523,16 @@
               "id": "hsk1_大学",
               "hanzi": "大学",
               "traditional": "大学",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "dàxué",
+              "pinyin_numeric": "da4xue2",
+              "han_viet": "Đại học",
+              "vietnamese": "Trường đại học",
               "level": "hsk1",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "大",
+              "frequency": 80,
               "example": {
                 "cn": "我们是在大学认识的，她是我大学同学。",
                 "pinyin": "Wǒmen shì zài dàxué rènshi de, tā shì wǒ dàxué tóngxué.",
@@ -5580,16 +5545,16 @@
               "id": "hsk1_饭店",
               "hanzi": "饭店",
               "traditional": "饭店",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "fàndiàn",
+              "pinyin_numeric": "fan4dian4",
+              "han_viet": "Phạn điếm",
+              "vietnamese": "Nhà hàng, khách sạn",
               "level": "hsk1",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "饣",
+              "frequency": 85,
               "example": {
                 "cn": "你们是怎么来饭店的？",
                 "pinyin": "Nǐmen shì zěnme lái fàndiàn de?",
@@ -5811,16 +5776,16 @@
           "id": "hsk1_你们",
           "hanzi": "你们",
           "traditional": "你们",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "nǐmen",
+          "pinyin_numeric": "ni3men",
+          "han_viet": "Nễ môn",
+          "vietnamese": "Các bạn, các anh chị (số nhiều của 你)",
           "level": "hsk1",
           "pos": [
-            "n"
+            "r"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "亻",
+          "frequency": 40,
           "example": {
             "cn": "你们好！",
             "pinyin": "Nǐmen hǎo!",
@@ -5865,122 +5830,6 @@
           ],
           "radical": "氵",
           "frequency": 3541,
-          "example": {
-            "cn": "没关系！",
-            "pinyin": "Méi guānxi!",
-            "vi": "Không sao / Không có gì đâu!"
-          },
-          "lesson_number": 1,
-          "lesson_title": "你好"
-        },
-        {
-          "id": "hsk1_一",
-          "hanzi": "一",
-          "traditional": "一",
-          "pinyin": "yī",
-          "pinyin_numeric": "yi1",
-          "han_viet": "Nhất",
-          "vietnamese": "Một (1)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "d",
-            "t"
-          ],
-          "radical": "一",
-          "frequency": 21,
-          "example": {
-            "cn": "这是一。",
-            "pinyin": "Zhè shì 一.",
-            "vi": "Đây là 一."
-          },
-          "lesson_number": 1,
-          "lesson_title": "你好"
-        },
-        {
-          "id": "hsk1_二",
-          "hanzi": "二",
-          "traditional": "二",
-          "pinyin": "èr",
-          "pinyin_numeric": "er4",
-          "han_viet": "Nhị",
-          "vietnamese": "Hai (2)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "二",
-          "frequency": 664,
-          "example": {
-            "cn": "这是二。",
-            "pinyin": "Zhè shì 二.",
-            "vi": "Đây là 二."
-          },
-          "lesson_number": 1,
-          "lesson_title": "你好"
-        },
-        {
-          "id": "hsk1_三",
-          "hanzi": "三",
-          "traditional": "三",
-          "pinyin": "Sān",
-          "pinyin_numeric": "San1",
-          "han_viet": "Tam",
-          "vietnamese": "Ba (3)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "一",
-          "frequency": 233,
-          "example": {
-            "cn": "这是三。",
-            "pinyin": "Zhè shì 三.",
-            "vi": "Đây là 三."
-          },
-          "lesson_number": 1,
-          "lesson_title": "你好"
-        },
-        {
-          "id": "hsk1_四",
-          "hanzi": "四",
-          "traditional": "四",
-          "pinyin": "sì",
-          "pinyin_numeric": "si4",
-          "han_viet": "Tứ",
-          "vietnamese": "Bốn (4)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "囗",
-          "frequency": 481,
-          "example": {
-            "cn": "这是四。",
-            "pinyin": "Zhè shì 四.",
-            "vi": "Đây là 四."
-          },
-          "lesson_number": 1,
-          "lesson_title": "你好"
-        },
-        {
-          "id": "hsk1_没",
-          "hanzi": "没",
-          "traditional": "沒",
-          "pinyin": "méi",
-          "pinyin_numeric": "mei2",
-          "han_viet": "Một",
-          "vietnamese": "Không, chưa (phủ định quá khứ, sở hữu)",
-          "level": "hsk1",
-          "pos": [
-            "d",
-            "v"
-          ],
-          "radical": "氵",
-          "frequency": 63,
           "example": {
             "cn": "没关系！",
             "pinyin": "Méi guānxi!",
@@ -6071,145 +5920,6 @@
             "cn": "再见！",
             "pinyin": "Zàijiàn!",
             "vi": "Tạm biệt bạn!"
-          },
-          "lesson_number": 2,
-          "lesson_title": "谢谢你"
-        },
-        {
-          "id": "hsk1_五",
-          "hanzi": "五",
-          "traditional": "五",
-          "pinyin": "wǔ",
-          "pinyin_numeric": "wu3",
-          "han_viet": "Ngũ",
-          "vietnamese": "Năm (5)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "二",
-          "frequency": 563,
-          "example": {
-            "cn": "这是五。",
-            "pinyin": "Zhè shì 五.",
-            "vi": "Đây là 五."
-          },
-          "lesson_number": 2,
-          "lesson_title": "谢谢你"
-        },
-        {
-          "id": "hsk1_六",
-          "hanzi": "六",
-          "traditional": "六",
-          "pinyin": "liù",
-          "pinyin_numeric": "liu4",
-          "han_viet": "Lục",
-          "vietnamese": "Sáu (6)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "八",
-          "frequency": 802,
-          "example": {
-            "cn": "这是六。",
-            "pinyin": "Zhè shì 六.",
-            "vi": "Đây là 六."
-          },
-          "lesson_number": 2,
-          "lesson_title": "谢谢你"
-        },
-        {
-          "id": "hsk1_七",
-          "hanzi": "七",
-          "traditional": "七",
-          "pinyin": "qī",
-          "pinyin_numeric": "qi1",
-          "han_viet": "Thất",
-          "vietnamese": "Bảy (7)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "一",
-          "frequency": 1419,
-          "example": {
-            "cn": "这是七。",
-            "pinyin": "Zhè shì 七.",
-            "vi": "Đây là 七."
-          },
-          "lesson_number": 2,
-          "lesson_title": "谢谢你"
-        },
-        {
-          "id": "hsk1_八",
-          "hanzi": "八",
-          "traditional": "八",
-          "pinyin": "bā",
-          "pinyin_numeric": "ba1",
-          "han_viet": "Bát",
-          "vietnamese": "Tám (8)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "八",
-          "frequency": 1362,
-          "example": {
-            "cn": "这是八。",
-            "pinyin": "Zhè shì 八.",
-            "vi": "Đây là 八."
-          },
-          "lesson_number": 2,
-          "lesson_title": "谢谢你"
-        },
-        {
-          "id": "hsk1_九",
-          "hanzi": "九",
-          "traditional": "九",
-          "pinyin": "jiǔ",
-          "pinyin_numeric": "jiu3",
-          "han_viet": "Cửu",
-          "vietnamese": "Chín (9)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t",
-            "b"
-          ],
-          "radical": "乙",
-          "frequency": 2040,
-          "example": {
-            "cn": "这是九。",
-            "pinyin": "Zhè shì 九.",
-            "vi": "Đây là 九."
-          },
-          "lesson_number": 2,
-          "lesson_title": "谢谢你"
-        },
-        {
-          "id": "hsk1_十",
-          "hanzi": "十",
-          "traditional": "十",
-          "pinyin": "shí",
-          "pinyin_numeric": "shi2",
-          "han_viet": "Thập",
-          "vietnamese": "Mười (10)",
-          "level": "hsk1",
-          "pos": [
-            "m",
-            "t"
-          ],
-          "radical": "十",
-          "frequency": 865,
-          "example": {
-            "cn": "这是十。",
-            "pinyin": "Zhè shì 十.",
-            "vi": "Đây là 十."
           },
           "lesson_number": 2,
           "lesson_title": "谢谢你"
@@ -6440,16 +6150,16 @@
           "id": "hsk1_美国",
           "hanzi": "美国",
           "traditional": "美国",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "Měiguó",
+          "pinyin_numeric": "Mei3guo2",
+          "han_viet": "Mỹ quốc",
+          "vietnamese": "Nước Mỹ, Hoa Kỳ",
           "level": "hsk1",
           "pos": [
-            "n"
+            "ns"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "羊",
+          "frequency": 50,
           "example": {
             "cn": "我不是中国人，我是美国人。",
             "pinyin": "Wǒ bú shì Zhōngguó rén, wǒ shì Měiguó rén.",
@@ -6574,16 +6284,16 @@
           "id": "hsk1_国",
           "hanzi": "国",
           "traditional": "国",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "guó",
+          "pinyin_numeric": "guo2",
+          "han_viet": "Quốc",
+          "vietnamese": "Nước, quốc gia",
           "level": "hsk1",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "囗",
+          "frequency": 30,
           "example": {
             "cn": "你是哪国人？",
             "pinyin": "Nǐ shì nǎ guó rén?",
@@ -6843,16 +6553,16 @@
           "id": "hsk1_今年",
           "hanzi": "今年",
           "traditional": "今年",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "jīnnián",
+          "pinyin_numeric": "jin1nian2",
+          "han_viet": "Kim niên",
+          "vietnamese": "Năm nay",
           "level": "hsk1",
           "pos": [
-            "n"
+            "t"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "人",
+          "frequency": 60,
           "example": {
             "cn": "她今年四岁了。",
             "pinyin": "Tā jīnnián sì suì le.",
@@ -6914,6 +6624,226 @@
           "lesson_title": "她女儿今年二十岁"
         },
         {
+          "id": "hsk1_一",
+          "hanzi": "一",
+          "traditional": "一",
+          "pinyin": "yī",
+          "pinyin_numeric": "yi1",
+          "han_viet": "Nhất",
+          "vietnamese": "Một (1)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "一",
+          "frequency": 21,
+          "example": {
+            "cn": "他有一本书。",
+            "pinyin": "Tā yǒu 一 běn shū.",
+            "vi": "Anh ấy có 一 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_二",
+          "hanzi": "二",
+          "traditional": "二",
+          "pinyin": "èr",
+          "pinyin_numeric": "er4",
+          "han_viet": "Nhị",
+          "vietnamese": "Hai (2)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "二",
+          "frequency": 664,
+          "example": {
+            "cn": "他有二本书。",
+            "pinyin": "Tā yǒu 二 běn shū.",
+            "vi": "Anh ấy có 二 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_三",
+          "hanzi": "三",
+          "traditional": "三",
+          "pinyin": "Sān",
+          "pinyin_numeric": "San1",
+          "han_viet": "Tam",
+          "vietnamese": "Ba (3)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "一",
+          "frequency": 233,
+          "example": {
+            "cn": "他有三本书。",
+            "pinyin": "Tā yǒu 三 běn shū.",
+            "vi": "Anh ấy có 三 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_四",
+          "hanzi": "四",
+          "traditional": "四",
+          "pinyin": "sì",
+          "pinyin_numeric": "si4",
+          "han_viet": "Tứ",
+          "vietnamese": "Bốn (4)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "囗",
+          "frequency": 481,
+          "example": {
+            "cn": "他有四本书。",
+            "pinyin": "Tā yǒu 四 běn shū.",
+            "vi": "Anh ấy có 四 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_五",
+          "hanzi": "五",
+          "traditional": "五",
+          "pinyin": "wǔ",
+          "pinyin_numeric": "wu3",
+          "han_viet": "Ngũ",
+          "vietnamese": "Năm (5)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "二",
+          "frequency": 563,
+          "example": {
+            "cn": "他有五本书。",
+            "pinyin": "Tā yǒu 五 běn shū.",
+            "vi": "Anh ấy có 五 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_六",
+          "hanzi": "六",
+          "traditional": "六",
+          "pinyin": "liù",
+          "pinyin_numeric": "liu4",
+          "han_viet": "Lục",
+          "vietnamese": "Sáu (6)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "八",
+          "frequency": 802,
+          "example": {
+            "cn": "他有六本书。",
+            "pinyin": "Tā yǒu 六 běn shū.",
+            "vi": "Anh ấy có 六 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_七",
+          "hanzi": "七",
+          "traditional": "七",
+          "pinyin": "qī",
+          "pinyin_numeric": "qi1",
+          "han_viet": "Thất",
+          "vietnamese": "Bảy (7)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "一",
+          "frequency": 1419,
+          "example": {
+            "cn": "他有七本书。",
+            "pinyin": "Tā yǒu 七 běn shū.",
+            "vi": "Anh ấy có 七 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_八",
+          "hanzi": "八",
+          "traditional": "八",
+          "pinyin": "bā",
+          "pinyin_numeric": "ba1",
+          "han_viet": "Bát",
+          "vietnamese": "Tám (8)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "八",
+          "frequency": 1362,
+          "example": {
+            "cn": "他有八本书。",
+            "pinyin": "Tā yǒu 八 běn shū.",
+            "vi": "Anh ấy có 八 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_九",
+          "hanzi": "九",
+          "traditional": "九",
+          "pinyin": "jiǔ",
+          "pinyin_numeric": "jiu3",
+          "han_viet": "Cửu",
+          "vietnamese": "Chín (9)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "乙",
+          "frequency": 2040,
+          "example": {
+            "cn": "他有九本书。",
+            "pinyin": "Tā yǒu 九 běn shū.",
+            "vi": "Anh ấy có 九 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
+          "id": "hsk1_十",
+          "hanzi": "十",
+          "traditional": "十",
+          "pinyin": "shí",
+          "pinyin_numeric": "shi2",
+          "han_viet": "Thập",
+          "vietnamese": "Mười (10)",
+          "level": "hsk1",
+          "pos": [
+            "m"
+          ],
+          "radical": "十",
+          "frequency": 865,
+          "example": {
+            "cn": "他有十本书。",
+            "pinyin": "Tā yǒu 十 běn shū.",
+            "vi": "Anh ấy có 十 cuốn sách."
+          },
+          "lesson_number": 5,
+          "lesson_title": "她女儿今年二十岁"
+        },
+        {
           "id": "hsk1_会",
           "hanzi": "会",
           "traditional": "會",
@@ -6940,16 +6870,16 @@
           "id": "hsk1_说",
           "hanzi": "说",
           "traditional": "说",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "shuō",
+          "pinyin_numeric": "shuo1",
+          "han_viet": "Thuyết",
+          "vietnamese": "Nói",
           "level": "hsk1",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "讠",
+          "frequency": 15,
           "example": {
             "cn": "你会说汉语吗？",
             "pinyin": "Nǐ huì shuō Hànyǔ ma?",
@@ -7094,16 +7024,16 @@
           "id": "hsk1_汉字",
           "hanzi": "汉字",
           "traditional": "汉字",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "hànzì",
+          "pinyin_numeric": "han4zi4",
+          "han_viet": "Hán tự",
+          "vietnamese": "Chữ Hán, chữ Trung Quốc",
           "level": "hsk1",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "氵",
+          "frequency": 80,
           "example": {
             "cn": "你会写汉字吗？",
             "pinyin": "Nǐ huì xiě hànzì ma?",
@@ -7929,16 +7859,16 @@
           "id": "hsk1_那儿",
           "hanzi": "那儿",
           "traditional": "那儿",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "nàr",
+          "pinyin_numeric": "nar4",
+          "han_viet": "Kia",
+          "vietnamese": "Chỗ đó, đằng kia",
           "level": "hsk1",
           "pos": [
-            "n"
+            "r"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "阝",
+          "frequency": 75,
           "example": {
             "cn": "小猫在那儿。",
             "pinyin": "Xiǎo māo zài nàr.",
@@ -8020,16 +7950,16 @@
           "id": "hsk1_哪儿",
           "hanzi": "哪儿",
           "traditional": "哪儿",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "nǎr",
+          "pinyin_numeric": "nar3",
+          "han_viet": "Nào",
+          "vietnamese": "Ở đâu, chỗ nào",
           "level": "hsk1",
           "pos": [
-            "n"
+            "r"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 45,
           "example": {
             "cn": "小猫在哪儿？",
             "pinyin": "Xiǎo māo zài nǎr?",
@@ -8363,16 +8293,16 @@
           "id": "hsk1_这儿",
           "hanzi": "这儿",
           "traditional": "这儿",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "zhèr",
+          "pinyin_numeric": "zher4",
+          "han_viet": "Giá",
+          "vietnamese": "Ở đây, chỗ này",
           "level": "hsk1",
           "pos": [
-            "n"
+            "r"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "辶",
+          "frequency": 35,
           "example": {
             "cn": "这儿有人吗？",
             "pinyin": "Zhèr yǒu rén ma?",
@@ -8385,16 +8315,16 @@
           "id": "hsk1_没有",
           "hanzi": "没有",
           "traditional": "没有",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "méiyǒu",
+          "pinyin_numeric": "mei2you3",
+          "han_viet": "Một hữu",
+          "vietnamese": "Không có, chưa",
           "level": "hsk1",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "氵",
+          "frequency": 25,
           "example": {
             "cn": "没有。",
             "pinyin": "Méiyǒu.",
@@ -8548,16 +8478,16 @@
           "id": "hsk1_吃饭",
           "hanzi": "吃饭",
           "traditional": "吃饭",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "chīfàn",
+          "pinyin_numeric": "chi1fan4",
+          "han_viet": "Ngật phạn",
+          "vietnamese": "Ăn cơm, dùng bữa",
           "level": "hsk1",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 55,
           "example": {
             "cn": "中午几点吃饭？",
             "pinyin": "Zhōngwǔ jǐ diǎn chī fàn?",
@@ -8681,16 +8611,16 @@
           "id": "hsk1_前",
           "hanzi": "前",
           "traditional": "前",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "qián",
+          "pinyin_numeric": "qian2",
+          "han_viet": "Tiền",
+          "vietnamese": "Trước, phía trước",
           "level": "hsk1",
           "pos": [
-            "n"
+            "f"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "刂",
+          "frequency": 65,
           "example": {
             "cn": "星期五前能回家吗？",
             "pinyin": "Xīngqīwǔ qián néng huí jiā ma?",
@@ -8865,16 +8795,16 @@
           "id": "hsk1_雨",
           "hanzi": "雨",
           "traditional": "雨",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "yǔ",
+          "pinyin_numeric": "yu3",
+          "han_viet": "Vũ",
+          "vietnamese": "Mưa",
           "level": "hsk1",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "雨",
+          "frequency": 90,
           "example": {
             "cn": "今天会下雨吗？",
             "pinyin": "Jīntiān huì xià yǔ ma?",
@@ -9299,16 +9229,16 @@
           "id": "hsk1_一点儿",
           "hanzi": "一点儿",
           "traditional": "一点儿",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "yìdiǎnr",
+          "pinyin_numeric": "yi4dianr3",
+          "han_viet": "Nhất điểm nhi",
+          "vietnamese": "Một chút, một ít",
           "level": "hsk1",
           "pos": [
-            "n"
+            "m"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "一",
+          "frequency": 85,
           "example": {
             "cn": "我买了一点儿苹果。",
             "pinyin": "Wǒ mǎi le yìdiǎnr píngguǒ.",
@@ -9410,16 +9340,16 @@
           "id": "hsk1_车",
           "hanzi": "车",
           "traditional": "车",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "chē",
+          "pinyin_numeric": "che1",
+          "han_viet": "Xa",
+          "vietnamese": "Xe, xe cộ",
           "level": "hsk1",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "车",
+          "frequency": 70,
           "example": {
             "cn": "看见了，他去学开车了。",
             "pinyin": "Kànjiàn le, tā qù xué kāi chē le.",
@@ -9432,16 +9362,16 @@
           "id": "hsk1_回来",
           "hanzi": "回来",
           "traditional": "回来",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "huílái",
+          "pinyin_numeric": "hui2lai2",
+          "han_viet": "Hồi lai",
+          "vietnamese": "Trở về, quay về",
           "level": "hsk1",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 60,
           "example": {
             "cn": "他什么时候能回来？",
             "pinyin": "Tā shénme shíhou néng huílái?",
@@ -9476,16 +9406,16 @@
           "id": "hsk1_后",
           "hanzi": "后",
           "traditional": "后",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "hòu",
+          "pinyin_numeric": "hou4",
+          "han_viet": "Hậu",
+          "vietnamese": "Sau, phía sau",
           "level": "hsk1",
           "pos": [
-            "n"
+            "f"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 50,
           "example": {
             "cn": "四十分钟后回来。",
             "pinyin": "Sìshí fēnzhōng hòu huílái.",
@@ -9591,16 +9521,16 @@
           "id": "hsk1_不少",
           "hanzi": "不少",
           "traditional": "不少",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "bùshǎo",
+          "pinyin_numeric": "bu4shao3",
+          "han_viet": "Bất thiểu",
+          "vietnamese": "Nhiều, không ít",
           "level": "hsk1",
           "pos": [
-            "n"
+            "a"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "一",
+          "frequency": 95,
           "example": {
             "cn": "是啊，她买了不少衣服。",
             "pinyin": "Shì a, tā mǎi le bù shǎo yīfu.",
@@ -9613,16 +9543,16 @@
           "id": "hsk1_这些",
           "hanzi": "这些",
           "traditional": "这些",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "zhèxiē",
+          "pinyin_numeric": "zhe4xie1",
+          "han_viet": "Giá ta",
+          "vietnamese": "Những cái này",
           "level": "hsk1",
           "pos": [
-            "n"
+            "r"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "辶",
+          "frequency": 40,
           "example": {
             "cn": "我没买，这些都是李老师的东西。",
             "pinyin": "Wǒ méi mǎi, zhèxiē dōu shì Lǐ lǎoshī de dōngxi.",
@@ -9706,16 +9636,16 @@
           "id": "hsk1_大学",
           "hanzi": "大学",
           "traditional": "大学",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "dàxué",
+          "pinyin_numeric": "da4xue2",
+          "han_viet": "Đại học",
+          "vietnamese": "Trường đại học",
           "level": "hsk1",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "大",
+          "frequency": 80,
           "example": {
             "cn": "我们是在大学认识的，她是我大学同学。",
             "pinyin": "Wǒmen shì zài dàxué rènshi de, tā shì wǒ dàxué tóngxué.",
@@ -9728,16 +9658,16 @@
           "id": "hsk1_饭店",
           "hanzi": "饭店",
           "traditional": "饭店",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "fàndiàn",
+          "pinyin_numeric": "fan4dian4",
+          "han_viet": "Phạn điếm",
+          "vietnamese": "Nhà hàng, khách sạn",
           "level": "hsk1",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "饣",
+          "frequency": 85,
           "example": {
             "cn": "你们是怎么来饭店的？",
             "pinyin": "Nǐmen shì zěnme lái fàndiàn de?",
@@ -10172,16 +10102,16 @@
               "id": "hsk2_足球",
               "hanzi": "足球",
               "traditional": "足球",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "zúqiú",
+              "pinyin_numeric": "zu2qiu2",
+              "han_viet": "Túc cầu",
+              "vietnamese": "Bóng đá",
               "level": "hsk2",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "足",
+              "frequency": 110,
               "example": {
                 "cn": "我最喜欢踢足球。",
                 "pinyin": "Wǒ zuì xǐhuan tī zúqiú.",
@@ -10659,16 +10589,16 @@
               "id": "hsk2_出院",
               "hanzi": "出院",
               "traditional": "出院",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "chūyuàn",
+              "pinyin_numeric": "chu1yuan4",
+              "han_viet": "Xuất viện",
+              "vietnamese": "Xuất viện, ra viện",
               "level": "hsk2",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "凵",
+              "frequency": 120,
               "example": {
                 "cn": "什么时候能出院？",
                 "pinyin": "Shénme shíhou néng chūyuàn?",
@@ -11101,16 +11031,16 @@
               "id": "hsk2_一下",
               "hanzi": "一下",
               "traditional": "一下",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "yíxià",
+              "pinyin_numeric": "yi2xia4",
+              "han_viet": "Nhất hạ",
+              "vietnamese": "Một lát, một chút (chỉ động tác ngắn)",
               "level": "hsk2",
               "pos": [
-                "n"
+                "m"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "一",
+              "frequency": 45,
               "example": {
                 "cn": "我看一下。不是，是送报纸的。",
                 "pinyin": "Wǒ kàn yíxià. Bú shì, shì sòng bàozhǐ de.",
@@ -11793,16 +11723,16 @@
               "id": "hsk2_帮",
               "hanzi": "帮",
               "traditional": "帮",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "bāng",
+              "pinyin_numeric": "bang1",
+              "han_viet": "Bang",
+              "vietnamese": "Giúp, giúp đỡ",
               "level": "hsk2",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "巾",
+              "frequency": 50,
               "example": {
                 "cn": "认识，这个工作就是他帮我介绍的。",
                 "pinyin": "Rènshi, zhè ge gōngzuò jiù shì tā bāng wǒ jièshào de.",
@@ -12164,16 +12094,16 @@
               "id": "hsk2_不错",
               "hanzi": "不错",
               "traditional": "不错",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "búcuò",
+              "pinyin_numeric": "bu2cuo4",
+              "han_viet": "Bất thác",
+              "vietnamese": "Không tồi, khá tốt",
               "level": "hsk2",
               "pos": [
-                "n"
+                "a"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "一",
+              "frequency": 65,
               "example": {
                 "cn": "这件不错，就买这件吧。",
                 "pinyin": "Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.",
@@ -13041,16 +12971,16 @@
               "id": "hsk2_过",
               "hanzi": "过",
               "traditional": "过",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "guo",
+              "pinyin_numeric": "guo4",
+              "han_viet": "Quá",
+              "vietnamese": "Từng, qua (trợ từ chỉ kinh nghiệm)",
               "level": "hsk2",
               "pos": [
-                "n"
+                "u"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "辶",
+              "frequency": 30,
               "example": {
                 "cn": "是啊，过生日，大家一起吃个饭。",
                 "pinyin": "Shì a, guò shēngrì, dàjiā yìqǐ chī ge fàn.",
@@ -13323,16 +13253,16 @@
               "id": "hsk2_等",
               "hanzi": "等",
               "traditional": "等",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "děng",
+              "pinyin_numeric": "deng3",
+              "han_viet": "Đẳng",
+              "vietnamese": "Đợi, chờ đợi",
               "level": "hsk2",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "竹",
+              "frequency": 40,
               "example": {
                 "cn": "你在等谁呢？",
                 "pinyin": "Nǐ zài děng shéi ne?",
@@ -14391,16 +14321,16 @@
               "id": "hsk2_男",
               "hanzi": "男",
               "traditional": "男",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "nán",
+              "pinyin_numeric": "nan2",
+              "han_viet": "Nam",
+              "vietnamese": "Nam, đàn ông, con trai",
               "level": "hsk2",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "田",
+              "frequency": 75,
               "example": {
                 "cn": "那个唱歌的男孩子是谁？",
                 "pinyin": "Nàge chànggē de nán háizi shì shéi?",
@@ -14435,16 +14365,16 @@
               "id": "hsk2_女",
               "hanzi": "女",
               "traditional": "女",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "nǚ",
+              "pinyin_numeric": "nü3",
+              "han_viet": "Nữ",
+              "vietnamese": "Nữ, phụ nữ, con gái",
               "level": "hsk2",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "女",
+              "frequency": 70,
               "example": {
                 "cn": "右边那个女孩子姓什么？",
                 "pinyin": "Yòubian nàge nǚ háizi xìng shénme?",
@@ -14978,16 +14908,16 @@
               "id": "hsk2_手",
               "hanzi": "手",
               "traditional": "手",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "shǒu",
+              "pinyin_numeric": "shou3",
+              "han_viet": "Thủ",
+              "vietnamese": "Tay, bàn tay",
               "level": "hsk2",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "手",
+              "frequency": 90,
               "example": {
                 "cn": "他不在，他手里拿着铅笔出去了。",
                 "pinyin": "Tā bú zài, tā shǒulǐ ná zhe qiānbǐ chūqu le.",
@@ -15160,16 +15090,16 @@
               "id": "hsk2_往",
               "hanzi": "往",
               "traditional": "往",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "wǎng",
+              "pinyin_numeric": "wang3",
+              "han_viet": "Vãng",
+              "vietnamese": "Về phía, hướng tới",
               "level": "hsk2",
               "pos": [
-                "n"
+                "p"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "彳",
+              "frequency": 80,
               "example": {
                 "cn": "从这儿一直往前面走，到了路口往右拐。",
                 "pinyin": "Cóng zhèr yìzhí wǎng qiánmiàn zǒu, dào le lùkǒu wǎng yòu guǎi.",
@@ -15313,16 +15243,16 @@
               "id": "hsk2_过",
               "hanzi": "过",
               "traditional": "过",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "guo",
+              "pinyin_numeric": "guo4",
+              "han_viet": "Quá",
+              "vietnamese": "Từng, qua (trợ từ chỉ kinh nghiệm)",
               "level": "hsk2",
               "pos": [
-                "n"
+                "u"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "辶",
+              "frequency": 30,
               "example": {
                 "cn": "你看过那个中国电影吗？",
                 "pinyin": "Nǐ kàn guò nàge Zhōngguó diànyǐng ma?",
@@ -15910,16 +15840,16 @@
           "id": "hsk2_足球",
           "hanzi": "足球",
           "traditional": "足球",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "zúqiú",
+          "pinyin_numeric": "zu2qiu2",
+          "han_viet": "Túc cầu",
+          "vietnamese": "Bóng đá",
           "level": "hsk2",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "足",
+          "frequency": 110,
           "example": {
             "cn": "我最喜欢踢足球。",
             "pinyin": "Wǒ zuì xǐhuan tī zúqiú.",
@@ -16247,16 +16177,16 @@
           "id": "hsk2_出院",
           "hanzi": "出院",
           "traditional": "出院",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "chūyuàn",
+          "pinyin_numeric": "chu1yuan4",
+          "han_viet": "Xuất viện",
+          "vietnamese": "Xuất viện, ra viện",
           "level": "hsk2",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "凵",
+          "frequency": 120,
           "example": {
             "cn": "什么时候能出院？",
             "pinyin": "Shénme shíhou néng chūyuàn?",
@@ -16546,16 +16476,16 @@
           "id": "hsk2_一下",
           "hanzi": "一下",
           "traditional": "一下",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "yíxià",
+          "pinyin_numeric": "yi2xia4",
+          "han_viet": "Nhất hạ",
+          "vietnamese": "Một lát, một chút (chỉ động tác ngắn)",
           "level": "hsk2",
           "pos": [
-            "n"
+            "m"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "一",
+          "frequency": 45,
           "example": {
             "cn": "我看一下。不是，是送报纸的。",
             "pinyin": "Wǒ kàn yíxià. Bú shì, shì sòng bàozhǐ de.",
@@ -17094,16 +17024,16 @@
           "id": "hsk2_帮",
           "hanzi": "帮",
           "traditional": "帮",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "bāng",
+          "pinyin_numeric": "bang1",
+          "han_viet": "Bang",
+          "vietnamese": "Giúp, giúp đỡ",
           "level": "hsk2",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "巾",
+          "frequency": 50,
           "example": {
             "cn": "认识，这个工作就是他帮我介绍的。",
             "pinyin": "Rènshi, zhè ge gōngzuò jiù shì tā bāng wǒ jièshào de.",
@@ -17322,16 +17252,16 @@
           "id": "hsk2_不错",
           "hanzi": "不错",
           "traditional": "不错",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "búcuò",
+          "pinyin_numeric": "bu2cuo4",
+          "han_viet": "Bất thác",
+          "vietnamese": "Không tồi, khá tốt",
           "level": "hsk2",
           "pos": [
-            "n"
+            "a"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "一",
+          "frequency": 65,
           "example": {
             "cn": "这件不错，就买这件吧。",
             "pinyin": "Zhè jiàn búcuò, jiù mǎi zhè jiàn ba.",
@@ -17925,16 +17855,16 @@
           "id": "hsk2_过",
           "hanzi": "过",
           "traditional": "过",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "guo",
+          "pinyin_numeric": "guo4",
+          "han_viet": "Quá",
+          "vietnamese": "Từng, qua (trợ từ chỉ kinh nghiệm)",
           "level": "hsk2",
           "pos": [
-            "n"
+            "u"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "辶",
+          "frequency": 30,
           "example": {
             "cn": "是啊，过生日，大家一起吃个饭。",
             "pinyin": "Shì a, guò shēngrì, dàjiā yìqǐ chī ge fàn.",
@@ -18082,16 +18012,16 @@
           "id": "hsk2_等",
           "hanzi": "等",
           "traditional": "等",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "děng",
+          "pinyin_numeric": "deng3",
+          "han_viet": "Đẳng",
+          "vietnamese": "Đợi, chờ đợi",
           "level": "hsk2",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "竹",
+          "frequency": 40,
           "example": {
             "cn": "你在等谁呢？",
             "pinyin": "Nǐ zài děng shéi ne?",
@@ -18768,16 +18698,16 @@
           "id": "hsk2_男",
           "hanzi": "男",
           "traditional": "男",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "nán",
+          "pinyin_numeric": "nan2",
+          "han_viet": "Nam",
+          "vietnamese": "Nam, đàn ông, con trai",
           "level": "hsk2",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "田",
+          "frequency": 75,
           "example": {
             "cn": "那个唱歌的男孩子是谁？",
             "pinyin": "Nàge chànggē de nán háizi shì shéi?",
@@ -18812,16 +18742,16 @@
           "id": "hsk2_女",
           "hanzi": "女",
           "traditional": "女",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "nǚ",
+          "pinyin_numeric": "nü3",
+          "han_viet": "Nữ",
+          "vietnamese": "Nữ, phụ nữ, con gái",
           "level": "hsk2",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "女",
+          "frequency": 70,
           "example": {
             "cn": "右边那个女孩子姓什么？",
             "pinyin": "Yòubian nàge nǚ háizi xìng shénme?",
@@ -19152,16 +19082,16 @@
           "id": "hsk2_手",
           "hanzi": "手",
           "traditional": "手",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "shǒu",
+          "pinyin_numeric": "shou3",
+          "han_viet": "Thủ",
+          "vietnamese": "Tay, bàn tay",
           "level": "hsk2",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "手",
+          "frequency": 90,
           "example": {
             "cn": "他不在，他手里拿着铅笔出去了。",
             "pinyin": "Tā bú zài, tā shǒulǐ ná zhe qiānbǐ chūqu le.",
@@ -19309,16 +19239,16 @@
           "id": "hsk2_往",
           "hanzi": "往",
           "traditional": "往",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "wǎng",
+          "pinyin_numeric": "wang3",
+          "han_viet": "Vãng",
+          "vietnamese": "Về phía, hướng tới",
           "level": "hsk2",
           "pos": [
-            "n"
+            "p"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "彳",
+          "frequency": 80,
           "example": {
             "cn": "从这儿一直往前面走，到了路口往右拐。",
             "pinyin": "Cóng zhèr yìzhí wǎng qiánmiàn zǒu, dào le lùkǒu wǎng yòu guǎi.",
@@ -19998,16 +19928,16 @@
               "id": "hsk3_南方",
               "hanzi": "南方",
               "traditional": "南方",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "nánfāng",
+              "pinyin_numeric": "nan2fang1",
+              "han_viet": "Nam phương",
+              "vietnamese": "Miền nam, phương nam",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "十",
+              "frequency": 130,
               "example": {
                 "cn": "下个月我就要去南方工作了。",
                 "pinyin": "Xià ge yuè wǒ jiù yào qù nánfāng gōngzuò le.",
@@ -20519,16 +20449,16 @@
               "id": "hsk3_太太",
               "hanzi": "太太",
               "traditional": "太太",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "tàitai",
+              "pinyin_numeric": "tai4tai",
+              "han_viet": "Thái thái",
+              "vietnamese": "Vợ, bà xã, phu nhân",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "大",
+              "frequency": 140,
               "example": {
                 "cn": "他出去了，周太太生病了，他去医院了。",
                 "pinyin": "Tā chūqu le, Zhōu tàitai shēngbìng le, tā qù yīyuàn le.",
@@ -20541,16 +20471,16 @@
               "id": "hsk3_秘书",
               "hanzi": "秘书",
               "traditional": "秘书",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "mìshū",
+              "pinyin_numeric": "mi4shu1",
+              "han_viet": "Bí thư",
+              "vietnamese": "Thư ký",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "禾",
+              "frequency": 150,
               "example": {
                 "cn": "这是秘书。",
                 "pinyin": "Zhè shì 秘书.",
@@ -21041,16 +20971,16 @@
               "id": "hsk3_饮料",
               "hanzi": "饮料",
               "traditional": "饮料",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "yǐnliào",
+              "pinyin_numeric": "yin3liao4",
+              "han_viet": "Ẩm liệu",
+              "vietnamese": "Đồ uống, nước giải khát",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "饣",
+              "frequency": 160,
               "example": {
                 "cn": "桌子上放着很多饮料，你想喝点儿什么？",
                 "pinyin": "Zhuōzi shang fàng zhe hěn duō yǐnliào, nǐ xiǎng hē diǎnr shénme?",
@@ -21724,16 +21654,16 @@
               "id": "hsk3_嘴",
               "hanzi": "嘴",
               "traditional": "嘴",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "zuǐ",
+              "pinyin_numeric": "zui3",
+              "han_viet": "Chủy",
+              "vietnamese": "Miệng, mồm",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 170,
               "example": {
                 "cn": "对，我嘴里正吃着苹果呢，就被拍下来了。",
                 "pinyin": "Duì, wǒ zuǐ lǐ zhèng chī zhe píngguǒ ne, jiù bèi pāi xiàlai le.",
@@ -21768,16 +21698,16 @@
               "id": "hsk3_照相",
               "hanzi": "照相",
               "traditional": "照相",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "zhàoxiàng",
+              "pinyin_numeric": "zhao4xiang4",
+              "han_viet": "Chiếu tướng",
+              "vietnamese": "Chụp ảnh",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "灬",
+              "frequency": 180,
               "example": {
                 "cn": "是用新照相机照的吗？",
                 "pinyin": "Shì yòng xīn zhàoxiàngjī zhào de ma?",
@@ -22314,16 +22244,16 @@
               "id": "hsk3_春天",
               "hanzi": "春天",
               "traditional": "春天",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "chūntiān",
+              "pinyin_numeric": "chun1tian1",
+              "han_viet": "Xuân thiên",
+              "vietnamese": "Mùa xuân",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "日",
+              "frequency": 190,
               "example": {
                 "cn": "春天草绿花红，正是锻炼身体的好季节，多去跑步吧！",
                 "pinyin": "Chūntiān cǎolǜ huāhóng, zhèng shì duànliàn shēntǐ de hǎo jìjié, duō qù pǎobù ba!",
@@ -22382,16 +22312,16 @@
               "id": "hsk3_夏天",
               "hanzi": "夏天",
               "traditional": "夏天",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "xiàtiān",
+              "pinyin_numeric": "xia4tian1",
+              "han_viet": "Hạ thiên",
+              "vietnamese": "Mùa hè",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "夂",
+              "frequency": 195,
               "example": {
                 "cn": "我最近越来越胖了，夏天快到了，得少吃点儿了。",
                 "pinyin": "Wǒ zuìjìn yuè lái yuè pàng le, xiàtiān kuài dào le, děi shǎo chī diǎnr le.",
@@ -22448,16 +22378,16 @@
               "id": "hsk3_越来越",
               "hanzi": "越来越",
               "traditional": "越来越",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "yuè lái yuè",
+              "pinyin_numeric": "yue4 lai2 yue4",
+              "han_viet": "Việt lai việt",
+              "vietnamese": "Càng ngày càng...",
               "level": "hsk3",
               "pos": [
-                "n"
+                "d"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "走",
+              "frequency": 110,
               "example": {
                 "cn": "我最近越来越胖了，夏天快到了，得少吃点儿了。",
                 "pinyin": "Wǒ zuìjìn yuè lái yuè pàng le, xiàtiān kuài dào le, děi shǎo chī diǎnr le.",
@@ -22957,16 +22887,16 @@
               "id": "hsk3_聊天",
               "hanzi": "聊天",
               "traditional": "聊天",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "liáotiān",
+              "pinyin_numeric": "liao2tian1",
+              "han_viet": "Liêu thiên",
+              "vietnamese": "Nói chuyện phiếm, tán gẫu",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "耳",
+              "frequency": 125,
               "example": {
                 "cn": "听音乐或者跟朋友聊天，能让人更放松。",
                 "pinyin": "Tīng yīnyuè huòzhě gēn péngyou liáotiān, néng ràng rén gèng fàngsōng.",
@@ -22979,16 +22909,16 @@
               "id": "hsk3_睡着",
               "hanzi": "睡着",
               "traditional": "睡着",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "shuìzháo",
+              "pinyin_numeric": "shui4zhao2",
+              "han_viet": "Thụy trước",
+              "vietnamese": "Ngủ say, thiếp đi",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "目",
+              "frequency": 135,
               "example": {
                 "cn": "这是睡着。",
                 "pinyin": "Zhè shì 睡着.",
@@ -23325,16 +23255,16 @@
               "id": "hsk3_感兴趣",
               "hanzi": "感兴趣",
               "traditional": "感兴趣",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "gǎn xìngqù",
+              "pinyin_numeric": "gan3 xing4qu4",
+              "han_viet": "Cảm hứng thú",
+              "vietnamese": "Có hứng thú, thích thú",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "心",
+              "frequency": 145,
               "example": {
                 "cn": "他在银行工作了很久，对金融非常感兴趣。",
                 "pinyin": "Tā zài yínháng gōngzuò le hěn jiǔ, duì jīnróng fēicháng gǎn xìngqù.",
@@ -23925,16 +23855,16 @@
               "id": "hsk3_可乐",
               "hanzi": "可乐",
               "traditional": "可乐",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "kělè",
+              "pinyin_numeric": "ke3le4",
+              "han_viet": "Khả lạc",
+              "vietnamese": "Nước ngọt Coca-cola",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 155,
               "example": {
                 "cn": "天气太热了，我去买两罐冰可乐，你去哪儿？",
                 "pinyin": "Tiānqì tài rè le, wǒ qù mǎi liǎng guàn bīng kělè, nǐ qù nǎr?",
@@ -24201,16 +24131,16 @@
               "id": "hsk3_皮鞋",
               "hanzi": "皮鞋",
               "traditional": "皮鞋",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "píxié",
+              "pinyin_numeric": "pi2xie2",
+              "han_viet": "Bì hài",
+              "vietnamese": "Giày da",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "皮",
+              "frequency": 165,
               "example": {
                 "cn": "这条新皮鞋和帽子真漂亮！",
                 "pinyin": "Zhè tiáo xīn píxié hé màozi zhēn piàoliang!",
@@ -24245,16 +24175,16 @@
               "id": "hsk3_刷牙",
               "hanzi": "刷牙",
               "traditional": "刷牙",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "shuāyá",
+              "pinyin_numeric": "shua1ya2",
+              "han_viet": "Loát nha",
+              "vietnamese": "Đánh răng",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "刂",
+              "frequency": 175,
               "example": {
                 "cn": "她每天早起刷牙的时候都在听录音呢。",
                 "pinyin": "Tā měitiān zǎoqǐ shuāyá de shíhou dōu zài tīng lùyīn ne.",
@@ -24336,16 +24266,16 @@
               "id": "hsk3_甚至",
               "hanzi": "甚至",
               "traditional": "甚至",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "shènzhì",
+              "pinyin_numeric": "shen4zhi4",
+              "han_viet": "Thậm chí",
+              "vietnamese": "Thậm chí",
               "level": "hsk3",
               "pos": [
-                "n"
+                "d"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "甘",
+              "frequency": 185,
               "example": {
                 "cn": "这是甚至。",
                 "pinyin": "Zhè shì 甚至.",
@@ -24812,16 +24742,16 @@
               "id": "hsk3_中介",
               "hanzi": "中介",
               "traditional": "中介",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "zhōngjiè",
+              "pinyin_numeric": "zhong1jie4",
+              "han_viet": "Trung giới",
+              "vietnamese": "Môi giới, trung gian",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "丨",
+              "frequency": 195,
               "example": {
                 "cn": "我想换一个地方住，中介给您推荐了哪儿？",
                 "pinyin": "Wǒ xiǎng huàn yí ge dìfang zhù, zhōngjiè gěi nín tuījiàn le nǎr?",
@@ -24834,16 +24764,16 @@
               "id": "hsk3_房东",
               "hanzi": "房东",
               "traditional": "房东",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "fángdōng",
+              "pinyin_numeric": "fang2dong1",
+              "han_viet": "Phòng đông",
+              "vietnamese": "Chủ nhà, chủ trọ",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "户",
+              "frequency": 205,
               "example": {
                 "cn": "房东人很好，房子离地铁站特别近，交通方便多了。",
                 "pinyin": "Fángdōng rén hěn hǎo, fángzi lí dìtiězhàn tèbié jìn, jiāotōng fāngbiàn duō le.",
@@ -25203,16 +25133,16 @@
               "id": "hsk3_发",
               "hanzi": "发",
               "traditional": "发",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "fā",
+              "pinyin_numeric": "fa1",
+              "han_viet": "Phát",
+              "vietnamese": "Gửi (email, tin nhắn), phát ra",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "又",
+              "frequency": 60,
               "example": {
                 "cn": "邮件发了吗？",
                 "pinyin": "Yóujiàn fā le ma?",
@@ -25616,16 +25546,16 @@
               "id": "hsk3_极了",
               "hanzi": "极了",
               "traditional": "极了",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "jí le",
+              "pinyin_numeric": "ji2 le",
+              "han_viet": "Cực liễu",
+              "vietnamese": "Cực kỳ, vô cùng",
               "level": "hsk3",
               "pos": [
-                "n"
+                "u"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "木",
+              "frequency": 70,
               "example": {
                 "cn": "简单极了，刷卡就行，大家学习都非常努力认真。",
                 "pinyin": "Jiǎndān jí le, shuākǎ jiù xíng, dàjiā xuéxí dōu fēicháng nǔlì rènzhēn.",
@@ -25974,16 +25904,16 @@
               "id": "hsk3_信用卡",
               "hanzi": "信用卡",
               "traditional": "信用卡",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "xìnyòngkǎ",
+              "pinyin_numeric": "xin4yong4ka3",
+              "han_viet": "Tín dụng tạp",
+              "vietnamese": "Thẻ tín dụng",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "亻",
+              "frequency": 80,
               "example": {
                 "cn": "先生，一共三百六十元，您付现金还是刷信用卡？",
                 "pinyin": "Xiānsheng, yígòng sānbǎi liùshí yuán, nín fù xiànjīn háishi shuā xìnyòngkǎ?",
@@ -25996,16 +25926,16 @@
               "id": "hsk3_现金",
               "hanzi": "现金",
               "traditional": "现金",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "xiànjīn",
+              "pinyin_numeric": "xian4jin1",
+              "han_viet": "Hiện kim",
+              "vietnamese": "Tiền mặt",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "王",
+              "frequency": 90,
               "example": {
                 "cn": "先生，一共三百六十元，您付现金还是刷信用卡？",
                 "pinyin": "Xiānsheng, yígòng sānbǎi liùshí yuán, nín fù xiànjīn háishi shuā xìnyòngkǎ?",
@@ -27400,16 +27330,16 @@
               "id": "hsk3_词典",
               "hanzi": "词典",
               "traditional": "词典",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "cídiǎn",
+              "pinyin_numeric": "ci2dian3",
+              "han_viet": "Từ điển",
+              "vietnamese": "Từ điển",
               "level": "hsk3",
               "pos": [
                 "n"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "讠",
+              "frequency": 100,
               "example": {
                 "cn": "查生词用这本词典真方便，别人都借去看过。",
                 "pinyin": "Chá shēngcí yòng zhè běn cídiǎn zhēn fāngbiàn, biérén dōu jiè qù kàn guò.",
@@ -27813,16 +27743,16 @@
               "id": "hsk3_后来",
               "hanzi": "后来",
               "traditional": "后来",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "hòulái",
+              "pinyin_numeric": "hou4lai2",
+              "han_viet": "Hậu lai",
+              "vietnamese": "Sau này, về sau",
               "level": "hsk3",
               "pos": [
-                "n"
+                "t"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "口",
+              "frequency": 85,
               "example": {
                 "cn": "太幸运了，后来他们还特意送过来了呢。",
                 "pinyin": "Tài xìngyùn le, hòulái tāmen hái tèyì sòng guòlai le ne.",
@@ -28074,16 +28004,16 @@
               "id": "hsk3_出来",
               "hanzi": "出来",
               "traditional": "出来",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "chūlai",
+              "pinyin_numeric": "chu1lai",
+              "han_viet": "Xuất lai",
+              "vietnamese": "Ra ngoài, xuất hiện",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "凵",
+              "frequency": 75,
               "example": {
                 "cn": "今天小李穿了新西装，你没看出来吗？",
                 "pinyin": "Jīntiān Xiǎo Lǐ chuān le xīn xīzhuāng, nǐ méi kàn chūlai ma?",
@@ -28118,16 +28048,16 @@
               "id": "hsk3_发生",
               "hanzi": "发生",
               "traditional": "发生",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "fāshēng",
+              "pinyin_numeric": "fa1sheng1",
+              "han_viet": "Phát sinh",
+              "vietnamese": "Xảy ra, phát sinh",
               "level": "hsk3",
               "pos": [
-                "n"
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "又",
+              "frequency": 65,
               "example": {
                 "cn": "这个世界发生的故事太神奇了！",
                 "pinyin": "Zhè ge shìjiè fāshēng de gùshi tài shénqí le!",
@@ -28531,16 +28461,16 @@
               "id": "hsk3_勇敢",
               "hanzi": "勇敢",
               "traditional": "勇敢",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "yǒnggǎn",
+              "pinyin_numeric": "yong3gan3",
+              "han_viet": "Dũng cảm",
+              "vietnamese": "Dũng cảm",
               "level": "hsk3",
               "pos": [
-                "n"
+                "a"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "力",
+              "frequency": 120,
               "example": {
                 "cn": "只要我们勇敢努力，无论遇到什么困难，都一定能成功！",
                 "pinyin": "Zhǐyào wǒmen yǒnggǎn nǔlì, wúlùn yùdào shénme kùnnan, dōu yídìng néng chénggōng!",
@@ -28553,16 +28483,16 @@
               "id": "hsk3_精彩",
               "hanzi": "精彩",
               "traditional": "精彩",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "jīngcǎi",
+              "pinyin_numeric": "jing1cai3",
+              "han_viet": "Tinh thải",
+              "vietnamese": "Đặc sắc, tuyệt vời",
               "level": "hsk3",
               "pos": [
-                "n"
+                "a"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "米",
+              "frequency": 115,
               "example": {
                 "cn": "这是精彩。",
                 "pinyin": "Zhè shì 精彩.",
@@ -28575,16 +28505,17 @@
               "id": "hsk3_成功",
               "hanzi": "成功",
               "traditional": "成功",
-              "pinyin": "",
-              "pinyin_numeric": "",
-              "han_viet": "",
-              "vietnamese": "",
+              "pinyin": "chénggōng",
+              "pinyin_numeric": "cheng2gong1",
+              "han_viet": "Thành công",
+              "vietnamese": "Thành công",
               "level": "hsk3",
               "pos": [
-                "n"
+                "a",
+                "v"
               ],
-              "radical": "",
-              "frequency": 1000,
+              "radical": "戈",
+              "frequency": 95,
               "example": {
                 "cn": "只要我们勇敢努力，无论遇到什么困难，都一定能成功！",
                 "pinyin": "Zhǐyào wǒmen yǒnggǎn nǔlì, wúlùn yùdào shénme kùnnan, dōu yídìng néng chénggōng!",
@@ -28922,16 +28853,16 @@
           "id": "hsk3_南方",
           "hanzi": "南方",
           "traditional": "南方",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "nánfāng",
+          "pinyin_numeric": "nan2fang1",
+          "han_viet": "Nam phương",
+          "vietnamese": "Miền nam, phương nam",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "十",
+          "frequency": 130,
           "example": {
             "cn": "下个月我就要去南方工作了。",
             "pinyin": "Xià ge yuè wǒ jiù yào qù nánfāng gōngzuò le.",
@@ -29329,16 +29260,16 @@
           "id": "hsk3_太太",
           "hanzi": "太太",
           "traditional": "太太",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "tàitai",
+          "pinyin_numeric": "tai4tai",
+          "han_viet": "Thái thái",
+          "vietnamese": "Vợ, bà xã, phu nhân",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "大",
+          "frequency": 140,
           "example": {
             "cn": "他出去了，周太太生病了，他去医院了。",
             "pinyin": "Tā chūqu le, Zhōu tàitai shēngbìng le, tā qù yīyuàn le.",
@@ -29351,16 +29282,16 @@
           "id": "hsk3_秘书",
           "hanzi": "秘书",
           "traditional": "秘书",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "mìshū",
+          "pinyin_numeric": "mi4shu1",
+          "han_viet": "Bí thư",
+          "vietnamese": "Thư ký",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "禾",
+          "frequency": 150,
           "example": {
             "cn": "这是秘书。",
             "pinyin": "Zhè shì 秘书.",
@@ -29755,16 +29686,16 @@
           "id": "hsk3_饮料",
           "hanzi": "饮料",
           "traditional": "饮料",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "yǐnliào",
+          "pinyin_numeric": "yin3liao4",
+          "han_viet": "Ẩm liệu",
+          "vietnamese": "Đồ uống, nước giải khát",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "饣",
+          "frequency": 160,
           "example": {
             "cn": "桌子上放着很多饮料，你想喝点儿什么？",
             "pinyin": "Zhuōzi shang fàng zhe hěn duō yǐnliào, nǐ xiǎng hē diǎnr shénme?",
@@ -30342,16 +30273,16 @@
           "id": "hsk3_嘴",
           "hanzi": "嘴",
           "traditional": "嘴",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "zuǐ",
+          "pinyin_numeric": "zui3",
+          "han_viet": "Chủy",
+          "vietnamese": "Miệng, mồm",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 170,
           "example": {
             "cn": "对，我嘴里正吃着苹果呢，就被拍下来了。",
             "pinyin": "Duì, wǒ zuǐ lǐ zhèng chī zhe píngguǒ ne, jiù bèi pāi xiàlai le.",
@@ -30386,16 +30317,16 @@
           "id": "hsk3_照相",
           "hanzi": "照相",
           "traditional": "照相",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "zhàoxiàng",
+          "pinyin_numeric": "zhao4xiang4",
+          "han_viet": "Chiếu tướng",
+          "vietnamese": "Chụp ảnh",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "灬",
+          "frequency": 180,
           "example": {
             "cn": "是用新照相机照的吗？",
             "pinyin": "Shì yòng xīn zhàoxiàngjī zhào de ma?",
@@ -30860,16 +30791,16 @@
           "id": "hsk3_春天",
           "hanzi": "春天",
           "traditional": "春天",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "chūntiān",
+          "pinyin_numeric": "chun1tian1",
+          "han_viet": "Xuân thiên",
+          "vietnamese": "Mùa xuân",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "日",
+          "frequency": 190,
           "example": {
             "cn": "春天草绿花红，正是锻炼身体的好季节，多去跑步吧！",
             "pinyin": "Chūntiān cǎolǜ huāhóng, zhèng shì duànliàn shēntǐ de hǎo jìjié, duō qù pǎobù ba!",
@@ -30928,16 +30859,16 @@
           "id": "hsk3_夏天",
           "hanzi": "夏天",
           "traditional": "夏天",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "xiàtiān",
+          "pinyin_numeric": "xia4tian1",
+          "han_viet": "Hạ thiên",
+          "vietnamese": "Mùa hè",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "夂",
+          "frequency": 195,
           "example": {
             "cn": "我最近越来越胖了，夏天快到了，得少吃点儿了。",
             "pinyin": "Wǒ zuìjìn yuè lái yuè pàng le, xiàtiān kuài dào le, děi shǎo chī diǎnr le.",
@@ -30994,16 +30925,16 @@
           "id": "hsk3_越来越",
           "hanzi": "越来越",
           "traditional": "越来越",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "yuè lái yuè",
+          "pinyin_numeric": "yue4 lai2 yue4",
+          "han_viet": "Việt lai việt",
+          "vietnamese": "Càng ngày càng...",
           "level": "hsk3",
           "pos": [
-            "n"
+            "d"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "走",
+          "frequency": 110,
           "example": {
             "cn": "我最近越来越胖了，夏天快到了，得少吃点儿了。",
             "pinyin": "Wǒ zuìjìn yuè lái yuè pàng le, xiàtiān kuài dào le, děi shǎo chī diǎnr le.",
@@ -31425,16 +31356,16 @@
           "id": "hsk3_聊天",
           "hanzi": "聊天",
           "traditional": "聊天",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "liáotiān",
+          "pinyin_numeric": "liao2tian1",
+          "han_viet": "Liêu thiên",
+          "vietnamese": "Nói chuyện phiếm, tán gẫu",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "耳",
+          "frequency": 125,
           "example": {
             "cn": "听音乐或者跟朋友聊天，能让人更放松。",
             "pinyin": "Tīng yīnyuè huòzhě gēn péngyou liáotiān, néng ràng rén gèng fàngsōng.",
@@ -31447,16 +31378,16 @@
           "id": "hsk3_睡着",
           "hanzi": "睡着",
           "traditional": "睡着",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "shuìzháo",
+          "pinyin_numeric": "shui4zhao2",
+          "han_viet": "Thụy trước",
+          "vietnamese": "Ngủ say, thiếp đi",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "目",
+          "frequency": 135,
           "example": {
             "cn": "这是睡着。",
             "pinyin": "Zhè shì 睡着.",
@@ -31715,16 +31646,16 @@
           "id": "hsk3_感兴趣",
           "hanzi": "感兴趣",
           "traditional": "感兴趣",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "gǎn xìngqù",
+          "pinyin_numeric": "gan3 xing4qu4",
+          "han_viet": "Cảm hứng thú",
+          "vietnamese": "Có hứng thú, thích thú",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "心",
+          "frequency": 145,
           "example": {
             "cn": "他在银行工作了很久，对金融非常感兴趣。",
             "pinyin": "Tā zài yínháng gōngzuò le hěn jiǔ, duì jīnróng fēicháng gǎn xìngqù.",
@@ -32237,16 +32168,16 @@
           "id": "hsk3_可乐",
           "hanzi": "可乐",
           "traditional": "可乐",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "kělè",
+          "pinyin_numeric": "ke3le4",
+          "han_viet": "Khả lạc",
+          "vietnamese": "Nước ngọt Coca-cola",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 155,
           "example": {
             "cn": "天气太热了，我去买两罐冰可乐，你去哪儿？",
             "pinyin": "Tiānqì tài rè le, wǒ qù mǎi liǎng guàn bīng kělè, nǐ qù nǎr?",
@@ -32441,16 +32372,16 @@
           "id": "hsk3_皮鞋",
           "hanzi": "皮鞋",
           "traditional": "皮鞋",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "píxié",
+          "pinyin_numeric": "pi2xie2",
+          "han_viet": "Bì hài",
+          "vietnamese": "Giày da",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "皮",
+          "frequency": 165,
           "example": {
             "cn": "这条新皮鞋和帽子真漂亮！",
             "pinyin": "Zhè tiáo xīn píxié hé màozi zhēn piàoliang!",
@@ -32485,16 +32416,16 @@
           "id": "hsk3_刷牙",
           "hanzi": "刷牙",
           "traditional": "刷牙",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "shuāyá",
+          "pinyin_numeric": "shua1ya2",
+          "han_viet": "Loát nha",
+          "vietnamese": "Đánh răng",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "刂",
+          "frequency": 175,
           "example": {
             "cn": "她每天早起刷牙的时候都在听录音呢。",
             "pinyin": "Tā měitiān zǎoqǐ shuāyá de shíhou dōu zài tīng lùyīn ne.",
@@ -32576,16 +32507,16 @@
           "id": "hsk3_甚至",
           "hanzi": "甚至",
           "traditional": "甚至",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "shènzhì",
+          "pinyin_numeric": "shen4zhi4",
+          "han_viet": "Thậm chí",
+          "vietnamese": "Thậm chí",
           "level": "hsk3",
           "pos": [
-            "n"
+            "d"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "甘",
+          "frequency": 185,
           "example": {
             "cn": "这是甚至。",
             "pinyin": "Zhè shì 甚至.",
@@ -32980,16 +32911,16 @@
           "id": "hsk3_中介",
           "hanzi": "中介",
           "traditional": "中介",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "zhōngjiè",
+          "pinyin_numeric": "zhong1jie4",
+          "han_viet": "Trung giới",
+          "vietnamese": "Môi giới, trung gian",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "丨",
+          "frequency": 195,
           "example": {
             "cn": "我想换一个地方住，中介给您推荐了哪儿？",
             "pinyin": "Wǒ xiǎng huàn yí ge dìfang zhù, zhōngjiè gěi nín tuījiàn le nǎr?",
@@ -33002,16 +32933,16 @@
           "id": "hsk3_房东",
           "hanzi": "房东",
           "traditional": "房东",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "fángdōng",
+          "pinyin_numeric": "fang2dong1",
+          "han_viet": "Phòng đông",
+          "vietnamese": "Chủ nhà, chủ trọ",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "户",
+          "frequency": 205,
           "example": {
             "cn": "房东人很好，房子离地铁站特别近，交通方便多了。",
             "pinyin": "Fángdōng rén hěn hǎo, fángzi lí dìtiězhàn tèbié jìn, jiāotōng fāngbiàn duō le.",
@@ -33299,16 +33230,16 @@
           "id": "hsk3_发",
           "hanzi": "发",
           "traditional": "发",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "fā",
+          "pinyin_numeric": "fa1",
+          "han_viet": "Phát",
+          "vietnamese": "Gửi (email, tin nhắn), phát ra",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "又",
+          "frequency": 60,
           "example": {
             "cn": "邮件发了吗？",
             "pinyin": "Yóujiàn fā le ma?",
@@ -33640,16 +33571,16 @@
           "id": "hsk3_极了",
           "hanzi": "极了",
           "traditional": "极了",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "jí le",
+          "pinyin_numeric": "ji2 le",
+          "han_viet": "Cực liễu",
+          "vietnamese": "Cực kỳ, vô cùng",
           "level": "hsk3",
           "pos": [
-            "n"
+            "u"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "木",
+          "frequency": 70,
           "example": {
             "cn": "简单极了，刷卡就行，大家学习都非常努力认真。",
             "pinyin": "Jiǎndān jí le, shuākǎ jiù xíng, dàjiā xuéxí dōu fēicháng nǔlì rènzhēn.",
@@ -33932,16 +33863,16 @@
           "id": "hsk3_信用卡",
           "hanzi": "信用卡",
           "traditional": "信用卡",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "xìnyòngkǎ",
+          "pinyin_numeric": "xin4yong4ka3",
+          "han_viet": "Tín dụng tạp",
+          "vietnamese": "Thẻ tín dụng",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "亻",
+          "frequency": 80,
           "example": {
             "cn": "先生，一共三百六十元，您付现金还是刷信用卡？",
             "pinyin": "Xiānsheng, yígòng sānbǎi liùshí yuán, nín fù xiànjīn háishi shuā xìnyòngkǎ?",
@@ -33954,16 +33885,16 @@
           "id": "hsk3_现金",
           "hanzi": "现金",
           "traditional": "现金",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "xiànjīn",
+          "pinyin_numeric": "xian4jin1",
+          "han_viet": "Hiện kim",
+          "vietnamese": "Tiền mặt",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "王",
+          "frequency": 90,
           "example": {
             "cn": "先生，一共三百六十元，您付现金还是刷信用卡？",
             "pinyin": "Xiānsheng, yígòng sānbǎi liùshí yuán, nín fù xiànjīn háishi shuā xìnyòngkǎ?",
@@ -35106,16 +35037,16 @@
           "id": "hsk3_词典",
           "hanzi": "词典",
           "traditional": "词典",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "cídiǎn",
+          "pinyin_numeric": "ci2dian3",
+          "han_viet": "Từ điển",
+          "vietnamese": "Từ điển",
           "level": "hsk3",
           "pos": [
             "n"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "讠",
+          "frequency": 100,
           "example": {
             "cn": "查生词用这本词典真方便，别人都借去看过。",
             "pinyin": "Chá shēngcí yòng zhè běn cídiǎn zhēn fāngbiàn, biérén dōu jiè qù kàn guò.",
@@ -35453,16 +35384,16 @@
           "id": "hsk3_后来",
           "hanzi": "后来",
           "traditional": "后来",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "hòulái",
+          "pinyin_numeric": "hou4lai2",
+          "han_viet": "Hậu lai",
+          "vietnamese": "Sau này, về sau",
           "level": "hsk3",
           "pos": [
-            "n"
+            "t"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "口",
+          "frequency": 85,
           "example": {
             "cn": "太幸运了，后来他们还特意送过来了呢。",
             "pinyin": "Tài xìngyùn le, hòulái tāmen hái tèyì sòng guòlai le ne.",
@@ -35632,16 +35563,16 @@
           "id": "hsk3_出来",
           "hanzi": "出来",
           "traditional": "出来",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "chūlai",
+          "pinyin_numeric": "chu1lai",
+          "han_viet": "Xuất lai",
+          "vietnamese": "Ra ngoài, xuất hiện",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "凵",
+          "frequency": 75,
           "example": {
             "cn": "今天小李穿了新西装，你没看出来吗？",
             "pinyin": "Jīntiān Xiǎo Lǐ chuān le xīn xīzhuāng, nǐ méi kàn chūlai ma?",
@@ -35676,16 +35607,16 @@
           "id": "hsk3_发生",
           "hanzi": "发生",
           "traditional": "发生",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "fāshēng",
+          "pinyin_numeric": "fa1sheng1",
+          "han_viet": "Phát sinh",
+          "vietnamese": "Xảy ra, phát sinh",
           "level": "hsk3",
           "pos": [
-            "n"
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "又",
+          "frequency": 65,
           "example": {
             "cn": "这个世界发生的故事太神奇了！",
             "pinyin": "Zhè ge shìjiè fāshēng de gùshi tài shénqí le!",
@@ -36013,16 +35944,16 @@
           "id": "hsk3_勇敢",
           "hanzi": "勇敢",
           "traditional": "勇敢",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "yǒnggǎn",
+          "pinyin_numeric": "yong3gan3",
+          "han_viet": "Dũng cảm",
+          "vietnamese": "Dũng cảm",
           "level": "hsk3",
           "pos": [
-            "n"
+            "a"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "力",
+          "frequency": 120,
           "example": {
             "cn": "只要我们勇敢努力，无论遇到什么困难，都一定能成功！",
             "pinyin": "Zhǐyào wǒmen yǒnggǎn nǔlì, wúlùn yùdào shénme kùnnan, dōu yídìng néng chénggōng!",
@@ -36035,16 +35966,16 @@
           "id": "hsk3_精彩",
           "hanzi": "精彩",
           "traditional": "精彩",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "jīngcǎi",
+          "pinyin_numeric": "jing1cai3",
+          "han_viet": "Tinh thải",
+          "vietnamese": "Đặc sắc, tuyệt vời",
           "level": "hsk3",
           "pos": [
-            "n"
+            "a"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "米",
+          "frequency": 115,
           "example": {
             "cn": "这是精彩。",
             "pinyin": "Zhè shì 精彩.",
@@ -36057,16 +35988,17 @@
           "id": "hsk3_成功",
           "hanzi": "成功",
           "traditional": "成功",
-          "pinyin": "",
-          "pinyin_numeric": "",
-          "han_viet": "",
-          "vietnamese": "",
+          "pinyin": "chénggōng",
+          "pinyin_numeric": "cheng2gong1",
+          "han_viet": "Thành công",
+          "vietnamese": "Thành công",
           "level": "hsk3",
           "pos": [
-            "n"
+            "a",
+            "v"
           ],
-          "radical": "",
-          "frequency": 1000,
+          "radical": "戈",
+          "frequency": 95,
           "example": {
             "cn": "只要我们勇敢努力，无论遇到什么困难，都一定能成功！",
             "pinyin": "Zhǐyào wǒmen yǒnggǎn nǔlì, wúlùn yùdào shénme kùnnan, dōu yídìng néng chénggōng!",

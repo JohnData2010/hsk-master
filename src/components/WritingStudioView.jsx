@@ -210,7 +210,7 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
                   key={w.id || idx}
                   onClick={() => handleSelectWord(w)}
                   className={`px-3.5 py-1.5 rounded-xl font-hanzi font-bold text-base whitespace-nowrap transition-all border ${
-                    selectedWord.hanzi === w.hanzi
+                    selectedWord?.hanzi === w.hanzi
                       ? 'bg-cinnabar-500 text-white border-cinnabar-600 shadow-sm'
                       : 'bg-[#F9F6F0] text-ink-800 border-[#E8E2D5] hover:border-cinnabar-300'
                   }`}
@@ -227,22 +227,22 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
             {/* Word metadata with large fonts */}
             <div>
               <div className="flex items-center justify-center gap-3">
-                <span className="text-6xl font-extrabold font-hanzi text-ink-900 tracking-wide">{selectedWord.hanzi}</span>
+                <span className="text-6xl font-extrabold font-hanzi text-ink-900 tracking-wide">{selectedWord?.hanzi || ''}</span>
                 <button
-                  onClick={() => speakChinese(selectedWord.hanzi, 0.55)}
+                  onClick={() => speakChinese(selectedWord?.hanzi || '', 0.55)}
                   className="p-2.5 rounded-full bg-cinnabar-50 text-cinnabar-600 hover:bg-cinnabar-100 transition-colors"
                   title="Nghe phát âm thật chậm"
                 >
                   <Volume2 size={22} />
                 </button>
               </div>
-              <div className="text-2xl font-bold text-cinnabar-600 mt-1.5 tracking-wide">{selectedWord.pinyin}</div>
+              <div className="text-2xl font-bold text-cinnabar-600 mt-1.5 tracking-wide">{selectedWord?.pinyin || ''}</div>
               <div className="text-sm text-ink-700 mt-1.5 flex items-center justify-center gap-2">
                 <span className="text-xs font-bold text-amberseal-800 bg-[#FAF2E6] border border-[#EEDBBA] px-2 py-0.5 rounded-md">
-                  {selectedWord.han_viet}
+                  {selectedWord?.han_viet || ''}
                 </span>
                 <span className="text-ink-400">•</span>
-                <span className="font-semibold text-ink-900">"{selectedWord.vietnamese}"</span>
+                <span className="font-semibold text-ink-900">"{selectedWord?.vietnamese || ''}"</span>
               </div>
             </div>
 

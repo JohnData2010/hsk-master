@@ -173,12 +173,18 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
                     </div>
                     <div className="text-sm font-semibold text-cinnabar-700 mt-1">{lesson.title_pinyin}</div>
                     <div className="text-sm text-ink-800 font-medium mt-1">{lesson.title_vi}</div>
-                    <div className="flex items-center gap-2 mt-2 text-xs text-ink-500 font-medium">
-                      <span>📖 {lesson.dialogues?.length || 1} bài khóa</span>
-                      <span>•</span>
-                      <span>🪶 {lesson.word_count || lesson.words?.length || 10} từ mới</span>
-                      <span>•</span>
-                      <span>📜 {lesson.grammar?.length || 2} điểm ngữ pháp</span>
+                    <div className="flex flex-wrap items-center gap-1.5 mt-2.5 text-xs text-ink-600 font-medium">
+                      <span className="inline-flex items-center gap-1 whitespace-nowrap bg-[#F4EFE6] px-2 py-0.5 rounded-lg border border-[#E0D7C7] text-[11px]">
+                        📖 {lesson.dialogues?.length || 1} bài khóa
+                      </span>
+                      <span className="inline-flex items-center gap-1 whitespace-nowrap bg-[#F4EFE6] px-2 py-0.5 rounded-lg border border-[#E0D7C7] text-[11px]">
+                        🪶 {lesson.word_count || lesson.words?.length || 0} từ mới
+                      </span>
+                      {lesson.grammar && lesson.grammar.length > 0 && (
+                        <span className="inline-flex items-center gap-1 whitespace-nowrap bg-[#F4EFE6] px-2 py-0.5 rounded-lg border border-[#E0D7C7] text-[11px]">
+                          📜 {lesson.grammar.length} {lesson.lesson <= 2 ? 'chú thích' : 'ngữ pháp'}
+                        </span>
+                      )}
                     </div>
                   </div>
                 </div>
