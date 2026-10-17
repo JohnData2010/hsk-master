@@ -232,12 +232,12 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
             {/* MNEMONICS & CHARACTER BREAKDOWN (Chiết tự & Mẹo nhớ chữ) */}
             {learningTip && (
               <div className="bg-[#FAF8F2] border border-[#E8E0D0] p-4 rounded-2xl text-left space-y-1.5">
-                <div className="flex items-center gap-1.5 font-bold text-amberseal-800 text-xs sm:text-sm">
-                  <Lightbulb size={15} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
+                <div className="flex items-center gap-2 font-bold text-amberseal-900 text-sm sm:text-base">
+                  <Lightbulb size={16} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
                   <span>Chiết tự: {learningTip.breakdown}</span>
                 </div>
-                <div className="text-ink-700 leading-relaxed text-xs sm:text-sm pl-5">
-                  📖 {learningTip.story}
+                <div className="text-ink-800 leading-relaxed text-sm sm:text-base pl-6">
+                  {learningTip.story}
                 </div>
               </div>
             )}
@@ -245,20 +245,21 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
             {/* Example sentence */}
             {currentWord.example && (
               <div className="bg-[#F9F6F0] border border-[#E8E2D5] p-4 rounded-2xl text-left space-y-1.5">
-                <div className="font-semibold text-ink-900 flex items-center justify-between">
-                  <span className="font-hanzi font-bold text-lg text-ink-900">{currentWord.example.cn}</span>
+                <div className="font-semibold text-ink-900 flex items-center justify-between gap-2">
+                  <span className="font-hanzi font-bold text-xl sm:text-2xl text-ink-900 leading-snug">{currentWord.example.cn}</span>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
                       speakChinese(currentWord.example.cn, 0.65);
                     }}
-                    className="text-cinnabar-600 hover:text-cinnabar-700 p-1.5 rounded-lg hover:bg-cinnabar-50"
+                    className="text-cinnabar-600 hover:text-cinnabar-700 p-1.5 rounded-lg hover:bg-cinnabar-50 flex-shrink-0"
+                    title="Nghe câu ví dụ"
                   >
                     <Volume2 size={18} />
                   </button>
                 </div>
-                <div className="text-cinnabar-700 text-sm font-semibold">{currentWord.example.pinyin}</div>
-                <div className="text-ink-700 text-sm">{currentWord.example.vi}</div>
+                <div className="text-cinnabar-700 text-sm sm:text-base font-semibold">{currentWord.example.pinyin}</div>
+                <div className="text-ink-800 text-sm sm:text-base font-medium">{currentWord.example.vi}</div>
               </div>
             )}
           </div>

@@ -136,7 +136,7 @@ export default function SituationalDialogues({ dialogues = [] }) {
               </button>
             </div>
             <h3 className="text-base font-extrabold text-ink-900">{activeDialogue.title}</h3>
-            <p className="text-xs text-ink-400 mt-1 leading-relaxed">{activeDialogue.scenario}</p>
+            <p className="text-sm text-ink-600 mt-1 leading-relaxed">{activeDialogue.scenario}</p>
           </div>
 
           {/* Dialogue Conversation Stream */}
@@ -150,8 +150,8 @@ export default function SituationalDialogues({ dialogues = [] }) {
                   key={idx}
                   className={`flex flex-col ${isUser ? 'items-end' : 'items-start'}`}
                 >
-                  <div className="text-[11px] font-bold text-ink-400 mb-1 px-1 flex items-center gap-1">
-                    <User size={12} />
+                  <div className="text-xs font-bold text-ink-500 mb-1 px-1 flex items-center gap-1">
+                    <User size={13} />
                     <span>{line.speaker}</span>
                   </div>
 
@@ -172,14 +172,14 @@ export default function SituationalDialogues({ dialogues = [] }) {
                         {line.cn}
                       </div>
                       <Volume2
-                        size={18}
+                        size={20}
                         className={`flex-shrink-0 mt-1 ${isUser ? 'text-cinnabar-200' : 'text-cinnabar-500'} ${isPlaying ? 'animate-bounce' : ''}`}
                       />
                     </div>
-                    <div className={`text-sm mt-1.5 ${isUser ? 'text-cinnabar-100' : 'text-cinnabar-600 font-semibold'}`}>
+                    <div className={`text-sm sm:text-base mt-1.5 ${isUser ? 'text-cinnabar-100' : 'text-cinnabar-600 font-semibold'}`}>
                       {line.pinyin}
                     </div>
-                    <div className={`text-sm mt-1.5 font-medium ${isUser ? 'text-cinnabar-50/90' : 'text-ink-700'}`}>
+                    <div className={`text-sm sm:text-base mt-1 font-medium ${isUser ? 'text-cinnabar-50/90' : 'text-ink-800'}`}>
                       {line.vi}
                     </div>
                   </div>

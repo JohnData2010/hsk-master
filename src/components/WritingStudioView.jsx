@@ -242,7 +242,7 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
                   {selectedWord?.han_viet || ''}
                 </span>
                 <span className="text-ink-400">•</span>
-                <span className="font-semibold text-ink-900">"{selectedWord?.vietnamese || ''}"</span>
+                <span className="font-semibold text-ink-900 text-base">"{selectedWord?.vietnamese || ''}"</span>
               </div>
             </div>
 

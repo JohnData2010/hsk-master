@@ -190,7 +190,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
         </div>
 
         {/* Authentic BLCUP 4-Section Tab Switcher */}
-        <div className="flex items-center border-b border-[#E8E2D5] bg-[#F2ECE1] px-2 sm:px-3 gap-1 overflow-x-auto text-xs font-bold no-scrollbar flex-shrink-0 sticky top-0 z-10 shadow-xs min-h-[44px]">
+        <div className="flex items-center border-b border-[#E8E2D5] bg-[#F2ECE1] px-2 sm:px-3 gap-1 overflow-x-auto text-sm font-bold no-scrollbar flex-shrink-0 sticky top-0 z-10 shadow-xs min-h-[46px]">
           {STEPS.map((s) => (
             <button
               key={s.id}
@@ -202,7 +202,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
               className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
                 activeTab === s.id
                   ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
-                  : 'border-transparent text-ink-600 hover:text-ink-900'
+                  : 'border-transparent text-ink-600 hover:text-ink-900 text-sm'
               }`}
             >
               {s.title} ({s.id === 'quiz' ? 'Kiểm tra' : s.badge})
@@ -379,8 +379,8 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
 
           {/* SECTION 2: TỪ MỚI (生词 - VOCABULARY IN SEQUENTIAL ORDER) */}
           {activeTab === 'vocab' && (
-            <div className="space-y-3">
-              <div className="text-xs font-bold text-ink-500 px-1 flex items-center justify-between">
+            <div className="space-y-3.5">
+              <div className="text-sm font-bold text-ink-600 px-1 flex items-center justify-between">
                 <span>Từ mới xuất hiện lần lượt theo thứ tự bài khóa:</span>
                 <span className="text-cinnabar-600 font-extrabold">{words.length} từ</span>
               </div>
@@ -390,23 +390,23 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
                 return (
                   <div
                     key={w.id || idx}
-                    className="p-4 rounded-2xl border-2 border-[#E8E2D5] bg-[#FDFCF9] shadow-sm hover:border-cinnabar-200 transition-all space-y-2.5"
+                    className="p-4 sm:p-5 rounded-2xl border-2 border-[#E8E2D5] bg-[#FDFCF9] shadow-sm hover:border-cinnabar-200 transition-all space-y-3"
                   >
                     <div className="flex items-center justify-between gap-3">
                       <div className="flex items-start gap-3">
-                        <span className="w-6 h-6 rounded-full bg-paper-200 text-ink-500 font-extrabold text-xs flex items-center justify-center flex-shrink-0 border border-[#D5C9B5] mt-1">
+                        <span className="w-7 h-7 rounded-full bg-paper-200 text-ink-600 font-extrabold text-xs flex items-center justify-center flex-shrink-0 border border-[#D5C9B5] mt-1">
                           {idx + 1}
                         </span>
                         <div>
-                          <div className="flex items-baseline gap-2.5">
-                            <span className="text-3xl sm:text-4xl font-bold font-hanzi text-ink-900">{w.hanzi}</span>
-                            <span className="text-lg font-bold text-cinnabar-700">{w.pinyin}</span>
+                          <div className="flex items-baseline gap-3">
+                            <span className="text-4xl sm:text-5xl font-bold font-hanzi text-ink-900 tracking-wide">{w.hanzi}</span>
+                            <span className="text-xl sm:text-2xl font-bold text-cinnabar-700 tracking-wide">{w.pinyin}</span>
                           </div>
-                          <div className="text-sm text-ink-800 mt-1.5 flex items-center flex-wrap gap-1.5">
-                            <span className="bg-[#FAF2E6] text-amberseal-800 border border-[#EEDBBA] px-2 py-0.5 rounded-md text-xs font-bold">
+                          <div className="text-base text-ink-900 mt-2 flex items-center flex-wrap gap-2">
+                            <span className="bg-[#FAF2E6] text-amberseal-800 border border-[#EEDBBA] px-2.5 py-0.5 rounded-md text-xs font-bold">
                               {w.han_viet}
                             </span>
-                            <span className="font-semibold text-ink-900">"{w.vietnamese}"</span>
+                            <span className="font-semibold text-ink-900 text-base">"{w.vietnamese}"</span>
                           </div>
                         </div>
                       </div>
@@ -417,43 +417,50 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
                           className="p-2.5 rounded-xl text-ink-600 hover:text-cinnabar-600 hover:bg-paper-100 transition-colors"
                           title="Luyện viết từng nét"
                         >
-                          <Edit3 size={18} />
+                          <Edit3 size={20} />
                         </button>
                         <button
                           onClick={() => speakChinese(w.hanzi, 0.65)}
                           className="p-2.5 rounded-xl text-cinnabar-600 hover:bg-cinnabar-50 transition-colors"
                           title="Nghe phát âm chuẩn"
                         >
-                          <Volume2 size={18} />
+                          <Volume2 size={20} />
                         </button>
                       </div>
                     </div>
 
-                    {/* Authentic Example Sentence from Lesson */}
+                    {/* Authentic Example Sentence from Lesson - Upgraded size and clarity matching dialogues */}
                     {w.example && (
-                      <div className="p-3 rounded-xl bg-[#F9F6F0] border border-[#E8E2D5] text-xs space-y-0.5">
-                        <div className="flex items-center justify-between">
-                          <span className="font-bold font-hanzi text-sm text-ink-900">{w.example.cn}</span>
+                      <div className="p-3.5 sm:p-4 rounded-2xl bg-[#F9F6F0] border border-[#E8E2D5] space-y-1.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <span className="font-bold font-hanzi text-xl sm:text-2xl text-ink-900 leading-snug tracking-wide">
+                            {w.example.cn}
+                          </span>
                           <button
                             onClick={() => speakChinese(w.example.cn, 0.65)}
-                            className="text-cinnabar-600 hover:text-cinnabar-700 p-0.5"
+                            className="text-cinnabar-600 hover:text-cinnabar-700 p-1.5 rounded-lg hover:bg-cinnabar-50 transition-colors flex-shrink-0"
+                            title="Nghe câu ví dụ"
                           >
-                            <Volume2 size={14} />
+                            <Volume2 size={18} />
                           </button>
                         </div>
-                        <div className="text-[11px] font-semibold text-cinnabar-700">{w.example.pinyin}</div>
-                        <div className="text-[11px] text-ink-600">{w.example.vi}</div>
+                        <div className="text-sm sm:text-base font-semibold text-cinnabar-700 tracking-wide">
+                          {w.example.pinyin}
+                        </div>
+                        <div className="text-sm sm:text-base text-ink-800 font-medium">
+                          {w.example.vi}
+                        </div>
                       </div>
                     )}
 
-                    {/* Mnemonic Story */}
+                    {/* Mnemonic Story - Upgraded size and clarity */}
                     {tip && (
-                      <div className="p-3 rounded-xl bg-[#FAF8F2] border border-[#E8E0D0] text-xs text-ink-700 space-y-1">
-                        <div className="font-bold text-amberseal-800 flex items-center gap-1.5 text-xs">
-                          <Lightbulb size={14} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
+                      <div className="p-3.5 sm:p-4 rounded-2xl bg-[#FAF8F2] border border-[#E8E0D0] space-y-1.5">
+                        <div className="font-bold text-amberseal-900 flex items-center gap-2 text-sm sm:text-base">
+                          <Lightbulb size={16} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
                           <span>Chiết tự: {tip.breakdown}</span>
                         </div>
-                        <p className="text-xs text-ink-700 leading-relaxed pl-5">
+                        <p className="text-sm sm:text-base text-ink-800 leading-relaxed pl-6 font-normal">
                           {tip.story}
                         </p>
                       </div>
@@ -467,35 +474,37 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
           {/* SECTION 3: NGỮ PHÁP (语法 / 注释 - GRAMMAR NOTES) */}
           {activeTab === 'grammar' && (
             <div className="space-y-4">
-              <div className="text-xs font-bold text-ink-500 px-1">
+              <div className="text-sm font-bold text-ink-600 px-1">
                 Các điểm ngữ pháp và chú thích trọng điểm trong bài:
               </div>
 
               {grammarList.map((g, idx) => (
                 <div
                   key={idx}
-                  className="p-4 rounded-2xl bg-[#FDFCF9] border-2 border-[#E8E2D5] shadow-paper space-y-2.5"
+                  className="p-4 sm:p-5 rounded-2xl bg-[#FDFCF9] border-2 border-[#E8E2D5] shadow-paper space-y-3"
                 >
-                  <div className="flex items-center gap-2">
-                    <span className="w-6 h-6 rounded-full bg-cinnabar-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+                  <div className="flex items-center gap-2.5">
+                    <span className="w-7 h-7 rounded-full bg-cinnabar-500 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
                       {idx + 1}
                     </span>
-                    <h4 className="font-bold text-ink-900 text-base">{g.point}</h4>
+                    <h4 className="font-bold text-ink-900 text-base sm:text-lg">{g.point}</h4>
                   </div>
-                  <p className="text-xs sm:text-sm text-ink-700 leading-relaxed pl-8">{g.explanation}</p>
+                  <p className="text-sm sm:text-base text-ink-800 leading-relaxed pl-9">{g.explanation}</p>
                   
                   {g.example && (
-                    <div className="mt-2 pl-8">
-                      <div className="p-3.5 rounded-2xl bg-[#F9F6F0] border border-[#E8E2D5] text-sm flex items-center justify-between">
+                    <div className="mt-2 pl-9">
+                      <div className="p-3.5 sm:p-4 rounded-2xl bg-[#F9F6F0] border border-[#E8E2D5] flex items-center justify-between gap-3">
                         <div>
-                          <span className="font-bold text-ink-900 font-hanzi text-lg leading-relaxed">{g.example}</span>
+                          <span className="font-bold text-ink-900 font-hanzi text-xl sm:text-2xl leading-relaxed tracking-wide">
+                            {g.example}
+                          </span>
                         </div>
                         <button
                           onClick={() => speakChinese(g.example.split('(')[0].trim(), 0.65)}
-                          className="text-cinnabar-600 hover:text-cinnabar-700 p-1 flex-shrink-0 ml-2"
+                          className="text-cinnabar-600 hover:text-cinnabar-700 p-1.5 rounded-lg hover:bg-cinnabar-50 flex-shrink-0 ml-2"
                           title="Nghe câu ví dụ"
                         >
-                          <Volume2 size={18} />
+                          <Volume2 size={20} />
                         </button>
                       </div>
                     </div>

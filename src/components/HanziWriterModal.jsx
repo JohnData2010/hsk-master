@@ -122,7 +122,7 @@ export default function HanziWriterModal({ word, onClose }) {
               {word?.han_viet}
             </span>
             <span className="text-ink-400">•</span>
-            <span className="font-semibold text-ink-900">"{word?.vietnamese}"</span>
+            <span className="font-semibold text-ink-900 text-base">"{word?.vietnamese}"</span>
           </div>
         </div>
 
