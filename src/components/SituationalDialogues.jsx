@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Volume2, PlayCircle, Lightbulb, User } from 'lucide-react';
-import { speakChinese } from '../utils/audio';
+import React, { useState, useRef, useEffect } from 'react';
+import { Volume2, PlayCircle, Square, Lightbulb, User } from 'lucide-react';
+import { speakChinese, stopSpeech } from '../utils/audio';
 
 const SCENARIO_ICONS = {
   milktea: '🧋',
@@ -12,8 +12,28 @@ const SCENARIO_ICONS = {
 export default function SituationalDialogues({ dialogues = [] }) {
   const [selectedId, setSelectedId] = useState(dialogues[0]?.id || 'milktea');
   const [activeSpeechLine, setActiveSpeechLine] = useState(null);
+  const [isPlayingFull, setIsPlayingFull] = useState(false);
+  const cancelFullRef = useRef(false);
+  const playTimeoutRef = useRef(null);
 
-  React.useEffect(() => {
+  const stopAllAudio = () => {
+    cancelFullRef.current = true;
+    if (playTimeoutRef.current) {
+      clearTimeout(playTimeoutRef.current);
+      playTimeoutRef.current = null;
+    }
+    stopSpeech();
+    setIsPlayingFull(false);
+    setActiveSpeechLine(null);
+  };
+
+  useEffect(() => {
+    return () => {
+      stopAllAudio();
+    };
+  }, []);
+
+  useEffect(() => {
     if (dialogues && dialogues.length > 0 && !dialogues.some(d => d.id === selectedId)) {
       setSelectedId(dialogues[0].id);
     }
@@ -22,6 +42,7 @@ export default function SituationalDialogues({ dialogues = [] }) {
   const activeDialogue = dialogues.find(d => d.id === selectedId) || dialogues[0];
 
   const handleSpeakLine = (text, index) => {
+    stopAllAudio();
     setActiveSpeechLine(index);
     speakChinese(text, 0.65, () => {
       setActiveSpeechLine(null);
@@ -29,19 +50,32 @@ export default function SituationalDialogues({ dialogues = [] }) {
   };
 
   const handlePlayFull = () => {
-    if (!activeDialogue) return;
+    if (isPlayingFull) {
+      stopAllAudio();
+      return;
+    }
+    if (!activeDialogue || !activeDialogue.dialogue?.length) return;
+
+    cancelFullRef.current = false;
+    setIsPlayingFull(true);
     let index = 0;
+
     const playNext = () => {
+      if (cancelFullRef.current) return;
+
       if (index < activeDialogue.dialogue.length) {
         setActiveSpeechLine(index);
         speakChinese(activeDialogue.dialogue[index].cn, 0.65, () => {
+          if (cancelFullRef.current) return;
           index++;
-          setTimeout(playNext, 600);
+          playTimeoutRef.current = setTimeout(playNext, 750);
         });
       } else {
+        setIsPlayingFull(false);
         setActiveSpeechLine(null);
       }
     };
+
     playNext();
   };
 
@@ -56,8 +90,8 @@ export default function SituationalDialogues({ dialogues = [] }) {
             <button
               key={d.id}
               onClick={() => {
+                stopAllAudio();
                 setSelectedId(d.id);
-                setActiveSpeechLine(null);
               }}
               className={`px-3.5 py-2 rounded-2xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
                 isSelected
@@ -82,10 +116,23 @@ export default function SituationalDialogues({ dialogues = [] }) {
               </span>
               <button
                 onClick={handlePlayFull}
-                className="flex items-center gap-1.5 text-xs font-bold text-cinnabar-600 hover:text-cinnabar-800 bg-[#FCF3F2] border border-[#F1CCC8] px-3 py-1 rounded-xl transition-colors"
+                className={`flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-xl transition-colors border shadow-xs ${
+                  isPlayingFull
+                    ? 'bg-cinnabar-600 text-white border-cinnabar-700 animate-pulse'
+                    : 'text-cinnabar-600 hover:text-cinnabar-800 bg-[#FCF3F2] border-[#F1CCC8]'
+                }`}
               >
-                <PlayCircle size={15} />
-                <span>Nghe toàn bộ</span>
+                {isPlayingFull ? (
+                  <>
+                    <Square size={14} className="fill-white" />
+                    <span>Dừng nghe</span>
+                  </>
+                ) : (
+                  <>
+                    <PlayCircle size={15} />
+                    <span>Nghe toàn bộ</span>
+                  </>
+                )}
               </button>
             </div>
             <h3 className="text-base font-extrabold text-ink-900">{activeDialogue.title}</h3>

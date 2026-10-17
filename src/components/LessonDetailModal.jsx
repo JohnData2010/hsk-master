@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { X, Volume2, Edit3, BookOpen, CheckCircle, Lightbulb, Play, Square, Eye, EyeOff, MessageSquare, ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
-import { speakChinese, playSoundEffect } from '../utils/audio';
+import { speakChinese, stopSpeech, playSoundEffect } from '../utils/audio';
 import { getLearningTipForWord } from '../data/learningTips';
 
 export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter }) {
@@ -15,6 +15,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
   const [isPlayingDialogue, setIsPlayingDialogue] = useState(false);
   const [activeLineIdx, setActiveLineIdx] = useState(null);
   const playTimeoutRef = useRef(null);
+  const isCancelledRef = useRef(false);
   const modalBodyRef = useRef(null);
 
   // Quiz state
@@ -55,12 +56,12 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
   };
 
   const stopDialogueAudio = () => {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      window.speechSynthesis.cancel();
-    }
+    isCancelledRef.current = true;
     if (playTimeoutRef.current) {
       clearTimeout(playTimeoutRef.current);
+      playTimeoutRef.current = null;
     }
+    stopSpeech();
     setIsPlayingDialogue(false);
     setActiveLineIdx(null);
   };
@@ -74,20 +75,32 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
 
   if (!lesson) return null;
 
-  // Autoplay full dialogue
+  // Play individual dialogue line cleanly with highlight
+  const handleSpeakSingleLine = (text, idx) => {
+    stopDialogueAudio();
+    setActiveLineIdx(idx);
+    speakChinese(text, 0.65, () => {
+      setActiveLineIdx(null);
+    });
+  };
+
+  // Autoplay full dialogue with synchronized onEnd completion
   const handlePlayFullDialogue = (diag) => {
     if (isPlayingDialogue) {
       stopDialogueAudio();
       return;
     }
 
-    const lines = diag.lines || [];
+    const lines = diag?.lines || [];
     if (lines.length === 0) return;
 
+    isCancelledRef.current = false;
     setIsPlayingDialogue(true);
     let currentIdx = 0;
 
     const playNextLine = () => {
+      if (isCancelledRef.current) return;
+
       if (currentIdx >= lines.length) {
         setIsPlayingDialogue(false);
         setActiveLineIdx(null);
@@ -96,12 +109,14 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
 
       setActiveLineIdx(currentIdx);
       const line = lines[currentIdx];
-      speakChinese(line.cn, 0.65);
 
-      // Estimate duration based on Chinese char length
-      const durationMs = Math.max(1600, line.cn.length * 360);
-      currentIdx++;
-      playTimeoutRef.current = setTimeout(playNextLine, durationMs);
+      // Wait for the line to completely finish speaking naturally before continuing
+      speakChinese(line.cn, 0.65, () => {
+        if (isCancelledRef.current) return;
+        currentIdx++;
+        // Natural conversational gap between dialogue lines (750ms)
+        playTimeoutRef.current = setTimeout(playNextLine, 750);
+      });
     };
 
     playNextLine();
@@ -310,12 +325,13 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
 
                         {/* Speech Bubble */}
                         <div
-                          className={`p-3.5 sm:p-4 rounded-3xl max-w-[82%] border-2 transition-all space-y-1 shadow-sm ${
+                          onClick={() => handleSpeakSingleLine(line.cn, lIdx)}
+                          className={`p-3.5 sm:p-4 rounded-3xl max-w-[82%] border-2 transition-all space-y-1 shadow-sm cursor-pointer ${
                             isActive
                               ? 'bg-[#FFF8E7] border-amberseal-500 ring-2 ring-amberseal-300 scale-[1.01]'
                               : isSpeakerA
-                              ? 'bg-[#FDFCF9] border-[#E8E2D5] rounded-tl-sm'
-                              : 'bg-[#F6FAF6] border-[#D6E6D6] rounded-tr-sm text-right'
+                              ? 'bg-[#FDFCF9] border-[#E8E2D5] rounded-tl-sm hover:border-[#D5C9B5]'
+                              : 'bg-[#F6FAF6] border-[#D6E6D6] rounded-tr-sm text-right hover:border-[#B5D5B5]'
                           }`}
                         >
                           {/* Chinese Text */}
@@ -324,7 +340,10 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
                               {line.cn}
                             </span>
                             <button
-                              onClick={() => speakChinese(line.cn, 0.65)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleSpeakSingleLine(line.cn, lIdx);
+                              }}
                               className="text-cinnabar-600 hover:text-cinnabar-700 p-1 flex-shrink-0"
                               title="Nghe câu này"
                             >

@@ -31,8 +31,47 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
   };
 }
 
+// Set to retain SpeechSynthesisUtterance references in JS memory, preventing Chrome/WebKit premature GC cut-offs
+const activeUtterances = new Set();
+let speechResumeInterval = null;
+
 /**
- * Speak Chinese text with beginner-friendly speed
+ * Clean Chinese text before passing to TTS voice:
+ * - Removes bracketed annotations (both ASCII and fullwidth)
+ * - Removes speaker prefixes (e.g. "A: ", "B: ", "王老师：")
+ * - Cleans stray markdown formatting symbols
+ */
+export const cleanChineseText = (text) => {
+  if (!text) return '';
+  let cleaned = String(text);
+  // Remove content in brackets / parentheses
+  cleaned = cleaned.replace(/\([^)]*\)/g, ' ');
+  cleaned = cleaned.replace(/（[^）]*）/g, ' ');
+  cleaned = cleaned.replace(/\[[^\]]*\]/g, ' ');
+  cleaned = cleaned.replace(/【[^】]*】/g, ' ');
+  // Remove speaker prefixes like "A: ", "B: ", "李老师："
+  cleaned = cleaned.replace(/^[A-Za-z\u4e00-\u9fa5]{1,6}[：:]\s*/, ' ');
+  // Remove markdown symbols
+  cleaned = cleaned.replace(/[#*~_`]/g, '');
+  return cleaned.trim();
+};
+
+/**
+ * Stop any currently playing speech immediately and clear timers
+ */
+export const stopSpeech = () => {
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    if (speechResumeInterval) {
+      clearInterval(speechResumeInterval);
+      speechResumeInterval = null;
+    }
+    window.speechSynthesis.cancel();
+    activeUtterances.clear();
+  }
+};
+
+/**
+ * Speak Chinese text with beginner-friendly speed and robust lifecycle management
  * @param {string} text - Chinese characters or pinyin
  * @param {number} rate - default 0.65 (slow, clear for learners). Can be set to 0.45 for ultra-slow pronunciation
  * @param {function} onEnd - callback when done
@@ -44,42 +83,95 @@ export const speakChinese = (text, rate = 0.65, onEnd = null) => {
     return;
   }
 
-  // Cancel any ongoing speech
-  window.speechSynthesis.cancel();
+  // Cancel any ongoing speech first
+  stopSpeech();
 
-  if (!text) {
+  const cleaned = cleanChineseText(text);
+  if (!cleaned) {
     if (onEnd) onEnd();
     return;
   }
 
-  // Create utterance
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'zh-CN';
-  
-  // Rate: Complete beginner default is 0.65 (very clear, not rushed)
-  utterance.rate = Math.max(0.4, Math.min(1.0, rate));
-  utterance.pitch = 1.0; // stable pitch for accurate tones
+  // Small timeout (15ms) after cancel to avoid Chromium race condition where speak() is dropped immediately after cancel()
+  setTimeout(() => {
+    try {
+      // Ensure synthesizer is not paused
+      if (window.speechSynthesis.paused) {
+        window.speechSynthesis.resume();
+      }
 
-  const bestVoice = getBestChineseVoice();
-  if (bestVoice) {
-    utterance.voice = bestVoice;
-  }
+      const utterance = new SpeechSynthesisUtterance(cleaned);
+      utterance.lang = 'zh-CN';
+      utterance.rate = Math.max(0.4, Math.min(1.0, rate));
+      utterance.pitch = 1.0; // stable pitch for accurate tones
 
-  if (onEnd) {
-    utterance.onend = onEnd;
-    utterance.onerror = (e) => {
-      console.warn('Speech error:', e);
-      onEnd();
-    };
-  }
+      const bestVoice = getBestChineseVoice();
+      if (bestVoice) {
+        utterance.voice = bestVoice;
+      }
 
-  window.speechSynthesis.speak(utterance);
-};
+      // Keep strong reference to prevent GC premature cut-off in Chromium
+      activeUtterances.add(utterance);
 
-export const stopSpeech = () => {
-  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-    window.speechSynthesis.cancel();
-  }
+      let finished = false;
+      let safetyTimeout = null;
+
+      const finish = () => {
+        if (finished) return;
+        finished = true;
+        if (safetyTimeout) {
+          clearTimeout(safetyTimeout);
+          safetyTimeout = null;
+        }
+        if (speechResumeInterval && activeUtterances.size <= 1) {
+          clearInterval(speechResumeInterval);
+          speechResumeInterval = null;
+        }
+        activeUtterances.delete(utterance);
+        if (onEnd) {
+          try {
+            onEnd();
+          } catch (err) {
+            console.error('Error in onEnd callback:', err);
+          }
+        }
+      };
+
+      utterance.onend = () => {
+        finish();
+      };
+
+      utterance.onerror = (e) => {
+        // e.error === 'canceled' or 'interrupted' is normal when stopSpeech() is called
+        finish();
+      };
+
+      // Safety timeout: in case browser drops onend event, trigger finish after expected maximum duration
+      const estimatedMaxMs = Math.max(4500, Math.ceil((cleaned.length * 1600) / utterance.rate) + 2500);
+      safetyTimeout = setTimeout(() => {
+        if (!finished && !window.speechSynthesis.speaking) {
+          finish();
+        }
+      }, estimatedMaxMs);
+
+      // Start periodic resume pulse to work around Chromium 15-second speech silence bug
+      if (!speechResumeInterval) {
+        speechResumeInterval = setInterval(() => {
+          if (!window.speechSynthesis.speaking) {
+            clearInterval(speechResumeInterval);
+            speechResumeInterval = null;
+          } else if (window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+          }
+        }, 3000);
+      }
+
+      window.speechSynthesis.speak(utterance);
+    } catch (err) {
+      console.warn('speakChinese error:', err);
+      if (onEnd) onEnd();
+    }
+  }, 15);
 };
 
 // Play short auditory feedback for writing and quizzes
