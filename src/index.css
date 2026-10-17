@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F8F5EE;
+    color: #2A3029;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(138, 145, 136, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 90, 80, 0.6);
+}
+
+/* Tianzige grid - Giấy kẻ ô Mễ truyền thống màu son nhạt */
+.tianzige-grid {
+  background-color: #FDFCF7;
+  background-image: 
+    linear-gradient(to right, rgba(194, 65, 56, 0.18) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(194, 65, 56, 0.18) 1px, transparent 1px),
+    linear-gradient(45deg, transparent 49.5%, rgba(194, 65, 56, 0.12) 50%, transparent 50.5%),
+    linear-gradient(-45deg, transparent 49.5%, rgba(194, 65, 56, 0.12) 50%, transparent 50.5%);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  background-position: center;
+}
+
+/* Triện ấn đỏ (Calligraphy Seal Stamp) */
+.stamp-seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #C24138;
+  color: #C24138;
+  border-radius: 6px;
+  font-family: 'Noto Serif SC', serif;
+  font-weight: 700;
+  box-shadow: inset 0 0 0 1px rgba(194, 65, 56, 0.2);
+}

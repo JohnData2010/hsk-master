@@ -1,0 +1,196 @@
+import React, { useState } from 'react';
+import { Search, ChevronRight, Volume2, Edit3, BookOpen, Lightbulb } from 'lucide-react';
+import { speakChinese } from '../utils/audio';
+import { getLearningTipForWord } from '../data/learningTips';
+
+export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter }) {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  if (!levelData) return null;
+
+  const lessons = levelData.lessons || [];
+  const words = levelData.words || [];
+
+  // Filter words if searching
+  const searchResults = searchQuery.trim()
+    ? words.filter(w =>
+        w.hanzi.includes(searchQuery) ||
+        w.pinyin.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        w.vietnamese.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        w.han_viet.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
+  return (
+    <div className="max-w-md mx-auto px-2 sm:px-4 py-2">
+      {/* Search Bar - Warm paper texture */}
+      <div className="relative mb-4">
+        <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-400" />
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          placeholder="Tra cứu từ: chữ Hán, Pinyin, Hán Việt..."
+          className="w-full pl-10 pr-10 py-3 rounded-2xl bg-[#FDFCF9] border-2 border-[#D5C9B5] text-sm font-medium text-ink-800 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-cinnabar-500/30 focus:border-cinnabar-500 shadow-paper transition-all"
+        />
+        {searchQuery && (
+          <button
+            onClick={() => setSearchQuery('')}
+            className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-ink-400 hover:text-ink-600"
+          >
+            Xóa
+          </button>
+        )}
+      </div>
+
+      {/* SEARCH RESULTS VIEW */}
+      {searchQuery.trim() ? (
+        <div className="space-y-3 mb-6">
+          <div className="text-xs font-bold text-ink-600 px-1">
+            Tìm thấy {searchResults.length} từ vựng:
+          </div>
+          {searchResults.length === 0 ? (
+            <div className="text-center py-10 bg-[#FDFCF9] rounded-3xl border border-[#E8E2D5] text-xs text-ink-400">
+              Không tìm thấy từ nào khớp với "{searchQuery}"
+            </div>
+          ) : (
+            searchResults.map((w, idx) => {
+              const tip = getLearningTipForWord(w);
+              return (
+                <div
+                  key={w.id || idx}
+                  className="p-4 rounded-2xl bg-[#FDFCF9] border-2 border-[#E8E2D5] shadow-paper space-y-2 hover:border-cinnabar-300 transition-all"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <div>
+                      <div className="flex items-baseline gap-2.5">
+                        <span className="text-3xl font-bold font-hanzi text-ink-900">{w.hanzi}</span>
+                        <span className="text-base font-bold text-cinnabar-600">{w.pinyin}</span>
+                        <span className="text-[10px] font-bold uppercase bg-paper-200 text-ink-600 px-1.5 py-0.5 rounded border border-[#D5C9B5]">
+                          {w.level}
+                        </span>
+                        {w.lesson_number && (
+                          <span className="text-[10px] font-bold bg-[#FAF2E6] text-amberseal-800 px-1.5 py-0.5 rounded border border-[#EEDBBA]">
+                            Bài {w.lesson_number}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-sm text-ink-700 mt-1">
+                        <span className="bg-[#FAF2E6] text-amberseal-700 border border-[#EEDBBA] px-2 py-0.5 rounded text-xs font-bold mr-2">
+                          {w.han_viet}
+                        </span>
+                        <span className="font-semibold text-ink-900">{w.vietnamese}</span>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 flex-shrink-0">
+                      <button
+                        onClick={() => onOpenWriter && onOpenWriter(w)}
+                        className="p-2.5 rounded-xl text-ink-600 hover:text-cinnabar-600 hover:bg-paper-100 transition-colors"
+                        title="Tập viết chữ này"
+                      >
+                        <Edit3 size={18} />
+                      </button>
+                      <button
+                        onClick={() => speakChinese(w.hanzi, 0.65)}
+                        className="p-2.5 rounded-xl text-cinnabar-600 hover:bg-cinnabar-50 transition-colors"
+                        title="Nghe phát âm chậm"
+                      >
+                        <Volume2 size={18} />
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Character Mnemonic Box */}
+                  {tip && (
+                    <div className="p-3 rounded-xl bg-[#FAF8F2] border border-[#E8E0D0] text-xs text-ink-700 space-y-1">
+                      <div className="text-amberseal-800 font-bold text-xs flex items-center gap-1.5">
+                        <Lightbulb size={13} className="fill-amberseal-500 text-amberseal-600 flex-shrink-0" />
+                        <span>Mẹo nhớ chữ: {tip.breakdown}</span>
+                      </div>
+                      <div className="text-xs text-ink-600 leading-relaxed pl-4">{tip.story}</div>
+                    </div>
+                  )}
+                </div>
+              );
+            })
+          )}
+        </div>
+      ) : (
+        /* LESSONS LIST VIEW */
+        <div className="space-y-4">
+          {/* Notebook Cover Banner */}
+          <div className="p-5 rounded-3xl bg-[#222821] text-[#FDFCF9] shadow-md border border-[#141813] relative overflow-hidden">
+            <div className="relative z-10">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="stamp-seal px-2 py-0.5 text-xs bg-cinnabar-500/20 text-[#F1CCC8] border-cinnabar-400">
+                  Giáo Trình Chuẩn HSK
+                </span>
+                <span className="text-xs text-[#D2D5D0]">Tự học chuẩn sư phạm</span>
+              </div>
+              <h2 className="text-2xl font-extrabold font-hanzi tracking-wide text-white mb-1.5">
+                {levelData.title}
+              </h2>
+              <p className="text-xs text-[#D2D5D0] leading-relaxed max-w-[90%]">
+                {levelData.description}
+              </p>
+              <div className="flex items-center gap-4 mt-3 text-xs font-semibold text-[#EBECEA]">
+                <span>📖 {lessons.length} bài học</span>
+                <span>🪶 {words.length} từ vựng</span>
+              </div>
+            </div>
+            <span className="absolute -right-3 -bottom-6 text-9xl font-hanzi font-black text-white/[0.04] select-none pointer-events-none">
+              漢語
+            </span>
+          </div>
+
+          {/* Lesson Chapter Cards */}
+          <div className="space-y-3">
+            {lessons.map((lesson) => (
+              <div
+                key={lesson.lesson}
+                onClick={() => onSelectLesson(lesson)}
+                className="p-4 sm:p-4.5 rounded-3xl bg-[#FDFCF9] border-2 border-[#E8E2D5] shadow-paper hover:shadow-paper-hover hover:border-cinnabar-300 transition-all cursor-pointer group active:scale-[0.99] flex items-center justify-between gap-3"
+              >
+                <div className="flex items-start gap-3.5">
+                  <div className="w-11 h-11 rounded-2xl bg-paper-100 border border-[#D5C9B5] text-cinnabar-600 font-extrabold flex items-center justify-center text-sm flex-shrink-0 group-hover:bg-cinnabar-500 group-hover:text-white group-hover:border-cinnabar-600 transition-colors shadow-sm">
+                    {lesson.lesson}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <h3 className="font-extrabold font-hanzi text-xl sm:text-2xl text-ink-900 group-hover:text-cinnabar-600 transition-colors">
+                        {lesson.title_cn}
+                      </h3>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          speakChinese(lesson.title_cn, 0.65);
+                        }}
+                        className="text-ink-400 hover:text-cinnabar-600 p-0.5"
+                      >
+                        <Volume2 size={18} />
+                      </button>
+                    </div>
+                    <div className="text-sm font-semibold text-cinnabar-700 mt-1">{lesson.title_pinyin}</div>
+                    <div className="text-sm text-ink-800 font-medium mt-1">{lesson.title_vi}</div>
+                    <div className="flex items-center gap-2 mt-2 text-xs text-ink-500 font-medium">
+                      <span>📖 {lesson.dialogues?.length || 1} bài khóa</span>
+                      <span>•</span>
+                      <span>🪶 {lesson.word_count || lesson.words?.length || 10} từ mới</span>
+                      <span>•</span>
+                      <span>📜 {lesson.grammar?.length || 2} điểm ngữ pháp</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="text-ink-300 group-hover:text-cinnabar-500 group-hover:translate-x-1 transition-all">
+                  <ChevronRight size={22} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}

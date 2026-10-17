@@ -1,0 +1,122 @@
+[
+  {
+    "id": "p1",
+    "level": "hsk1",
+    "category": "Chào hỏi & Giới thiệu",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Xin chào, tôi là người Việt Nam, tôi biết nói tiếng Trung.'",
+    "target_cn": "你好，我是越南人，我会说汉语。",
+    "target_pinyin": "Nǐ hǎo, wǒ shì Yuènán rén, wǒ huì shuō Hànyǔ.",
+    "keywords": ["你好", "我", "是", "越南人", "会", "说", "汉语"],
+    "native_variant": "你好！我是越南人，会说一点儿中文。",
+    "native_explanation": "Trong giao tiếp tự nhiên hàng ngày, người Trung Quốc thường nói '会说一点儿' (biết nói một chút) để thể hiện sự khiêm tốn, và thường dùng '中文' (Zhōngwén) thay vì '汉语' (Hànyǔ) trong văn nói.",
+    "grammar_focus": "Động từ '是' khẳng định quốc tịch và động từ năng nguyện '会' chỉ kỹ năng học được."
+  },
+  {
+    "id": "p2",
+    "level": "hsk1",
+    "category": "Ăn uống & Hỏi giá",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Tôi muốn mua một cốc trà, cốc này bao nhiêu tiền?'",
+    "target_cn": "我想买一杯茶，这个杯子多少钱？",
+    "target_pinyin": "Wǒ xiǎng mǎi yì bēi chá, zhè gè bēizi duōshao qián?",
+    "keywords": ["想", "买", "茶", "多少钱"],
+    "native_variant": "老板，我想来一杯茶，这个多少钱？",
+    "native_explanation": "Khi mua đồ ở quán, người Trung Quốc bản xứ thường dùng động từ '来' (lái - cho tôi / lấy cho tôi: 来一杯茶) nghe tự nhiên và thân mật hơn '买' (mua).",
+    "grammar_focus": "Động từ năng nguyện 想 + Động từ, lượng từ 杯 (ly/cốc), và đại từ nghi vấn 多少钱."
+  },
+  {
+    "id": "p3",
+    "level": "hsk1",
+    "category": "Hỏi đường & Vị trí",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Xin lỗi, cho tôi hỏi bệnh viện ở đâu vậy?'",
+    "target_cn": "对不起，请问医院在哪儿？",
+    "target_pinyin": "Duìbuqǐ, qǐngwèn yīyuàn zài nǎr?",
+    "keywords": ["请问", "医院", "在", "哪儿"],
+    "native_variant": "你好，打扰一下，请问医院怎么走？",
+    "native_explanation": "Khi hỏi đường ngoài phố, người bản xứ hay mở đầu bằng '打扰一下' (làm phiền một chút) hoặc '请问...怎么走' (cho hỏi đi đường nào) thay vì chỉ hỏi 'ở đâu'.",
+    "grammar_focus": "Đại từ nghi vấn nơi chốn 哪儿 / 哪里 và từ lịch sự 请问."
+  },
+  {
+    "id": "p4",
+    "level": "hsk2",
+    "category": "So sánh & Thời tiết",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Hôm nay lạnh hơn hôm qua nhiều, bạn mặc thêm chút áo vào nhé.'",
+    "target_cn": "今天比昨天冷多了，你多穿点儿衣服吧。",
+    "target_pinyin": "Jīntiān bǐ zuótiān lěng duō le, nǐ duō chuān diǎnr yīfu ba.",
+    "keywords": ["比", "冷", "多", "穿", "衣服", "吧"],
+    "native_variant": "今天比昨天冷得多，出门多穿件外套吧！",
+    "native_explanation": "Khi khuyên ai đó làm gì nhiều hơn, người Trung Quốc dùng cấu trúc: 多 + Động từ (多穿, 多喝水, 多休息). Trợ từ 吧 ở cuối câu tạo cảm giác quan tâm ấm áp.",
+    "grammar_focus": "Cấu trúc so sánh chữ 比 (A 比 B + Adj + 多了) và phó từ khuyên nhủ 多 + V."
+  },
+  {
+    "id": "p5",
+    "level": "hsk2",
+    "category": "Kinh nghiệm & Trải nghiệm",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Tôi đã từng đi Bắc Kinh, món vịt quay ở đó ăn rất ngon.'",
+    "target_cn": "我去过北京，那儿的烤鸭很好吃。",
+    "target_pinyin": "Wǒ qù guò Běijīng, nàr de kǎoyā hěn hǎochī.",
+    "keywords": ["去过", "北京", "好吃"],
+    "native_variant": "我去过北京，那儿的北京烤鸭味道绝了！",
+    "native_explanation": "Để khen đồ ăn cực kỳ ngon, giới trẻ Trung Quốc rất chuộng từ '绝了' (jué le - đỉnh chóp / ngon tuyệt cú mèo) hoặc '地道' (chuẩn vị).",
+    "grammar_focus": "Trợ từ động thái 过 (từng làm gì trong quá khứ)."
+  },
+  {
+    "id": "p6",
+    "level": "hsk2",
+    "category": "Thời gian & Khoảng cách",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Nhà tôi cách công ty rất gần, đi bộ mười phút là đến rồi.'",
+    "target_cn": "我家离公司很近，走路十分钟就到了。",
+    "target_pinyin": "Wǒ jiā lí gōngsī hěn jìn, zǒulù shí fēnzhōng jiù dào le.",
+    "keywords": ["离", "近", "分钟", "就", "到"],
+    "native_variant": "我家离单位挺近的，走着去十分钟就到。",
+    "native_explanation": "Người Trung Quốc đi làm thường gọi công ty là '单位' (dānwèi) hoặc '公司'. Cụm '走着去' (đi bộ đi) rất đậm chất văn nói Bắc Kinh.",
+    "grammar_focus": "Giới từ 离 chỉ khoảng cách và phó từ 就 biểu thị sự nhanh chóng, thuận lợi."
+  },
+  {
+    "id": "p7",
+    "level": "hsk3",
+    "category": "Câu chữ 把 (Bắt buộc HSK 3)",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung dùng câu chữ 把: 'Làm ơn hãy giúp tôi đóng cửa sổ lại.'",
+    "target_cn": "请帮我把窗户关上。",
+    "target_pinyin": "Qǐng bāng wǒ bǎ chuānghu guān shàng.",
+    "keywords": ["把", "窗户", "关"],
+    "native_variant": "麻烦帮我把窗户关一下，谢谢！",
+    "native_explanation": "Trong đời sống, người Trung Quốc cực kỳ hay dùng từ '麻烦' (máfan - phiền bạn / làm phiền giúp tôi) khi nhờ vả ai đó thực hiện câu chữ 把, nghe vừa lễ phép vừa bản địa.",
+    "grammar_focus": "Cấu trúc câu chữ 把: S + 把 + O + V + Bổ ngữ kết quả (关上)."
+  },
+  {
+    "id": "p8",
+    "level": "hsk3",
+    "category": "Cấu trúc 越来越 & Cảm xúc",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Dạo gần đây công việc càng ngày càng bận, tôi mệt đến mức không muốn nói chuyện.'",
+    "target_cn": "最近工作越来越忙，我累得不想说话。",
+    "target_pinyin": "Zuìjìn gōngzuò yuè lái yuè máng, wǒ lèi de bù xiǎng shuōhuà.",
+    "keywords": ["最近", "越来越", "忙", "累得", "不想", "说话"],
+    "native_variant": "这阵子工作越来越忙，累得我话都不想说了。",
+    "native_explanation": "Cách đảo ngữ '累得我话都不想说了' (mệt đến nỗi tôi một lời cũng chả buồn nói) là cách diễn đạt cửa miệng điển hình của dân văn phòng bản địa.",
+    "grammar_focus": "Cấu trúc mức độ tăng dần 越来越... và bổ ngữ trạng thái chỉ mức độ 得."
+  },
+  {
+    "id": "p9",
+    "level": "hsk3",
+    "category": "Câu chữ 被 & Sự cố",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung dùng câu chữ 被: 'Chiếc bánh ngọt trên bàn bị con mèo ăn mất rồi.'",
+    "target_cn": "桌子上的蛋糕被猫吃了。",
+    "target_pinyin": "Zhuōzi shàng de dàngāo bèi māo chī le.",
+    "keywords": ["桌子上", "蛋糕", "被", "猫", "吃", "了"],
+    "native_variant": "桌上的蛋糕叫猫给吃了！",
+    "native_explanation": "Trong khẩu ngữ hàng ngày ở Trung Quốc, người ta rất hay dùng '叫...给...' hoặc '让...给...' thay cho chữ '被' để câu nói mềm mại và sống động hơn.",
+    "grammar_focus": "Cấu trúc câu bị động: Tân ngữ chịu tác động + 被 + Chủ thể gây ra + Động từ + 了."
+  },
+  {
+    "id": "p10",
+    "level": "hsk3",
+    "category": "Hô ứng 一...就...",
+    "prompt_vi": "Hãy dịch câu sau sang tiếng Trung: 'Anh ấy vừa nghe thấy bài hát này là nhớ đến người yêu cũ ngay.'",
+    "target_cn": "他一听见这首歌就想起前任（前女友/前男友）。",
+    "target_pinyin": "Tā yì tīngjiàn zhè shǒu gē jiù xiǎngqǐ qiánrèn.",
+    "keywords": ["一", "听", "就", "想"],
+    "native_variant": "他一听到这歌就立马想起前任。",
+    "native_explanation": "Từ '前任' (qiánrèn) là từ người bản xứ Trung Quốc dùng phổ biến nhất hiện nay cho người yêu cũ. '立马' (lìmǎ) là từ lóng bản địa cho 'ngay lập tức'.",
+    "grammar_focus": "Cấu trúc liên từ 一...就... biểu thị hai hành động liên tiếp tức thì."
+  }
+]
