@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [react()],
   server: {
     host: true, // Listen on 0.0.0.0 so phone can connect via local Wi-Fi IP
