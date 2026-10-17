@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Search, ChevronRight, Volume2, Edit3, BookOpen, Lightbulb } from 'lucide-react';
+import { Search, ChevronRight, Volume2, Edit3, BookOpen, Lightbulb, Sparkles, Compass } from 'lucide-react';
 import { speakChinese } from '../utils/audio';
 import { getLearningTipForWord } from '../data/learningTips';
 
-export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter }) {
+export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter, onOpenPinyin }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   if (!levelData) return null;
@@ -24,13 +24,13 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
   return (
     <div className="max-w-md mx-auto px-2 sm:px-4 py-2">
       {/* Search Bar - Warm paper texture */}
-      <div className="relative mb-4">
+      <div className="relative mb-3">
         <Search size={18} className="absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-400" />
         <input
           type="text"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          placeholder="Tra cứu từ: chữ Hán, Pinyin, Hán Việt..."
+          placeholder="Tra nhanh chữ Hán, Pinyin, nghĩa tiếng Việt..."
           className="w-full pl-10 pr-10 py-3 rounded-2xl bg-[#FDFCF9] border-2 border-[#D5C9B5] text-sm font-medium text-ink-800 placeholder-ink-400 focus:outline-none focus:ring-2 focus:ring-cinnabar-500/30 focus:border-cinnabar-500 shadow-paper transition-all"
         />
         {searchQuery && (
@@ -118,33 +118,70 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
         </div>
       ) : (
         /* LESSONS LIST VIEW */
-        <div className="space-y-4">
-          {/* Notebook Cover Banner */}
-          <div className="p-5 rounded-3xl bg-[#222821] text-[#FDFCF9] shadow-md border border-[#141813] relative overflow-hidden">
+        <div className="space-y-3.5">
+          {/* Level Header Banner - Friendly Warm & Humanized */}
+          <div className="p-4 sm:p-5 rounded-3xl bg-[#F4EFE6] border-2 border-[#DECFC0] shadow-sm relative overflow-hidden">
             <div className="relative z-10">
-              <div className="flex items-center gap-2 mb-2">
-                <span className="stamp-seal px-2 py-0.5 text-xs bg-cinnabar-500/20 text-[#F1CCC8] border-cinnabar-400">
-                  Giáo Trình Chuẩn HSK
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="stamp-seal px-2 py-0.5 text-xs bg-cinnabar-50 text-cinnabar-700 border-cinnabar-400">
+                  Lộ trình chuẩn BLCUP
                 </span>
-                <span className="text-xs text-[#D2D5D0]">Tự học chuẩn sư phạm</span>
+                <span className="text-xs text-ink-500 font-semibold">Tự học theo thứ tự</span>
               </div>
-              <h2 className="text-2xl font-extrabold font-hanzi tracking-wide text-white mb-1.5">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-ink-900 tracking-tight">
                 {levelData.title}
               </h2>
-              <p className="text-xs text-[#D2D5D0] leading-relaxed max-w-[90%]">
+              <p className="text-xs text-ink-600 mt-1 leading-relaxed">
                 {levelData.description}
               </p>
-              <div className="flex items-center gap-4 mt-3 text-xs font-semibold text-[#EBECEA]">
-                <span>📖 {lessons.length} bài học</span>
-                <span>🪶 {words.length} từ vựng</span>
+              <div className="flex items-center gap-3 mt-2.5 text-xs font-bold text-ink-700">
+                <span className="bg-white/80 px-2.5 py-0.5 rounded-md border border-[#E0D7C7]">
+                  📖 {lessons.length} bài học
+                </span>
+                <span className="bg-white/80 px-2.5 py-0.5 rounded-md border border-[#E0D7C7]">
+                  🪶 {words.length} từ vựng
+                </span>
               </div>
             </div>
-            <span className="absolute -right-3 -bottom-6 text-9xl font-hanzi font-black text-white/[0.04] select-none pointer-events-none">
-              漢語
-            </span>
           </div>
 
-          {/* Lesson Chapter Cards */}
+          {/* Special Starter Lesson for HSK 1: Phonetics & Pinyin */}
+          {levelData.id === 'hsk1' && (
+            <div
+              onClick={onOpenPinyin}
+              className="p-4 sm:p-4.5 rounded-3xl bg-gradient-to-r from-[#FAF2E6] to-[#FFF9F2] border-2 border-amberseal-300 shadow-paper hover:shadow-paper-hover hover:border-cinnabar-400 cursor-pointer transition-all active:scale-[0.99] flex items-center justify-between gap-3 group"
+            >
+              <div className="flex items-start gap-3.5">
+                <div className="w-11 h-11 rounded-2xl bg-amberseal-500 text-white font-extrabold flex items-center justify-center text-sm shadow-sm flex-shrink-0 group-hover:bg-cinnabar-500 transition-colors">
+                  0
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-extrabold uppercase bg-amberseal-100 text-amberseal-800 border border-amberseal-300 px-2 py-0.5 rounded-md">
+                      Nhập môn cơ bản
+                    </span>
+                    <span className="text-xs text-amberseal-800 font-bold">Vỡ Lòng</span>
+                  </div>
+                  <h3 className="font-extrabold text-lg text-ink-900 group-hover:text-cinnabar-600 transition-colors mt-0.5">
+                    Ngữ Âm Pinyin & 4 Thanh Điệu
+                  </h3>
+                  <div className="text-xs text-ink-600 mt-0.5 leading-snug">
+                    Học phát âm 4 dấu thanh, quy tắc biến điệu và 23 thanh mẫu căn bản.
+                  </div>
+                  <div className="flex items-center gap-2 mt-2 text-xs font-semibold text-amberseal-800">
+                    <span className="inline-flex items-center gap-1 bg-white/90 px-2 py-0.5 rounded-md border border-amberseal-200">
+                      🎯 Nền móng phát âm chuẩn
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div className="text-amberseal-600 group-hover:text-cinnabar-500 group-hover:translate-x-1 transition-all flex-shrink-0">
+                <ChevronRight size={22} />
+              </div>
+            </div>
+          )}
+
+          {/* Sequential Lesson Cards */}
           <div className="space-y-3">
             {lessons.map((lesson) => (
               <div
@@ -152,13 +189,15 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
                 onClick={() => onSelectLesson(lesson)}
                 className="p-4 sm:p-4.5 rounded-3xl bg-[#FDFCF9] border-2 border-[#E8E2D5] shadow-paper hover:shadow-paper-hover hover:border-cinnabar-300 transition-all cursor-pointer group active:scale-[0.99] flex items-center justify-between gap-3"
               >
-                <div className="flex items-start gap-3.5">
-                  <div className="w-11 h-11 rounded-2xl bg-paper-100 border border-[#D5C9B5] text-cinnabar-600 font-extrabold flex items-center justify-center text-sm flex-shrink-0 group-hover:bg-cinnabar-500 group-hover:text-white group-hover:border-cinnabar-600 transition-colors shadow-sm">
+                <div className="flex items-start gap-3.5 flex-1 min-w-0">
+                  {/* Lesson Number Circle */}
+                  <div className="w-11 h-11 rounded-2xl bg-[#F4EFE6] border border-[#D5C9B5] text-cinnabar-600 font-extrabold flex items-center justify-center text-sm flex-shrink-0 group-hover:bg-cinnabar-500 group-hover:text-white group-hover:border-cinnabar-600 transition-colors shadow-xs">
                     {lesson.lesson}
                   </div>
-                  <div>
+
+                  <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2">
-                      <h3 className="font-extrabold font-hanzi text-xl sm:text-2xl text-ink-900 group-hover:text-cinnabar-600 transition-colors">
+                      <h3 className="font-extrabold font-hanzi text-2xl text-ink-900 group-hover:text-cinnabar-600 transition-colors tracking-wide">
                         {lesson.title_cn}
                       </h3>
                       <button
@@ -167,12 +206,16 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
                           speakChinese(lesson.title_cn, 0.65);
                         }}
                         className="text-ink-400 hover:text-cinnabar-600 p-0.5"
+                        title="Nghe phát âm tên bài"
                       >
                         <Volume2 size={18} />
                       </button>
                     </div>
-                    <div className="text-sm font-semibold text-cinnabar-700 mt-1">{lesson.title_pinyin}</div>
-                    <div className="text-sm text-ink-800 font-medium mt-1">{lesson.title_vi}</div>
+
+                    <div className="text-sm font-bold text-cinnabar-700 mt-0.5">{lesson.title_pinyin}</div>
+                    <div className="text-sm text-ink-800 font-medium mt-0.5">{lesson.title_vi}</div>
+
+                    {/* Badge Details */}
                     <div className="flex flex-wrap items-center gap-1.5 mt-2.5 text-xs text-ink-600 font-medium">
                       <span className="inline-flex items-center gap-1 whitespace-nowrap bg-[#F4EFE6] px-2 py-0.5 rounded-lg border border-[#E0D7C7] text-[11px]">
                         📖 {lesson.dialogues?.length || 1} bài khóa
@@ -189,8 +232,10 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
                   </div>
                 </div>
 
-                <div className="text-ink-300 group-hover:text-cinnabar-500 group-hover:translate-x-1 transition-all">
-                  <ChevronRight size={22} />
+                {/* Right Action */}
+                <div className="flex items-center gap-1 text-ink-400 group-hover:text-cinnabar-600 font-bold text-xs flex-shrink-0 transition-colors">
+                  <span className="hidden sm:inline">Học bài</span>
+                  <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             ))}

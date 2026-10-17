@@ -3,14 +3,12 @@ import Navbar from './components/Navbar';
 import BottomNav from './components/BottomNav';
 import CurriculumView from './components/CurriculumView';
 import FlashcardDeck from './components/FlashcardDeck';
-import GamesHub from './components/GamesHub';
-import SituationalDialogues from './components/SituationalDialogues';
-import NativeAIEvaluator from './components/NativeAIEvaluator';
+import WritingStudioView from './components/WritingStudioView';
+import PracticeHub from './components/PracticeHub';
+import PinyinCourseView from './components/PinyinCourseView';
 import LessonDetailModal from './components/LessonDetailModal';
 import HanziWriterModal from './components/HanziWriterModal';
 import SettingsModal from './components/SettingsModal';
-import PinyinCourseView from './components/PinyinCourseView';
-import WritingStudioView from './components/WritingStudioView';
 
 import curriculumData from './data/hsk_curriculum.json';
 import { getUserStats } from './utils/srs';
@@ -19,8 +17,7 @@ const SETTINGS_KEY = 'hsk_master_settings_v1';
 
 export default function App() {
   const [currentLevel, setCurrentLevel] = useState('hsk1');
-  const [activeTab, setActiveTab] = useState('pinyin'); // 'pinyin' by default for beginner!
-  const [mentorSubTab, setMentorSubTab] = useState('evaluator'); // 'evaluator', 'dialogues', 'games'
+  const [activeTab, setActiveTab] = useState('curriculum'); // Default to Curriculum / Sequential Roadmap
   const [selectedLesson, setSelectedLesson] = useState(null);
   const [writingModalWord, setWritingModalWord] = useState(null);
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
@@ -68,7 +65,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F8F5EE] text-[#2A3029] font-sans pb-24 selection:bg-[#FCF3F2] selection:text-cinnabar-700">
-      {/* Top Navigation */}
+      {/* Top Navigation Bar */}
       <Navbar
         currentLevel={currentLevel}
         onSelectLevel={(lvl) => {
@@ -79,31 +76,40 @@ export default function App() {
         onOpenSettings={() => setIsSettingsOpen(true)}
       />
 
-      {/* Main Content View */}
-      <main className="max-w-xl mx-auto pt-4 px-2 sm:px-4">
-        {/* 1. PINYIN & TONES MASTERCLASS */}
-        {activeTab === 'pinyin' && (
-          <PinyinCourseView />
-        )}
-
-        {/* 2. HANZI WRITING STUDIO & STROKE VALIDATION */}
-        {activeTab === 'writing' && (
-          <WritingStudioView
-            words={currentWords}
-            onOpenWriter={(w) => setWritingModalWord(w)}
-          />
-        )}
-
-        {/* 3. CURRICULUM LESSONS */}
+      {/* Main Content Area */}
+      <main className="max-w-xl mx-auto pt-3 px-2 sm:px-4">
+        {/* 1. CURRICULUM ROADMAP (DEFAULT TAB) */}
         {activeTab === 'curriculum' && (
           <CurriculumView
             levelData={levelData}
             onSelectLesson={(les) => setSelectedLesson(les)}
             onOpenWriter={(w) => setWritingModalWord(w)}
+            onOpenPinyin={() => {
+              setActiveTab('pinyin');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
           />
         )}
 
-        {/* 4. FLASHCARDS SRS */}
+        {/* 2. PINYIN COURSE VIEW (TRIGGERED FROM BÀI 0 IN CURRICULUM) */}
+        {activeTab === 'pinyin' && (
+          <div>
+            <div className="max-w-md mx-auto mb-3 px-2 sm:px-4 flex items-center justify-between">
+              <button
+                onClick={() => {
+                  setActiveTab('curriculum');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-3.5 py-1.5 rounded-xl bg-white border border-[#D5C9B5] text-xs font-bold text-ink-700 hover:text-cinnabar-600 shadow-xs transition-colors flex items-center gap-1.5"
+              >
+                ← Quay lại Lộ trình bài học
+              </button>
+            </div>
+            <PinyinCourseView />
+          </div>
+        )}
+
+        {/* 3. FLASHCARDS SRS TAB */}
         {activeTab === 'flashcards' && (
           <FlashcardDeck
             words={currentWords}
@@ -112,61 +118,27 @@ export default function App() {
           />
         )}
 
-        {/* 5. TEACHER WANG MENTORSHIP & REAL-WORLD / GAMES */}
-        {activeTab === 'ai_grader' && (
-          <div>
-            {/* Sub-navigation inside Teacher Wang tab */}
-            <div className="max-w-md mx-auto px-2 sm:px-4 mb-4">
-              <div className="flex bg-[#F2ECE1] p-1 rounded-2xl text-xs font-bold border border-[#E0D7C7]">
-                <button
-                  onClick={() => setMentorSubTab('evaluator')}
-                  className={`flex-1 py-2 px-1 rounded-xl transition-all ${
-                    mentorSubTab === 'evaluator'
-                      ? 'bg-[#FDFCF9] text-cinnabar-600 shadow-sm font-extrabold'
-                      : 'text-ink-600 hover:text-ink-900'
-                  }`}
-                >
-                  Sửa câu
-                </button>
-                <button
-                  onClick={() => setMentorSubTab('dialogues')}
-                  className={`flex-1 py-2 px-1 rounded-xl transition-all ${
-                    mentorSubTab === 'dialogues'
-                      ? 'bg-[#FDFCF9] text-cinnabar-600 shadow-sm font-extrabold'
-                      : 'text-ink-600 hover:text-ink-900'
-                  }`}
-                >
-                  Hội thoại
-                </button>
-                <button
-                  onClick={() => setMentorSubTab('games')}
-                  className={`flex-1 py-2 px-1 rounded-xl transition-all ${
-                    mentorSubTab === 'games'
-                      ? 'bg-[#FDFCF9] text-cinnabar-600 shadow-sm font-extrabold'
-                      : 'text-ink-600 hover:text-ink-900'
-                  }`}
-                >
-                  Trò chơi
-                </button>
-              </div>
-            </div>
+        {/* 4. HANZI WRITING STUDIO TAB */}
+        {activeTab === 'writing' && (
+          <WritingStudioView
+            words={currentWords}
+            onOpenWriter={(w) => setWritingModalWord(w)}
+          />
+        )}
 
-            {mentorSubTab === 'evaluator' && (
-              <NativeAIEvaluator currentLevel={currentLevel} />
-            )}
-            {mentorSubTab === 'dialogues' && (
-              <SituationalDialogues dialogues={curriculumData.situational_dialogues || []} />
-            )}
-            {mentorSubTab === 'games' && (
-              <GamesHub words={currentWords} currentLevel={currentLevel} />
-            )}
-          </div>
+        {/* 5. PRACTICE HUB (MINIGAMES & TEACHER WANG AI) */}
+        {activeTab === 'practice' && (
+          <PracticeHub
+            words={currentWords}
+            currentLevel={currentLevel}
+            situationalDialogues={curriculumData.situational_dialogues || []}
+          />
         )}
       </main>
 
-      {/* Bottom Navigation */}
+      {/* Simplified Bottom Navigation with 4 Primary Tabs */}
       <BottomNav
-        activeTab={activeTab}
+        activeTab={activeTab === 'pinyin' ? 'curriculum' : activeTab}
         onSelectTab={(tab) => {
           setActiveTab(tab);
           window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
-import { X, Volume2, Edit3, BookOpen, CheckCircle, Lightbulb, Play, Square, Eye, EyeOff, MessageSquare } from 'lucide-react';
-import { speakChinese } from '../utils/audio';
+import { X, Volume2, Edit3, BookOpen, CheckCircle, Lightbulb, Play, Square, Eye, EyeOff, MessageSquare, ArrowRight, ArrowLeft, Sparkles } from 'lucide-react';
+import confetti from 'canvas-confetti';
+import { speakChinese, playSoundEffect } from '../utils/audio';
 import { getLearningTipForWord } from '../data/learningTips';
 
 export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter }) {
-  // Tabs: 'dialogues' (课文), 'vocab' (生词), 'grammar' (语法), 'quiz' (练习)
-  const [activeTab, setActiveTab] = useState('dialogues');
+  // Ordered Steps: 1. Từ mới (vocab) -> 2. Bài khóa (dialogues) -> 3. Chú thích/Ngữ pháp (grammar) -> 4. Luyện tập (quiz)
+  const [activeTab, setActiveTab] = useState('vocab');
   const [selectedDialogueIdx, setSelectedDialogueIdx] = useState(0);
   const [showPinyinInDialogue, setShowPinyinInDialogue] = useState(true);
   const [showViInDialogue, setShowViInDialogue] = useState(true);
@@ -14,6 +15,7 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
   const [isPlayingDialogue, setIsPlayingDialogue] = useState(false);
   const [activeLineIdx, setActiveLineIdx] = useState(null);
   const playTimeoutRef = useRef(null);
+  const modalBodyRef = useRef(null);
 
   // Quiz state
   const [quizAnswers, setQuizAnswers] = useState({});
@@ -22,6 +24,35 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
   const dialogues = lesson?.dialogues || [];
   const words = lesson?.words || [];
   const grammarList = lesson?.grammar || [];
+
+  const STEPS = [
+    { id: 'vocab', num: 1, title: '1. Từ mới', badge: `${words.length} từ` },
+    { id: 'dialogues', num: 2, title: '2. Bài khóa', badge: `${dialogues.length} bài` },
+    { id: 'grammar', num: 3, title: lesson?.lesson <= 2 ? '3. Chú thích' : '3. Ngữ pháp', badge: `${grammarList.length} điểm` },
+    { id: 'quiz', num: 4, title: '4. Luyện tập', badge: 'Trắc nghiệm' },
+  ];
+
+  const currentStepIdx = STEPS.findIndex(s => s.id === activeTab);
+
+  const handleNextStep = () => {
+    stopDialogueAudio();
+    if (currentStepIdx < STEPS.length - 1) {
+      setActiveTab(STEPS[currentStepIdx + 1].id);
+      if (modalBodyRef.current) modalBodyRef.current.scrollTop = 0;
+    } else {
+      playSoundEffect('level_up');
+      confetti({ particleCount: 90, spread: 70, origin: { y: 0.6 } });
+      onClose();
+    }
+  };
+
+  const handlePrevStep = () => {
+    stopDialogueAudio();
+    if (currentStepIdx > 0) {
+      setActiveTab(STEPS[currentStepIdx - 1].id);
+      if (modalBodyRef.current) modalBodyRef.current.scrollTop = 0;
+    }
+  };
 
   const stopDialogueAudio = () => {
     if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
@@ -144,66 +175,28 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
         </div>
 
         {/* Authentic BLCUP 4-Section Tab Switcher */}
-        <div className="flex items-center border-b border-[#E8E2D5] bg-[#F2ECE1] px-2 sm:px-3 gap-1 overflow-x-auto text-xs font-bold no-scrollbar flex-shrink-0 sticky top-0 z-10 shadow-xs min-h-[42px]">
-          <button
-            onClick={() => {
-              setActiveTab('dialogues');
-              stopDialogueAudio();
-            }}
-            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
-              activeTab === 'dialogues'
-                ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
-                : 'border-transparent text-ink-600 hover:text-ink-900'
-            }`}
-          >
-            1. Bài khóa ({dialogues.length})
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveTab('vocab');
-              stopDialogueAudio();
-            }}
-            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
-              activeTab === 'vocab'
-                ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
-                : 'border-transparent text-ink-600 hover:text-ink-900'
-            }`}
-          >
-            2. Từ mới ({words.length})
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveTab('grammar');
-              stopDialogueAudio();
-            }}
-            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
-              activeTab === 'grammar'
-                ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
-                : 'border-transparent text-ink-600 hover:text-ink-900'
-            }`}
-          >
-            3. {lesson.lesson <= 2 ? 'Chú thích' : 'Ngữ pháp'} ({grammarList.length})
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveTab('quiz');
-              stopDialogueAudio();
-            }}
-            className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
-              activeTab === 'quiz'
-                ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
-                : 'border-transparent text-ink-600 hover:text-ink-900'
-            }`}
-          >
-            4. Luyện tập
-          </button>
+        <div className="flex items-center border-b border-[#E8E2D5] bg-[#F2ECE1] px-2 sm:px-3 gap-1 overflow-x-auto text-xs font-bold no-scrollbar flex-shrink-0 sticky top-0 z-10 shadow-xs min-h-[44px]">
+          {STEPS.map((s) => (
+            <button
+              key={s.id}
+              onClick={() => {
+                setActiveTab(s.id);
+                stopDialogueAudio();
+                if (modalBodyRef.current) modalBodyRef.current.scrollTop = 0;
+              }}
+              className={`py-2.5 px-3 sm:px-4 border-b-2 whitespace-nowrap transition-all flex-shrink-0 ${
+                activeTab === s.id
+                  ? 'border-cinnabar-500 text-cinnabar-700 font-extrabold text-sm'
+                  : 'border-transparent text-ink-600 hover:text-ink-900'
+              }`}
+            >
+              {s.title} ({s.id === 'quiz' ? 'Kiểm tra' : s.badge})
+            </button>
+          ))}
         </div>
 
         {/* Modal Body */}
-        <div className="p-4 sm:p-5 overflow-y-auto flex-1 min-h-0 space-y-4">
+        <div ref={modalBodyRef} className="p-4 sm:p-5 overflow-y-auto flex-1 min-h-0 space-y-4">
           {/* SECTION 1: BÀI KHÓA (课文 - DIALOGUES) */}
           {activeTab === 'dialogues' && (
             <div className="space-y-4">
@@ -570,6 +563,47 @@ export default function LessonDetailModal({ lesson, level, onClose, onOpenWriter
               </div>
             </div>
           )}
+        </div>
+
+        {/* Sequential Stepper Footer */}
+        <div className="p-3 sm:p-4 bg-[#F9F6F0] border-t border-[#E8E2D5] flex items-center justify-between gap-3 flex-shrink-0">
+          <button
+            onClick={handlePrevStep}
+            disabled={currentStepIdx === 0}
+            className="px-3.5 py-2.5 rounded-xl border border-[#D5C9B5] text-xs font-bold text-ink-600 hover:bg-paper-200 disabled:opacity-30 disabled:pointer-events-none transition-all flex items-center gap-1.5"
+          >
+            <ArrowLeft size={14} />
+            <span className="hidden sm:inline">Bước trước</span>
+          </button>
+
+          {/* Step Indicator Dots */}
+          <div className="flex items-center gap-1.5">
+            {STEPS.map((s) => (
+              <button
+                key={s.id}
+                onClick={() => {
+                  stopDialogueAudio();
+                  setActiveTab(s.id);
+                  if (modalBodyRef.current) modalBodyRef.current.scrollTop = 0;
+                }}
+                className={`h-2 rounded-full transition-all ${
+                  activeTab === s.id ? 'bg-cinnabar-500 w-6' : 'bg-[#D5C9B5] w-2'
+                }`}
+                title={s.title}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={handleNextStep}
+            className="px-4 sm:px-5 py-2.5 rounded-xl bg-cinnabar-500 hover:bg-cinnabar-600 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 active:scale-98"
+          >
+            <span>
+              {currentStepIdx === STEPS.length - 1
+                ? 'Hoàn thành bài 🎉'
+                : `${STEPS[currentStepIdx + 1]?.title} →`}
+            </span>
+          </button>
         </div>
       </div>
     </div>
