@@ -168,18 +168,18 @@ export default function SituationalDialogues({ dialogues = [] }) {
                     }`}
                   >
                     <div className="flex items-start justify-between gap-3">
-                      <div className="font-hanzi font-bold text-xl sm:text-2xl leading-relaxed tracking-wide">
+                      <div className="font-hanzi font-bold text-base sm:text-lg leading-relaxed tracking-wide">
                         {line.cn}
                       </div>
                       <Volume2
-                        size={20}
-                        className={`flex-shrink-0 mt-1 ${isUser ? 'text-cinnabar-200' : 'text-cinnabar-500'} ${isPlaying ? 'animate-bounce' : ''}`}
+                        size={17}
+                        className={`flex-shrink-0 mt-0.5 ${isUser ? 'text-cinnabar-200' : 'text-cinnabar-500'} ${isPlaying ? 'animate-bounce' : ''}`}
                       />
                     </div>
-                    <div className={`text-sm sm:text-base mt-1.5 ${isUser ? 'text-cinnabar-100' : 'text-cinnabar-600 font-semibold'}`}>
+                    <div className={`text-xs sm:text-sm mt-1 ${isUser ? 'text-cinnabar-100' : 'text-cinnabar-600 font-semibold'}`}>
                       {line.pinyin}
                     </div>
-                    <div className={`text-sm sm:text-base mt-1 font-medium ${isUser ? 'text-cinnabar-50/90' : 'text-ink-800'}`}>
+                    <div className={`text-xs sm:text-sm mt-0.5 font-medium ${isUser ? 'text-cinnabar-50/90' : 'text-ink-700'}`}>
                       {line.vi}
                     </div>
                   </div>

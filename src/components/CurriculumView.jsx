@@ -63,52 +63,52 @@ export default function CurriculumView({ levelData, onSelectLesson, onOpenWriter
                 >
                   <div className="flex items-center justify-between gap-3">
                     <div>
-                      <div className="flex items-baseline gap-3">
-                        <span className="text-4xl font-bold font-hanzi text-ink-900 tracking-wide">{w.hanzi}</span>
-                        <span className="text-xl font-bold text-cinnabar-700 tracking-wide">{w.pinyin}</span>
-                        <span className="text-xs font-bold uppercase bg-paper-200 text-ink-700 px-2 py-0.5 rounded border border-[#D5C9B5]">
+                      <div className="flex items-baseline gap-2.5">
+                        <span className="text-2xl sm:text-3xl font-bold font-hanzi text-ink-900 tracking-wide">{w.hanzi}</span>
+                        <span className="text-base sm:text-lg font-bold text-cinnabar-700 tracking-wide">{w.pinyin}</span>
+                        <span className="text-[11px] font-bold uppercase bg-paper-200 text-ink-700 px-2 py-0.5 rounded border border-[#D5C9B5]">
                           {w.level}
                         </span>
                         {w.lesson_number && (
-                          <span className="text-xs font-bold bg-[#FAF2E6] text-amberseal-800 px-2 py-0.5 rounded border border-[#EEDBBA]">
+                          <span className="text-[11px] font-bold bg-[#FAF2E6] text-amberseal-800 px-2 py-0.5 rounded border border-[#EEDBBA]">
                             Bài {w.lesson_number}
                           </span>
                         )}
                       </div>
-                      <div className="text-base text-ink-900 mt-2 flex items-center flex-wrap gap-2">
+                      <div className="text-sm text-ink-900 mt-1.5 flex items-center flex-wrap gap-2">
                         <span className="bg-[#FAF2E6] text-amberseal-800 border border-[#EEDBBA] px-2.5 py-0.5 rounded-md text-xs font-bold">
                           {w.han_viet}
                         </span>
-                        <span className="font-semibold text-ink-900 text-base">"{w.vietnamese}"</span>
+                        <span className="font-semibold text-ink-900 text-sm sm:text-base">"{w.vietnamese}"</span>
                       </div>
                     </div>
 
                     <div className="flex items-center gap-1.5 flex-shrink-0">
                       <button
                         onClick={() => onOpenWriter && onOpenWriter(w)}
-                        className="p-2.5 rounded-xl text-ink-600 hover:text-cinnabar-600 hover:bg-paper-100 transition-colors"
+                        className="p-2 rounded-xl text-ink-600 hover:text-cinnabar-600 hover:bg-paper-100 transition-colors"
                         title="Tập viết chữ này"
                       >
-                        <Edit3 size={20} />
+                        <Edit3 size={18} />
                       </button>
                       <button
                         onClick={() => speakChinese(w.hanzi, 0.65)}
-                        className="p-2.5 rounded-xl text-cinnabar-600 hover:bg-cinnabar-50 transition-colors"
+                        className="p-2 rounded-xl text-cinnabar-600 hover:bg-cinnabar-50 transition-colors"
                         title="Nghe phát âm chậm"
                       >
-                        <Volume2 size={20} />
+                        <Volume2 size={18} />
                       </button>
                     </div>
                   </div>
 
                   {/* Character Mnemonic Box */}
                   {tip && (
-                    <div className="p-3.5 sm:p-4 rounded-2xl bg-[#FAF8F2] border border-[#E8E0D0] space-y-1.5">
-                      <div className="font-bold text-amberseal-900 flex items-center gap-2 text-sm sm:text-base">
-                        <Lightbulb size={16} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
+                    <div className="p-3 rounded-2xl bg-[#FAF8F2] border border-[#E8E0D0] space-y-1">
+                      <div className="font-bold text-amberseal-900 flex items-center gap-1.5 text-xs sm:text-sm">
+                        <Lightbulb size={15} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
                         <span>Mẹo nhớ chữ: {tip.breakdown}</span>
                       </div>
-                      <div className="text-sm sm:text-base text-ink-800 leading-relaxed pl-6">{tip.story}</div>
+                      <div className="text-xs sm:text-sm text-ink-700 leading-relaxed pl-5 font-normal">{tip.story}</div>
                     </div>
                   )}
                 </div>

@@ -109,28 +109,28 @@ export default function HanziWriterModal({ word, onClose }) {
           <div className="flex items-center justify-center gap-3 mb-1">
             <span className={`${
               (word?.hanzi || '').length >= 4
-                ? 'text-3xl sm:text-4xl'
+                ? 'text-2xl sm:text-3xl'
                 : (word?.hanzi || '').length === 3
-                  ? 'text-4xl sm:text-5xl'
-                  : 'text-5xl sm:text-6xl'
+                  ? 'text-3xl sm:text-4xl'
+                  : 'text-4xl sm:text-5xl'
             } font-extrabold font-hanzi text-ink-900 tracking-wide whitespace-nowrap`}>
               {word?.hanzi}
             </span>
             <button
               onClick={handleAudio}
-              className="p-2.5 rounded-full bg-cinnabar-50 text-cinnabar-600 hover:bg-cinnabar-100 transition-all"
+              className="p-2 rounded-full bg-cinnabar-50 text-cinnabar-600 hover:bg-cinnabar-100 transition-all"
               title="Nghe phát âm chuẩn"
             >
-              <Volume2 size={22} />
+              <Volume2 size={20} />
             </button>
           </div>
-          <div className="text-2xl font-bold text-cinnabar-600 tracking-wide mt-1">{word?.pinyin}</div>
-          <div className="text-sm text-ink-700 mt-1.5 flex items-center justify-center gap-2">
+          <div className="text-lg sm:text-xl font-bold text-cinnabar-600 tracking-wide mt-1">{word?.pinyin}</div>
+          <div className="text-sm text-ink-700 mt-1 flex items-center justify-center gap-2">
             <span className="text-xs font-bold text-amberseal-800 bg-[#FAF2E6] border border-[#EEDBBA] px-2 py-0.5 rounded-md">
               {word?.han_viet}
             </span>
             <span className="text-ink-400">•</span>
-            <span className="font-semibold text-ink-900 text-base">"{word?.vietnamese}"</span>
+            <span className="font-semibold text-ink-900 text-sm sm:text-base">"{word?.vietnamese}"</span>
           </div>
         </div>
 

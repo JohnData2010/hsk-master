@@ -182,10 +182,10 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
 
   const hanziLen = (selectedWord?.hanzi || '').length;
   const hanziSizeClass = hanziLen >= 4
-    ? 'text-3xl sm:text-4xl'
+    ? 'text-2xl sm:text-3xl'
     : hanziLen === 3
-      ? 'text-4xl sm:text-5xl'
-      : 'text-5xl sm:text-6xl';
+      ? 'text-3xl sm:text-4xl'
+      : 'text-4xl sm:text-5xl';
 
   return (
     <div className="max-w-md mx-auto px-2 sm:px-4 py-2">
@@ -310,13 +310,13 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
                   <Volume2 size={22} />
                 </button>
               </div>
-              <div className="text-2xl font-bold text-cinnabar-600 mt-1.5 tracking-wide">{selectedWord?.pinyin || ''}</div>
-              <div className="text-sm text-ink-700 mt-1.5 flex items-center justify-center gap-2">
+              <div className="text-lg sm:text-xl font-bold text-cinnabar-600 mt-1 tracking-wide">{selectedWord?.pinyin || ''}</div>
+              <div className="text-sm text-ink-700 mt-1 flex items-center justify-center gap-2">
                 <span className="text-xs font-bold text-amberseal-800 bg-[#FAF2E6] border border-[#EEDBBA] px-2 py-0.5 rounded-md">
                   {selectedWord?.han_viet || ''}
                 </span>
                 <span className="text-ink-400">•</span>
-                <span className="font-semibold text-ink-900 text-base">"{selectedWord?.vietnamese || ''}"</span>
+                <span className="font-semibold text-ink-900 text-sm sm:text-base">"{selectedWord?.vietnamese || ''}"</span>
               </div>
             </div>
 
@@ -488,7 +488,7 @@ export default function WritingStudioView({ words = [], onOpenWriter }) {
               {BASIC_STROKES.map((st, idx) => (
                 <div key={idx} className="p-4 rounded-2xl bg-[#F9F6F0] border border-[#E8E2D5] space-y-1.5">
                   <div className="flex items-baseline justify-between">
-                    <span className="text-4xl font-bold font-hanzi text-cinnabar-600">{st.shape}</span>
+                    <span className="text-3xl sm:text-4xl font-bold font-hanzi text-cinnabar-600">{st.shape}</span>
                     <span className="text-base font-bold text-ink-900">{st.name}</span>
                   </div>
                   <div className="text-sm text-cinnabar-700 font-semibold">{st.cn}</div>

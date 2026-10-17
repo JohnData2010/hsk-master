@@ -195,8 +195,8 @@ export default function NativeAIEvaluator({ currentLevel = 'hsk1' }) {
         {activeSubMode === 'speaking' && (
           <div className="mt-3.5 p-4 rounded-2xl bg-[#F9F6F0] border border-[#E8E2D5] flex items-center justify-between">
             <div>
-              <div className="text-2xl sm:text-3xl font-bold font-hanzi text-ink-900 tracking-wide">{currentPrompt.target_cn}</div>
-              <div className="text-sm font-semibold text-cinnabar-700 mt-1">{currentPrompt.target_pinyin}</div>
+              <div className="text-lg sm:text-xl font-bold font-hanzi text-ink-900 tracking-wide leading-relaxed">{currentPrompt.target_cn}</div>
+              <div className="text-xs sm:text-sm font-semibold text-cinnabar-700 mt-1">{currentPrompt.target_pinyin}</div>
             </div>
             <button
               onClick={() => speakChinese(currentPrompt.target_cn)}
@@ -373,11 +373,11 @@ export default function NativeAIEvaluator({ currentLevel = 'hsk1' }) {
                   <Volume2 size={18} />
                 </button>
               </div>
-              <div className="font-hanzi font-bold text-cinnabar-900 text-2xl mt-1.5 tracking-wide">
+              <div className="font-hanzi font-bold text-cinnabar-900 text-lg sm:text-xl mt-1 tracking-wide leading-relaxed">
                 {evaluationResult.nativeExpression}
               </div>
               {evaluationResult.nativePinyin && (
-                <div className="text-cinnabar-700 font-semibold text-sm mt-0.5">
+                <div className="text-cinnabar-700 font-semibold text-xs sm:text-sm mt-0.5">
                   {evaluationResult.nativePinyin}
                 </div>
               )}

@@ -170,7 +170,7 @@ export default function GameSentenceBuilder({ level = 'hsk1' }) {
 
       {/* Target Vietnamese sentence card */}
       <div className="bg-[#FDFCF9] rounded-3xl p-5 border border-[#E8E2D5] shadow-paper mb-4 text-center">
-        <div className="text-lg font-extrabold text-ink-900 leading-relaxed">
+        <div className="text-base sm:text-lg font-bold text-ink-900 leading-relaxed">
           "{challenge.vi}"
         </div>
       </div>
@@ -178,7 +178,7 @@ export default function GameSentenceBuilder({ level = 'hsk1' }) {
       {/* Placement Area */}
       <div className="min-h-[96px] p-4 bg-[#F9F6F0] rounded-3xl border-2 border-dashed border-[#D5C9B5] flex flex-wrap gap-2.5 items-center justify-center mb-4 transition-all">
         {selectedTokens.length === 0 ? (
-          <span className="text-sm text-ink-400 font-medium mx-auto text-center">
+          <span className="text-xs sm:text-sm text-ink-400 font-medium mx-auto text-center">
             Chạm các từ bên dưới để ghép câu hoàn chỉnh
           </span>
         ) : (
@@ -186,7 +186,7 @@ export default function GameSentenceBuilder({ level = 'hsk1' }) {
             <button
               key={idx}
               onClick={() => handleRemoveToken(token, idx)}
-              className="px-4 py-2.5 rounded-2xl bg-[#FDFCF9] border border-cinnabar-300 shadow-sm text-ink-900 font-hanzi font-bold text-xl hover:bg-[#FCF3F2] active:scale-95 transition-all"
+              className="px-3.5 py-2 rounded-2xl bg-[#FDFCF9] border border-cinnabar-300 shadow-sm text-ink-900 font-hanzi font-bold text-base sm:text-lg hover:bg-[#FCF3F2] active:scale-95 transition-all"
             >
               {token}
             </button>
@@ -200,7 +200,7 @@ export default function GameSentenceBuilder({ level = 'hsk1' }) {
           <button
             key={idx}
             onClick={() => handleSelectToken(token, idx)}
-            className="px-4 py-2.5 rounded-2xl bg-[#FDFCF9] border border-[#D5C9B5] shadow-paper text-ink-900 font-hanzi font-bold text-xl hover:border-cinnabar-400 active:scale-95 transition-all"
+            className="px-3.5 py-2 rounded-2xl bg-[#FDFCF9] border border-[#D5C9B5] shadow-paper text-ink-900 font-hanzi font-bold text-base sm:text-lg hover:border-cinnabar-400 active:scale-95 transition-all"
           >
             {token}
           </button>

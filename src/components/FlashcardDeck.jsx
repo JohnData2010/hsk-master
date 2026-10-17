@@ -114,8 +114,8 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
 
     if (chars.length === 1) {
       return (
-        <div className="w-36 h-36 sm:w-40 sm:h-40 rounded-3xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner">
-          <span className="text-7xl sm:text-8xl font-hanzi font-bold text-ink-900 leading-none select-none">
+        <div className="w-32 h-32 sm:w-36 sm:h-36 rounded-3xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner">
+          <span className="text-5xl sm:text-6xl font-hanzi font-bold text-ink-900 leading-none select-none">
             {chars[0]}
           </span>
         </div>
@@ -125,23 +125,6 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
     if (chars.length === 2) {
       return (
         <div className="flex items-center justify-center gap-2.5 sm:gap-3">
-          {chars.map((c, i) => (
-            <div
-              key={i}
-              className="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
-            >
-              <span className="text-5xl sm:text-6xl font-hanzi font-bold text-ink-900 leading-none select-none">
-                {c}
-              </span>
-            </div>
-          ))}
-        </div>
-      );
-    }
-
-    if (chars.length === 3) {
-      return (
-        <div className="flex items-center justify-center gap-2">
           {chars.map((c, i) => (
             <div
               key={i}
@@ -156,13 +139,30 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
       );
     }
 
+    if (chars.length === 3) {
+      return (
+        <div className="flex items-center justify-center gap-2">
+          {chars.map((c, i) => (
+            <div
+              key={i}
+              className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl border-2 border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
+            >
+              <span className="text-3xl sm:text-4xl font-hanzi font-bold text-ink-900 leading-none select-none">
+                {c}
+              </span>
+            </div>
+          ))}
+        </div>
+      );
+    }
+
     // 4 or more characters
     return (
       <div className="flex flex-wrap items-center justify-center gap-1.5 max-w-sm">
         {chars.map((c, i) => (
           <div
             key={i}
-            className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
+            className="w-16 h-16 sm:w-18 sm:h-18 rounded-xl border border-dashed border-cinnabar-300 tianzige-grid flex items-center justify-center shadow-inner"
           >
             <span className="text-2xl sm:text-3xl font-hanzi font-bold text-ink-900 leading-none select-none">
               {c}
@@ -277,7 +277,7 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
             </div>
 
             {settings?.showPinyin && (
-              <div className="text-2xl sm:text-3xl font-bold text-cinnabar-600 tracking-wide mb-1">
+              <div className="text-xl sm:text-2xl font-bold text-cinnabar-600 tracking-wide mb-1">
                 {currentWord.pinyin}
               </div>
             )}
@@ -289,16 +289,16 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
           </div>
         ) : (
           /* BACK SIDE - RICH DETAILS & PEDAGOGICAL TIPS */
-          <div className="my-auto text-center py-2 animate-fade-in space-y-3.5">
+          <div className="my-auto text-center py-2 animate-fade-in space-y-3">
             {/* Main Character Header */}
             <div className={`font-hanzi font-bold text-ink-900 tracking-wide whitespace-nowrap ${
-              currentWord.hanzi.length > 3 ? 'text-3xl sm:text-4xl' : currentWord.hanzi.length > 2 ? 'text-4xl sm:text-5xl' : 'text-5xl sm:text-6xl'
+              currentWord.hanzi.length > 3 ? 'text-2xl sm:text-3xl' : currentWord.hanzi.length > 2 ? 'text-3xl sm:text-4xl' : 'text-4xl sm:text-5xl'
             }`}>
               {currentWord.hanzi}
             </div>
 
             {/* Pinyin with large clear tone marks */}
-            <div className="text-2xl font-bold text-cinnabar-600 tracking-wide flex items-center justify-center gap-2.5">
+            <div className="text-lg sm:text-xl font-bold text-cinnabar-600 tracking-wide flex items-center justify-center gap-2">
               <span>{currentWord.pinyin}</span>
               <button
                 onClick={(e) => handleSpeech(e, true)}
@@ -311,24 +311,24 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
 
             {/* Sino-Vietnamese (Hán Việt) */}
             {settings?.showHanViet && (
-              <div className="inline-block bg-[#FAF2E6] text-amberseal-800 text-xs sm:text-sm font-semibold px-3.5 py-1 rounded-full border border-[#EEDBBA]">
+              <div className="inline-block bg-[#FAF2E6] text-amberseal-800 text-xs sm:text-sm font-semibold px-3 py-0.5 rounded-full border border-[#EEDBBA]">
                 Âm Hán Việt: <span className="font-bold">{currentWord.han_viet}</span>
               </div>
             )}
 
-            {/* Vietnamese Meaning - Large font */}
-            <div className="text-2xl sm:text-3xl font-extrabold text-ink-900 tracking-tight py-1 px-2">
+            {/* Vietnamese Meaning - Standard emphasis */}
+            <div className="text-xl sm:text-2xl font-bold text-ink-900 tracking-tight py-0.5 px-2">
               "{currentWord.vietnamese}"
             </div>
 
             {/* MNEMONICS & CHARACTER BREAKDOWN (Chiết tự & Mẹo nhớ chữ) */}
             {learningTip && (
-              <div className="bg-[#FAF8F2] border border-[#E8E0D0] p-4 rounded-2xl text-left space-y-1.5">
-                <div className="flex items-center gap-2 font-bold text-amberseal-900 text-sm sm:text-base">
-                  <Lightbulb size={16} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
+              <div className="bg-[#FAF8F2] border border-[#E8E0D0] p-3 sm:p-3.5 rounded-2xl text-left space-y-1">
+                <div className="flex items-center gap-2 font-bold text-amberseal-900 text-xs sm:text-sm">
+                  <Lightbulb size={15} className="text-amberseal-600 fill-amberseal-500 flex-shrink-0" />
                   <span>Chiết tự: {learningTip.breakdown}</span>
                 </div>
-                <div className="text-ink-800 leading-relaxed text-sm sm:text-base pl-6">
+                <div className="text-ink-800 leading-relaxed text-xs sm:text-sm pl-5 font-normal">
                   {learningTip.story}
                 </div>
               </div>
@@ -336,9 +336,9 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
 
             {/* Example sentence */}
             {currentWord.example && (
-              <div className="bg-[#F9F6F0] border border-[#E8E2D5] p-4 rounded-2xl text-left space-y-1.5">
+              <div className="bg-[#F9F6F0] border border-[#E8E2D5] p-3 sm:p-3.5 rounded-2xl text-left space-y-1">
                 <div className="font-semibold text-ink-900 flex items-center justify-between gap-2">
-                  <span className="font-hanzi font-bold text-xl sm:text-2xl text-ink-900 leading-snug">{currentWord.example.cn}</span>
+                  <span className="font-hanzi font-bold text-base sm:text-lg text-ink-900 leading-snug">{currentWord.example.cn}</span>
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -347,11 +347,11 @@ export default function FlashcardDeck({ words, onOpenWriter, settings }) {
                     className="text-cinnabar-600 hover:text-cinnabar-700 p-1.5 rounded-lg hover:bg-cinnabar-50 flex-shrink-0"
                     title="Nghe câu ví dụ"
                   >
-                    <Volume2 size={18} />
+                    <Volume2 size={16} />
                   </button>
                 </div>
-                <div className="text-cinnabar-700 text-sm sm:text-base font-semibold">{currentWord.example.pinyin}</div>
-                <div className="text-ink-800 text-sm sm:text-base font-medium">{currentWord.example.vi}</div>
+                <div className="text-cinnabar-700 text-xs sm:text-sm font-semibold">{currentWord.example.pinyin}</div>
+                <div className="text-ink-700 text-xs sm:text-sm font-medium">{currentWord.example.vi}</div>
               </div>
             )}
           </div>

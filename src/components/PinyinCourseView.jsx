@@ -141,10 +141,10 @@ export default function PinyinCourseView() {
                       >
                         <div>
                           <div className="flex items-baseline gap-2">
-                            <span className="font-hanzi font-bold text-3xl text-ink-900">{ex.char}</span>
-                            <span className="text-lg font-bold text-cinnabar-600">{ex.pinyin}</span>
+                            <span className="font-hanzi font-bold text-2xl sm:text-3xl text-ink-900">{ex.char}</span>
+                            <span className="text-base font-bold text-cinnabar-600">{ex.pinyin}</span>
                           </div>
-                          <div className="text-sm font-medium text-ink-700 mt-1">{ex.vi}</div>
+                          <div className="text-xs font-medium text-ink-700 mt-0.5">{ex.vi}</div>
                         </div>
                         <Volume2 size={20} className="text-cinnabar-600 flex-shrink-0" />
                       </div>
