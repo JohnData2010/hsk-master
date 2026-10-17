@@ -31,9 +31,6 @@ export default function BottomNav({ activeTab, onSelectTab }) {
               <span className={`text-xs mt-1 tracking-tight ${isActive ? 'font-extrabold text-cinnabar-600' : 'text-ink-600'}`}>
                 {tab.label}
               </span>
-              {isActive && (
-                <span className="absolute bottom-1 w-5 h-1 rounded-full bg-cinnabar-500" />
-              )}
             </button>
           );
         })}
